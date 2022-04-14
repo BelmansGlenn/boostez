@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% set urlLang = app.request.pathInfo|split('/') %}
+
+{% if 'NL' in urlLang[1] %}
+    {% set locale = 'NL' %}
+{% elseif 'EN' in urlLang[1] %}
+    {% set locale = 'EN' %}
+{% else %}
+    {% set locale = 'FR' %}
+{% endif %}
+{% block title %}{% trans into locale %} error.notfound.title {% endtrans %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans into locale %} error.notfound.title {% endtrans %}</h1>
+    <p>{% trans into locale %} error.notfound.message {% endtrans %}</p>
+{% endblock %}
