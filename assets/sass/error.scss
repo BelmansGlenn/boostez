@@ -1,0 +1,26 @@
+section{
+  display: flex;
+  justify-content: center;
+  .img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 500px;
+    }
+  }
+  .error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .errorTitle{
+      text-align: center;
+      font-size: 3em;
+    }
+    .errorText{
+      text-align: center;
+      font-size: 1.6em;
+    }
+  }
+
+}

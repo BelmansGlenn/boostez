@@ -1,4 +1,7 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/error.css') }}">
+{% endblock %}
 
 
 {% set urlLang = app.request.pathInfo|split('/') %}
@@ -13,7 +16,18 @@
 {% block title %}{% trans into locale %} error.notfound.title {% endtrans %}{% endblock %}
 
 {% block body %}
-    <img src="{{ asset('/img/front.jpeg') }}" alt="image-cover-livre-boostez">
-    <h3>{% trans into locale %} error.notfound.title {% endtrans %}</h3>
-    <h5>{% trans into locale %} error.notfound.message {% endtrans %}</h5>
+
+    <section>
+        <div class="img">
+            <img src="{{ asset('/img/front.jpeg') }}" alt="image-cover-livre-boostez">
+        </div>
+
+        <div class="error">
+            <h1 class="errorTitle">{% trans into locale %} error.notfound.title {% endtrans %}</h1>
+            <h5 class="errorText">{% trans into locale %} error.notfound.message {% endtrans %}</h5>
+        </div>
+
+    </section>
+
+
 {% endblock %}
