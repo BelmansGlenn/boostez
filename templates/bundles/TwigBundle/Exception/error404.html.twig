@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+{% set urlLang = app.request.pathInfo|split('/') %}
+
+{% if 'NL' in urlLang[1] %}
+    {% set locale = 'NL' %}
+{% elseif 'EN' in urlLang[1] %}
+    {% set locale = 'EN' %}
+{% else %}
+    {% set locale = 'FR' %}
+{% endif %}
+{% block title %}{% trans into locale %} error.notfound.title {% endtrans %}{% endblock %}
+
+{% block body %}
+    <img src="{{ asset('/img/front.jpeg') }}" alt="image-cover-livre-boostez">
+    <h3>{% trans into locale %} error.notfound.title {% endtrans %}</h3>
+    <h5>{% trans into locale %} error.notfound.message {% endtrans %}</h5>
+{% endblock %}
