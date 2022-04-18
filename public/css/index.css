@@ -8,9 +8,12 @@
   width: 250px;
 }
 .indexPage header h1 {
-  font-family: noh-sori, sans-serif;
+  font-family: kansasnew, serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 33px;
   color: #707070;
+  text-align: center;
 }
 .indexPage article {
   padding: 0% 12%;
@@ -42,7 +45,9 @@
   margin: 50px 0px 0px 0px;
 }
 .indexPage footer h1 {
-  font-family: noh-sori, sans-serif;
+  font-family: kansasnew, serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 33px;
   color: #707070;
   margin: 40px 0px;
@@ -53,6 +58,17 @@
   color: #707070;
   padding: 0px 0px 0px 10px;
   line-height: 26px;
+}
+
+@media all and (max-width: 400px) {
+  .indexPage article div p {
+    line-height: 35px;
+  }
+
+  .indexPage article div h1 {
+    text-align: center;
+    margin: 25px 0px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
