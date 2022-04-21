@@ -24,3 +24,8 @@ section{
   }
 
 }
+@media all and (max-width: 790px) {
+  .section{
+    flex-direction: column;
+  }
+}

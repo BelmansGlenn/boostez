@@ -24,4 +24,10 @@ section .error .errorText {
   font-size: 1.6em;
 }
 
+@media all and (max-width: 790px) {
+  section {
+    flex-direction: column;
+  }
+}
+
 /*# sourceMappingURL=error.css.map */
