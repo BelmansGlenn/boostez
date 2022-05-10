@@ -4,7 +4,15 @@
 
 {% block body %}
 
-    <h3>voila</h3>
+    {{ form_start(form, {'action': path('app_newsletter')}) }}
+        {{ form_errors(form) }}
+
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.email) }}
+
+        {{ form_row(form.submit) }}
+    {{ form_end(form) }}
 
 
 {% endblock %}
