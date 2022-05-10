@@ -17,11 +17,6 @@ class BibliographyController extends AbstractController
         $this->defaultLocale = $defaultLocale;
     }
 
-    #[Route("/{redirect}", name: 'app_home', defaults: ['redirect' => 'FR'] )]
-    public function home(): Response
-    {
-        return $this->redirectToRoute('app_bibliography.FR');
-    }
 
     #[Route(['FR' => '/bibliographie', 'NL' => '/bibliografie', 'EN' => '/bibliography'], name: 'app_bibliography')]
     public function getBibliography(): Response
