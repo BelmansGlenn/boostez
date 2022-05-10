@@ -5,3 +5,10 @@ error:
 
 bibliography:
   title: Bibliographie
+
+form:
+  submit: S'INSCRIRE
+  placeholder:
+    firstname: PRENOM
+    lastname: NOM
+    email:  ADRESSE EMAIL
