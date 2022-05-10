@@ -8,6 +8,93 @@
   color: inherit;
   font-weight: normal;
   font-style: normal;
+  font-family: "Raleway", sans-serif;
+}
+
+.menuMain {
+  background-color: #d41726;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.menuMain h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  margin: 0px 0px 0px 20px;
+  color: #eee;
+  text-transform: uppercase;
+}
+.menuMain ul {
+  display: flex;
+  flex-direction: row;
+}
+.menuMain ul li {
+  list-style: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 0px 20px;
+  color: #eee;
+}
+.footerMain {
+  background-color: #2d2c2c;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+}
+.footerMain div {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footerMain .copyright {
+  display: flex;
+  flex-direction: column;
+}
+.footerMain .copyright h1 {
+  font-weight: 700;
+}
+.footerMain .copyright h1 span {
+  font-weight: 400;
+}
+.footerMain .copyright h2 {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.footerMain .copyright h3 {
+  font-size: 12px;
+  margin: 10px 0px 0px 0px;
+}
+.footerMain .menuFoot {
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+.footerMain .menuFoot ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.footerMain .menuFoot ul li {
+  margin: 0px 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-family: "Raleway", sans-serif;
+}
+.footerMain .socialFoot {
+  padding: 0px 50px;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=base.css.map */
