@@ -28,29 +28,29 @@ trait ConferenceTrait
     #[Assert\NotBlank]
     private string $video;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'array')]
     #[Assert\NotBlank]
-    private string $point1;
+    private array $point;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank]
-    private string $point2;
-
-    #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank]
-    private string $point3;
-
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $point4;
-
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $point5;
-
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $point6;
-
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $point7;
+//    #[ORM\Column(type: 'string', length: 255)]
+//    #[Assert\NotBlank]
+//    private string $point2;
+//
+//    #[ORM\Column(type: 'string', length: 255)]
+//    #[Assert\NotBlank]
+//    private string $point3;
+//
+//    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+//    private string $point4;
+//
+//    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+//    private string $point5;
+//
+//    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+//    private string $point6;
+//
+//    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+//    private string $point7;
 
     #[ORM\Column(type: 'string', length: 2)]
     #[Assert\NotBlank]
@@ -143,116 +143,21 @@ trait ConferenceTrait
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getPoint1(): string
+    public function getPoint(): array
     {
-        return $this->point1;
+        return $this->point;
     }
 
     /**
-     * @param string $point1
+     * @param array $point
      */
-    public function setPoint1(string $point1): void
+    public function setPoint(array $point): void
     {
-        $this->point1 = $point1;
+        $this->point = $point;
     }
 
-    /**
-     * @return string
-     */
-    public function getPoint2(): string
-    {
-        return $this->point2;
-    }
-
-    /**
-     * @param string $point2
-     */
-    public function setPoint2(string $point2): void
-    {
-        $this->point2 = $point2;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPoint3(): string
-    {
-        return $this->point3;
-    }
-
-    /**
-     * @param string $point3
-     */
-    public function setPoint3(string $point3): void
-    {
-        $this->point3 = $point3;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPoint4(): string
-    {
-        return $this->point4;
-    }
-
-    /**
-     * @param string $point4
-     */
-    public function setPoint4(string $point4): void
-    {
-        $this->point4 = $point4;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPoint5(): string
-    {
-        return $this->point5;
-    }
-
-    /**
-     * @param string $point5
-     */
-    public function setPoint5(string $point5): void
-    {
-        $this->point5 = $point5;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPoint6(): string
-    {
-        return $this->point6;
-    }
-
-    /**
-     * @param string $point6
-     */
-    public function setPoint6(string $point6): void
-    {
-        $this->point6 = $point6;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPoint7(): string
-    {
-        return $this->point7;
-    }
-
-    /**
-     * @param string $point7
-     */
-    public function setPoint7(string $point7): void
-    {
-        $this->point7 = $point7;
-    }
 
     /**
      * @return string
