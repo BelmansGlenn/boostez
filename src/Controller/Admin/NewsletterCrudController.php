@@ -32,8 +32,8 @@ class NewsletterCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('firstname'),
-            TextField::new('lastname'),
+            TextField::new('firstname', 'Prénom'),
+            TextField::new('lastname', 'Nom de famille'),
             EmailField::new('email'),
         ];
     }

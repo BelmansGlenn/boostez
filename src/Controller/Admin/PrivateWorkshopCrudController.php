@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\PrivateWorkshop;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -32,13 +33,7 @@ class PrivateWorkshopCrudController extends AbstractCrudController
                     'voor individuen' => 'voor individuen',
                     'for individuals' => 'for individuals']),
             TextField::new('video', 'Video')->hideOnIndex(),
-            TextField::new('point1', 'Point 1')->hideOnIndex(),
-            TextField::new('point2', 'Point 2')->hideOnIndex(),
-            TextField::new('point3', 'Point 3')->hideOnIndex(),
-            TextField::new('point4', 'Point 4')->hideOnIndex()->setRequired(false),
-            TextField::new('point5', 'Point 5')->hideOnIndex()->setRequired(false),
-            TextField::new('point6', 'Point 6')->hideOnIndex()->setRequired(false),
-            TextField::new('point7', 'Point 7')->hideOnIndex()->setRequired(false),
+            ArrayField::new('point', 'Point')->hideOnIndex(),
             ChoiceField::new('language', 'Langue')->setChoices(['FR'=>'FR','NL'=>'NL','EN'=>'EN']),
             IntegerField::new('inOrder', 'Ordre'),
             BooleanField::new('isVisible', 'Est visible?')

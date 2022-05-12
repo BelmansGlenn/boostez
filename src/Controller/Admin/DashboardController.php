@@ -2,10 +2,12 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Book;
 use App\Entity\BusinessConference;
 use App\Entity\BusinessWorkshop;
 use App\Entity\PrivateRetreat;
 use App\Entity\PrivateWorkshop;
+use App\Entity\Speaker;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -44,9 +46,11 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Newsletter', 'fa-solid fa-business-time');
-         yield MenuItem::linkToCrud('Conference Entreprise', 'fa-solid fa-business-time', BusinessConference::class);
-         yield MenuItem::linkToCrud('Atelier Entreprise', 'fa-solid fa-paint-roller', BusinessWorkshop::class);
-         yield MenuItem::linkToCrud('Retraite Particulier', 'fa-solid fa-campground', PrivateRetreat::class);
-         yield MenuItem::linkToCrud('Atelier Particulier', 'fa-solid fa-paintbrush', PrivateWorkshop::class);
+         yield MenuItem::linkToCrud('Conferences Entreprises', 'fa-solid fa-business-time', BusinessConference::class);
+         yield MenuItem::linkToCrud('Ateliers Entreprises', 'fa-solid fa-paint-roller', BusinessWorkshop::class);
+         yield MenuItem::linkToCrud('Retraites Particuliers', 'fa-solid fa-campground', PrivateRetreat::class);
+         yield MenuItem::linkToCrud('Ateliers Particuliers', 'fa-solid fa-paintbrush', PrivateWorkshop::class);
+         yield MenuItem::linkToCrud('Conferenciers', 'fa-solid fa-people-group', Speaker::class);
+         yield MenuItem::linkToCrud('Livres', 'fa-solid fa-book', Book::class);
     }
 }
