@@ -8,4 +8,105 @@
   color: inherit;
   font-weight: normal;
   font-style: normal;
+  font-family: "Raleway", sans-serif;
+}
+
+.blue600 {
+  font-weight: 600;
+  color: #007793;
+}
+
+// sass --watch assets/sass:public/css
+// Rouge : #d41726
+// Bleu : #007793
+// Gris : #4c4745 (jouer en le faisant plus clair)
+
+.menuMain {
+  background-color:#d41726;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin: 0px 0px 0px 20px;
+    color: #eee;
+    text-transform: uppercase;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    li {
+      list-style: none;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      text-transform: uppercase;
+      font-size: 20px;
+      margin: 0px 20px;
+      color: #eee;
+      a {
+        // text-decoration: none;
+      }
+    }
+  }
+}
+
+.footerMain {
+  background-color: #2d2c2c;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  div {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      font-weight: 700;
+      span {
+        font-weight: 400;
+      }
+    }
+    h2 {
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    h3 {
+      font-size: 12px;
+      margin: 10px 0px 0px 0px;
+    }
+  }
+  .menuFoot {
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    ul {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+      li {
+        margin: 0px 5px;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 200;
+        font-family: "Raleway", sans-serif;
+      }
+    }
+  }
+  .socialFoot {
+    padding: 0px 50px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
 }

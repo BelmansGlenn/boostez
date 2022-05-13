@@ -1,0 +1,33 @@
+section {
+  display: flex;
+  justify-content: center;
+}
+section .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .img img {
+  width: 500px;
+}
+section .error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section .error .errorTitle {
+  text-align: center;
+  font-size: 3em;
+}
+section .error .errorText {
+  text-align: center;
+  font-size: 1.6em;
+}
+
+@media all and (max-width: 790px) {
+  .section {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=error.css.map */

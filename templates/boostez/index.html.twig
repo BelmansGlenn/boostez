@@ -1,19 +1,73 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BoostezController!{% endblock %}
+{% block title %}Boostez{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section class="boostez">
+    <header>
+        <figure><img src="{{ asset('img/helicopter.jpg') }}" alt="illustration-helicopter-taking-flight"></figure>
+        <div>
+            <h1>Boostez</h1>
+            <p>
+                L’objectif de « Boostez ! » est de vous redonner une <span class="blue600">vue d’ensemble</span>
+                sur ce qui compte aujourd’hui <span class="blue600">pour être en forme</span> dans son corps,
+                dans sa tête et performer selon ses objectifs.
+                <br>
+                Vous y trouverez de <span class="blue600">nombreux trucs et astuces</span>, ainsi qu’une méthode pour vous mettre en mouvement et tenir dans la durée
+            </p>
+        </div>
+    </header>
+    <section>
+        <header>
+            <h1>La méthode :</h1>
+            <h2>Picorez dans la <span>table des matières</span> ci-dessous et faites votre propre plan d’action individuel « Boostez ! ».</h2>
+            <div>BOUTON</div>
+        </header>
+        {# Picture here with colum flex section  #}
+    </section>
+    <article>
+        <h1>Vous êtes une entreprise ou une organisation ?</h1>
+        <p> 
+            Le livre peut être lu par tous, même si il a été particulièrement conçu pour les travailleurs de tous secteurs et de toutes fonctions.
+            Les patrons et les DRH peuvent l’acquérir pour leur personnel dans le cadre de leurs actions en faveur du bien-être au travail.
+            Ils peuvent en outre choisir de le personnaliser avec le mot du patron et les coordonnées des personnes de contact pour le bien-être au travail.
+        </p>
+        <a href="{{ path('app_redirect') }}">Contacez-nous</a>
+    </article>
+</section>
 
-<div class="example-wrapper">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/glennbelmans/glenn/Dev_php/symfony/anne_everard_test/boostez/src/Controller/BoostezController.php'|file_link(0) }}">src/Controller/BoostezController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/glennbelmans/glenn/Dev_php/symfony/anne_everard_test/boostez/templates/boostez/index.html.twig'|file_link(0) }}">templates/boostez/index.html.twig</a></code></li>
-    </ul>
-</div>
+<hr>
+<hr>
+Conférences
+<hr>
+<hr>
+
+<section class="conferences">
+    <section class="confEntreprise">
+        <header>
+            <div>
+                <h1>Pour les entreprises</h1>
+                <h2>Découvrez nos conférences et ateliers</h2>
+            </div>
+            <figure><img src="{{ asset('img/helicopter.jpg') }}" alt="illustration-helicopter-taking-flight"></figure>
+        </header>
+        <article>
+            <h1>Conférences</h1>
+            <section>
+                <a>Boostez</a>
+                <a>Boostez</a>
+                <a>Boostez</a>
+                <a>Boostez</a>
+            </section>
+            <h2>Ateliers</h2>
+            <section>
+                <a>Boostez</a>
+                <a>Boostez</a>
+                <a>Boostez</a><a>Boostez</a><a>Boostez</a><a>Boostez</a>
+                <a>Boostez</a>
+            </section>
+        </article>
+    </section>
+</section>
 {% endblock %}
