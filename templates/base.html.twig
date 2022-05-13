@@ -16,6 +16,9 @@
             <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
             <link rel="stylesheet" href="{{ asset('css/boostez.css') }}">
             <link rel="stylesheet" href="{{ asset('css/conference.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/books.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/bio.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 {#            {{ encore_entry_link_tags('app') }}#}
         {% endblock %}
 
@@ -30,9 +33,9 @@
                 <li><a href="{{ path('app_redirect') }}">Accueil</a></li>
                 <li><a href="{{ path('app_boostez') }}">Boostez</a></li>
                 <li><a href="{{ path('app_conference') }}">Conférences</a></li>
-                <li>Livres</li>
-                <li>Bio</li>
-                <li>Contact</li>
+                <li><a href="{{ path('app_books') }}">Livres</a></li>
+                <li><a href="{{ path('app_biography') }}">Bio</a></li>
+                <li><a href="{{ path('app_contact') }}">Contact</a></li>
             </ul>
         </header>
         {% block body %}{% endblock %}
@@ -44,10 +47,10 @@
             <ul>
                 <li><a href="{{ path('app_redirect') }}">Accueil</a></li>
                 <li><a href="{{ path('app_boostez') }}">Boostez</a></li>
-                <li>Conférences</li>
-                <li>Livres</li>
-                <li>Bio</li>
-                <li>Contact</li>
+                <li><a href="{{ path('app_conference') }}">Conférences</a></li>
+                <li><a href="{{ path('app_books') }}">Livres</a></li>
+                <li><a href="{{ path('app_biography') }}">Bio</a></li>
+                <li><a href="{{ path('app_contact') }}">Contact</a></li>
             </ul>
         </div>
         <div class="copyright">

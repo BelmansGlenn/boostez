@@ -1,9 +1,102 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BooksController!{% endblock %}
+{% block title %}Livres{% endblock %}
 
 {% block body %}
-<h1>voila livres</h1>
+<section class="books">
+    <article>
+        <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+        <section>
+            <h1>Boostez</h1>
+            <p>L’objectif de «Boostez» est de vous redonner une vue d’ensemble sur ce qui compte aujourd’hui pour être en forme dans son corps et dans sa tête et de performer selon ses objectifs. Vous y trouverez de nombreux trucs et astuces ainsi qu’une méthode pour vous mettre en mouvement et tenir dans la durée.</p>
+            <a href="www.google.com">Commander</a>
+        </section>
+    </article>
+    <article>
+        <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+        <section>
+            <h1>Boostez</h1>
+            <p>L’objectif de «Boostez» est de vous redonner une vue d’en- semble sur ce qui compte aujourd’hui pour être en forme dans son corps et dans sa tête et de performer selon ses objectifs. Vous y trouverez de nombreux trucs et astuces ain- si qu’une méthode pour vous mettre en mouvement et tenir dans la turée</p>
+            <a href="www.google.com">Commander</a>
+        </section>
+    </article>
+    <footer>
+        <header>
+            <h1>Traduction :</h1>
+        </header>
+        <section>
+            <div>
+                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+                <h1>Boostez</h1>
+                <h2>NL</h2>
+                <a href="www.google.com">Commander</a>
+            </div>
+            <div>
+                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+                <h1>Boostez</h1>
+                <h2>NL</h2>
+                <a href="www.google.com">Commander</a>
+            </div>
+            <div>
+                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+                <h1>Boostez</h1>
+                <h2>NL</h2>
+                <a href="www.google.com">Commander</a>
+            </div>
+            <div>
+                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+                <h1>Boostez</h1>
+                <h2>NL</h2>
+                <a href="www.google.com">Commander</a>
+            </div>
+            <div>
+                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+                <h1>Boostez</h1>
+                <h2>NL</h2>
+                <a href="www.google.com">Commander</a>
+            </div>
+            <div>
+                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+                <h1>Boostez</h1>
+                <h2>NL</h2>
+                <a href="www.google.com">Commander</a>
+            </div>
+            <div>
+                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+                <h1>Boostez</h1>
+                <h2>NL</h2>
+                <a href="www.google.com">Commander</a>
+            </div>
+            <div>
+                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+                <h1>Boostez</h1>
+                <h2>NL</h2>
+                <a href="www.google.com">Commander</a>
+            </div>
+            
+        </section>
+    </footer>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <hr>
@@ -33,13 +126,20 @@
             {{ message|trans({}, "messages", locale) }}
         </div>
     {% endfor %}
+    
+<section class="newsletter">
+    <article>
+        <h1>Newsletter</h1>
+        <p>Pour recevoir des informations sur les thématiques de «Booster», les conférences et séminaires, je vous invite à vous inscrire à ma newsletter.</p>
+    </article>
     {{ form_start(form, {'action': path('app_newsletter.FR')}) }}
     {{ form_errors(form) }}
-
-    {{ form_row(form.firstname) }}
-    {{ form_row(form.lastname) }}
-    {{ form_row(form.email) }}
-
+    <section>
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.email) }}
+    </section>
     {{ form_row(form.submit) }}
     {{ form_end(form) }}
+</section>
 {% endblock %}

@@ -13,28 +13,56 @@
   text-transform: uppercase;
   margin: 10px 0px;
 }
+.conferences section header div h2 {
+  font-size: 18px;
+}
 .conferences section header figure img {
   width: 200px;
 }
 .conferences section article h1 {
   text-transform: uppercase;
+  font-size: 22px;
+}
+.conferences section article h2 {
+  text-transform: uppercase;
+  font-size: 22px;
 }
 .conferences section article section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
+  margin: 15px 0px 35px 0px;
 }
 .conferences section article section a {
-  background-color: #ff1582;
   color: white;
   padding: 10px 45px;
   border-radius: 5px;
   text-transform: uppercase;
   font-weight: 600;
-  width: 33%;
-  margin: 10px 0px;
+  width: 30%;
+  margin: 10px 15px;
   text-align: center;
+}
+.conferences button {
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.conferences button a {
+  color: #007793;
+  padding: 15px 80px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+  border: 3px solid #007793;
+}
+.conferences button a:hover {
+  background-color: #007793;
+  color: white;
 }
 
 /*# sourceMappingURL=conference.css.map */
