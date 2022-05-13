@@ -11,6 +11,12 @@
   font-family: "Raleway", sans-serif;
 }
 
+.blue600 {
+  font-weight: 600;
+  color: #007793;
+}
+
+// sass --watch assets/sass:public/css
 // Rouge : #d41726
 // Bleu : #007793
 // Gris : #4c4745 (jouer en le faisant plus clair)

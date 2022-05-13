@@ -1,0 +1,113 @@
+.boostez {
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 5% 0px 1%;
+        figure {
+            img {
+                width: 500px;
+            }
+        }
+        div {
+            line-height: 25px;
+            h1 {
+                text-transform: uppercase;
+                font-size: 42px;
+                font-weight: 800;
+                color:#d41726;
+                margin: 25px 0px;
+            }
+        }
+    }
+    section {
+        header {
+            display: flex;
+            flex-direction: column;
+            line-height: 25px;
+            h1 {
+                font-size: 26px;
+                color: #007793;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin: 10px 0px;
+            }
+            h2 {
+                font-size: 16px;
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    article {
+        border-top: 10px solid #d41726;
+        padding: 0px 10%;
+        text-align: center;
+        line-height: 25px;
+        h1 {
+            font-size: 26px;
+            color: #007793;
+            font-weight: 600;
+            margin: 40px 0px;
+        }
+        a {
+            background-color: #007793;
+            color: white;
+            padding: 10px 45px;
+            border-radius: 35px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+}
+
+// Conférence xxxxxxxxxxx
+
+.conferences {
+    padding: 0% 10%;
+    section {
+        header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            div {
+                h1 {
+                    font-size: 26px;
+                    // color: #d41726;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    margin: 10px 0px;
+                }
+            }
+            figure {
+                img {
+                    width: 200px;
+                }
+            }
+        }
+        article {
+            h1 {
+                text-transform: uppercase;
+            }
+            section {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: start;
+                a {
+                    background-color: #ff1582;
+                    color: white;
+                    padding: 10px 45px;
+                    border-radius: 5px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    width: 33%;
+                    margin: 10px 0px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

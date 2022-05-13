@@ -11,6 +11,11 @@
   font-family: "Raleway", sans-serif;
 }
 
+.blue600 {
+  font-weight: 600;
+  color: #007793;
+}
+
 .menuMain {
   background-color: #d41726;
   width: 100%;
