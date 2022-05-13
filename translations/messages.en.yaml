@@ -5,3 +5,10 @@ error:
 
 bibliography:
   title: Bibliography
+
+form:
+  submit: SUBSCRIBE
+  placeholder:
+    firstname: FIRSTNAME
+    lastname: LASTNAME
+    email: EMAIL

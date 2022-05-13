@@ -37,7 +37,17 @@
         <a href="www.google.com">Commander</a>
     </footer>
 </section>
-  
+
+    {{ form_start(form, {'action': path('app_newsletter')}) }}
+        {{ form_errors(form) }}
+
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.email) }}
+
+        {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+
 
 
 {% endblock %}
