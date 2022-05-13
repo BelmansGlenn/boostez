@@ -12,3 +12,17 @@ form:
     firstname: VOORNAAM
     lastname: NAAM
     email: E-MAILADRES
+  constraint:
+    unique: Deze email is al in gebruik.
+    lastname:
+      minMessage: Uw achternaam moet minimaal 2 tekens bevatten.
+      maxMessage: Uw achternaam mag maximaal 50 tekens bevatten.
+      not_blank: Voer een achternaam in.
+    firstname:
+      minMessage: Uw voornaam moet minimaal 2 tekens bevatten.
+      maxMessage: Uw voornaam mag maximaal 50 tekens bevatten.
+      not_blank: Voer een voornaam in.
+    email:
+      type: Deze waarde is geen geldig e-mailadres.
+      not_blank: Voer een email in.
+

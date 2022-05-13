@@ -12,3 +12,16 @@ form:
     firstname: FIRSTNAME
     lastname: LASTNAME
     email: EMAIL
+  constraint:
+    unique: This email is already used
+    lastname:
+      minMessage: Your lastname must contain at least 2 characters.
+      maxMessage: Your lastname must have a maximum of 50 characters.
+      not_blank: Please enter a lastname.
+    firstname:
+      minMessage: Your firstname must contain at least 2 characters.
+      maxMessage: Your firstname must have a maximum of 50 characters.
+      not_blank: Please enter a firstname.
+    email:
+      type: This value is not a valid email address.
+      not_blank: Please enter an email.

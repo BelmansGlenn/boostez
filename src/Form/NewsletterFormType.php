@@ -9,8 +9,10 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Unique;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class NewsletterFormType extends AbstractType
@@ -22,11 +24,8 @@ class NewsletterFormType extends AbstractType
             ->add('lastname', TextType::class,[
                 'label' => false,
                 'constraints' => [
-                    new Length([
-                        'min' => 2,
-                        'max' => 50
-                    ]),
-                    new NotBlank()
+                    new NotBlank( message: "form.constraint.lastname.not_blank"),
+                    new Length(min: 2, max: 50, minMessage:'form.constraint.firstname.minMessage', maxMessage: 'form.constraint.firstname.maxMessage')
                 ],
                 'attr' => [
                     'placeholder' => 'form.placeholder.lastname'
@@ -34,11 +33,8 @@ class NewsletterFormType extends AbstractType
             ->add('firstname', TextType::class, [
                 'label' => false,
                 'constraints' => [
-                    new Length([
-                        'min' => 2,
-                        'max' => 40
-                    ]),
-                    new NotBlank()
+                    new NotBlank(message: "form.constraint.firstname.not_blank"),
+                    new Length(min: 2, max: 50, minMessage:'form.constraint.lastname.minMessage', maxMessage: 'form.constraint.lastname.maxMessage' )
                 ],
                 'attr' => [
                     'placeholder' => 'form.placeholder.firstname'
@@ -48,7 +44,8 @@ class NewsletterFormType extends AbstractType
                 'label' => false,
 
                 'constraints' => [
-                    new NotBlank()
+                    new NotBlank(message: "form.constraint.email.not_blank"),
+                    new Email(message: "form.constraint.email.type")
                 ],
                 'attr' => [
                     'placeholder' => 'form.placeholder.email'

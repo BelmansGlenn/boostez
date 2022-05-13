@@ -4,24 +4,15 @@ namespace App\Controller;
 
 use App\Entity\Newsletter;
 use App\Form\NewsletterFormType;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Services\EntityManager\EntityManagerService;
+use App\Services\Error\FormErrorService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class BoostezController extends AbstractController
 {
-
-    private $locales;
-    private $defaultLocale;
-
-    public function __construct($locales, $defaultLocale)
-    {
-        $this->locales = $locales;
-        $this->defaultLocale = $defaultLocale;
-    }
 
     #[Route('/{redirect}', name: 'app_redirect', defaults: ['redirect' => 'FR'] )]
     public function redirectToHome(): Response
@@ -46,21 +37,24 @@ class BoostezController extends AbstractController
         return $this->render('boostez/index.html.twig');
     }
 
-    #[Route(['FR' => '/newsletter', 'NL' => '/newsletter', 'EN' => '/newsletter'], name: 'app_newsletter')]
-    public function newsletter(Request $request, EntityManagerInterface $entityManager)
+    #[Route(['FR' => '/newsletter'], name: 'app_newsletter')]
+    public function handleNewsletter(Request $request, FormErrorService $formErrorService, EntityManagerService $entityManagerService)
     {
         $newsletter = new Newsletter();
-        $form = $this->createForm(NewsletterFormType::class,$newsletter);
+        $form = $this->createForm(NewsletterFormType::class, $newsletter);
         $form->handleRequest($request);
-
-
         if ($form->isSubmitted() && $form->isValid())
         {
-            $entityManager->persist($newsletter);
-            $entityManager->flush();
-            $this->addFlash('string', 'Vous êtes bien inscrit à la newsletter!');
+            $entityManagerService->create($newsletter);
+            $this->addFlash('success', 'Vous êtes bien inscrit à la newsletter.');
             return $this->redirect($request->headers->get('referer'));
         }
+        $errors = $formErrorService->getErrorsFromForm($form);
+        foreach ($errors as $error){
+            $this->addFlash('error', $error[0]);
+        }
+        return $this->redirect($request->headers->get('referer'));
+
     }
 
 

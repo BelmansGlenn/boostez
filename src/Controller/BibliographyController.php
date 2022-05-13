@@ -16,8 +16,6 @@ class BibliographyController extends AbstractController
         $this->locales = $locales;
         $this->defaultLocale = $defaultLocale;
     }
-
-
     #[Route(['FR' => '/bibliographie', 'NL' => '/bibliografie', 'EN' => '/bibliography'], name: 'app_bibliography')]
     public function getBibliography(): Response
     {

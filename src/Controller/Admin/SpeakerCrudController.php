@@ -26,7 +26,9 @@ class SpeakerCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             ImageField::new('image', 'Image')
                 ->setBasePath('uploads/images/speakers')
-                ->setUploadDir('public/uploads/images/speakers'),
+                ->setUploadDir('public/uploads/images/speakers')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false),
             TextField::new('firstname', 'Prénom'),
             TextField::new('lastname', 'Nom de famille'),
             TextEditorField::new('descriptionFR', 'Description Francais'),
