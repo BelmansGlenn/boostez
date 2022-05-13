@@ -8,37 +8,72 @@
     <section class="confEntreprise">
         <header>
             <div>
-                <h1>Pour les entreprises</h1>
-                <h2>Découvrez nos conférences et ateliers</h2>
+                <h1 class="red">Pour les entreprises</h1>
+                <h2>Découvrez nos conférences et nos ateliers</h2>
             </div>
             <figure><img src="{{ asset('img/cerveau.gif') }}" alt="illustration-helicopter-taking-flight"></figure>
         </header>
         <article>
             <h1>Conférences</h1>
+            {{ dump((businessConf))}}
             <section>
-                <a>Boostez</a>
-                <a>Boostez</a>
-                <a>Boostez</a>
-                <a>Boostez</a>
+                {% for conf in businessConf %}
+                    <a href="{{ conf.slug }}" class="bgRed">{{ conf.name }}</a>
+                {% endfor %}
             </section>
             <h2>Ateliers</h2>
             <section>
-                <a>Boostez</a>
-                <a>Boostez</a>
-                <a>Boostez</a><a>Boostez</a><a>Boostez</a><a>Boostez</a>
-                <a>Boostez</a>
+                <a href="{{ path('app_redirect') }}" class="bgRed">Boostez</a>
+                <a class="bgRed">Boostez</a>
+                <a class="bgRed">Boostez</a>
+                <a class="bgRed">Boostez</a>
+                <a class="bgRed">Boostez</a>
+                <a class="bgRed">Boostez</a>
+                <a class="bgRed">Boostez</a>
             </section>
         </article>
     </section>
+    <section class="confEntreprise">
+        <header>
+            <div>
+                <h1 class="blue">Pour les particuliers</h1>
+                <h2>Découvrez nos ateliers et retraites</h2>
+            </div>
+            <figure><img src="{{ asset('img/cerveau.gif') }}" alt="illustration-helicopter-taking-flight"></figure>
+        </header>
+        <article>
+            <h1>Ateliers</h1>
+            <section>
+                <a href="{{ path('app_redirect') }}" class="bgBlue">Boostez</a>
+                <a class="bgBlue">Boostez</a>
+                <a class="bgBlue">Boostez</a>
+                <a class="bgBlue">Boostez</a>
+                <a class="bgBlue">Boostez</a>
+            </section>
+            <h2>Retraites</h2>
+            <section>
+                <a href="{{ path('app_redirect') }}" class="bgBlue">Boostez</a>
+                <a class="bgBlue">Boostez</a>
+                <a class="bgBlue">Boostez</a>
+                <a class="bgBlue">Boostez</a>
+                <a class="bgBlue">Boostez</a>
+                <a class="bgBlue">Boostez</a>
+                <a class="bgBlue">Boostez</a>
+            </section>
+        </article>
+    </section>
+    <button>
+        <a href="{{ path('app_redirect') }}">Nos conférenciers</a>
+    </button>
 </section>
 
-{{ dump(businessConf) }}
-{{ dump(businessWorkshop) }}
+
+{# {{ dump(businessWorkshop) }}
 {{ dump(privateWorkshop) }}
-{{ dump(privateRetreat) }}
+{{ dump(privateRetreat) }} #}
 
 
-    <hr>
+
 
 
     {% set locale = app.request.locale %}
@@ -53,14 +88,19 @@
             {{ message|trans({}, "messages", locale) }}
         </div>
     {% endfor %}
+<section class="newsletter">
+    <article>
+        <h1>Newsletter</h1>
+        <p>Pour recevoir des informations sur les thématiques de «Booster», les conférences et séminaires, je vous invite à vous inscrire à ma newsletter.</p>
+    </article>
     {{ form_start(form, {'action': path('app_newsletter.FR')}) }}
     {{ form_errors(form) }}
-
-    {{ form_row(form.firstname) }}
-    {{ form_row(form.lastname) }}
-    {{ form_row(form.email) }}
-
+    <section>
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.email) }}
+    </section>
     {{ form_row(form.submit) }}
     {{ form_end(form) }}
-
+</section>
 {% endblock %}

@@ -1,26 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section class="contact">
+    <header>
+        <h1>Contact</h1>
+        <h2>Vous êtes intéressé par «Boostez», par une conférence ou un atelier ?</h2>
+    </header>
+    <footer>
+        <section>
+            <p>Nos bureaux</p>
+            <h1>Société Anne Ev.</h1>
+            <h2>304 Chaussée de Bruxelles 1000 Belgique</h2>
+            <h3>+32 475 784 322</h3>
+            <h4>anneeverard@info.com</h4>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/glennbelmans/glenn/Dev_php/symfony/anne_everard_test/boostez/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/glennbelmans/glenn/Dev_php/symfony/anne_everard_test/boostez/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
-</div>
+        </section>
+        <figure><img src="{{ asset('img/phoneWithArms.png') }}" alt="phone-with-arms-doing-tasks"></figure>
+    </footer>
+</section>
 
 
 
-    <hr>
+
+
+
+
 
 
     {% set locale = app.request.locale %}
@@ -35,13 +41,22 @@
             {{ message|trans({}, "messages", locale) }}
         </div>
     {% endfor %}
+
+
+
+<section class="newsletter">
+    <article>
+        <h1>Newsletter</h1>
+        <p>Pour recevoir des informations sur les thématiques de «Booster», les conférences et séminaires, je vous invite à vous inscrire à ma newsletter.</p>
+    </article>
     {{ form_start(form, {'action': path('app_newsletter.FR')}) }}
     {{ form_errors(form) }}
-
-    {{ form_row(form.firstname) }}
-    {{ form_row(form.lastname) }}
-    {{ form_row(form.email) }}
-
+    <section>
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.email) }}
+    </section>
     {{ form_row(form.submit) }}
     {{ form_end(form) }}
+</section>
 {% endblock %}
