@@ -39,12 +39,12 @@ final class BookFactory extends ModelFactory
     {
         return [
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
-            'title' => self::faker()->text(),
+            'title' => self::faker()->name(),
             'description' => self::faker()->text(),
-            'image' => self::faker()->text(),
-            'language' => self::faker()->text(),
-            'inOrder' => self::faker()->randomNumber(),
-            'isVisible' => self::faker()->boolean(),
+            'image' => 'front.jpeg',
+            'language' => self::faker()->randomElement(['FR','NL','EN']),
+            'inOrder' => self::faker()->randomElement([1,2,3,4,5,6]),
+            'isVisible' => true,
         ];
     }
 

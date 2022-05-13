@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Factory\BookFactory;
 use App\Factory\BusinessConferenceFactory;
 use App\Factory\BusinessWorkshopFactory;
 use App\Factory\PrivateRetreatFactory;
@@ -20,6 +21,8 @@ class AppFixtures extends Fixture
         BusinessWorkshopFactory::createMany(10);
         PrivateWorkshopFactory::createMany(10);
         PrivateRetreatFactory::createMany(10);
+
+        BookFactory::createMany(12);
 
         $manager->flush();
     }

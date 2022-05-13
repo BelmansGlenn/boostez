@@ -45,6 +45,30 @@ class BookRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAllBooksByLocaleOrderByImportance($locale)
+    {
+        return $this->createQueryBuilder('b')
+            ->select('b.image', 'b.title', 'b.description')
+            ->andWhere('b.language = :locale')
+            ->setParameter('locale', $locale)
+            ->andWhere('b.isVisible = true')
+            ->orderBy('b.inOrder', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findAllBooksWhereLocaleIsNotEqualOrderByImportance($locale)
+    {
+        return $this->createQueryBuilder('b')
+            ->select('b.image', 'b.title', 'b.language')
+            ->andWhere('b.language <> :locale')
+            ->setParameter('locale', $locale)
+            ->andWhere('b.isVisible = true')
+            ->orderBy('b.inOrder', 'ASC')
+            ->addOrderBy('b.language', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */
