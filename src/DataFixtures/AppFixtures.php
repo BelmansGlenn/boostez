@@ -2,6 +2,11 @@
 
 namespace App\DataFixtures;
 
+use App\Factory\BookFactory;
+use App\Factory\BusinessConferenceFactory;
+use App\Factory\BusinessWorkshopFactory;
+use App\Factory\PrivateRetreatFactory;
+use App\Factory\PrivateWorkshopFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -11,6 +16,13 @@ class AppFixtures extends Fixture
     {
         // $product = new Product();
         // $manager->persist($product);
+
+        BusinessConferenceFactory::createMany(10);
+        BusinessWorkshopFactory::createMany(10);
+        PrivateWorkshopFactory::createMany(10);
+        PrivateRetreatFactory::createMany(10);
+
+        BookFactory::createMany(12);
 
         $manager->flush();
     }

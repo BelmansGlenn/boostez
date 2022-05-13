@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\BusinessWorkshop;
+use App\Repository\Traits\ConferenceRepositoryTrait;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
@@ -16,6 +17,9 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class BusinessWorkshopRepository extends ServiceEntityRepository
 {
+
+    use ConferenceRepositoryTrait;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, BusinessWorkshop::class);
@@ -45,32 +49,4 @@ class BusinessWorkshopRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return BusinessWorkshop[] Returns an array of BusinessWorkshop objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('b.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?BusinessWorkshop
-    {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

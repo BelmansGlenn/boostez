@@ -9,14 +9,6 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
-    private $locales;
-    private $defaultLocale;
-
-    public function __construct($locales, $defaultLocale)
-    {
-        $this->locales = $locales;
-        $this->defaultLocale = $defaultLocale;
-    }
 
     #[Route(path: ['FR' => '/login'], name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response

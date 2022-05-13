@@ -27,10 +27,6 @@ class BusinessWorkshopCrudController extends AbstractCrudController
             IdField::new('id')->hideOnIndex()->hideOnForm(),
             TextField::new('name', 'Nom du bouton'),
             SlugField::new('slug')->setTargetFieldName('name')->hideOnIndex(),
-            TextField::new('title', 'Titre'),
-            ChoiceField::new('targetedAudience', 'Public visé')
-                ->setChoices(['pour les entreprises' => 'pour les entreprises',
-                    'voor bedrijven' => 'voor bedrijven', 'for companies' =>'for companies']),
             TextField::new('video', 'Video')->hideOnIndex(),
             ArrayField::new('point', 'Point')->hideOnIndex(),
             ChoiceField::new('language', 'Langue')->setChoices(['FR'=>'FR','NL'=>'NL','EN'=>'EN']),
