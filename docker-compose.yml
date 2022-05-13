@@ -2,6 +2,7 @@ version: '3.7'
 services:
   database:
     image: mysql:5.7
+    platform: linux/amd64
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root

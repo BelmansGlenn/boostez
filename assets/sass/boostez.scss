@@ -34,9 +34,15 @@
             }
             h2 {
                 font-size: 16px;
+                text-align: center;
                 span {
                     text-decoration: underline;
                 }
+            }
+        }
+        figure {
+            img {
+                width: 100%;
             }
         }
     }
@@ -62,52 +68,3 @@
     }
 }
 
-// Conférence xxxxxxxxxxx
-
-.conferences {
-    padding: 0% 10%;
-    section {
-        header {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            div {
-                h1 {
-                    font-size: 26px;
-                    // color: #d41726;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    margin: 10px 0px;
-                }
-            }
-            figure {
-                img {
-                    width: 200px;
-                }
-            }
-        }
-        article {
-            h1 {
-                text-transform: uppercase;
-            }
-            section {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: start;
-                a {
-                    background-color: #ff1582;
-                    color: white;
-                    padding: 10px 45px;
-                    border-radius: 5px;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    width: 33%;
-                    margin: 10px 0px;
-                    text-align: center;
-                }
-            }
-        }
-    }
-}
