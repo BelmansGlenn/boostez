@@ -7,4 +7,30 @@
 {{ dump(businessWorkshop) }}
 {{ dump(privateWorkshop) }}
 {{ dump(privateRetreat) }}
+
+
+    <hr>
+
+
+    {% set locale = app.request.locale %}
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message|trans({}, "messages", locale) }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-success">
+            {{ message|trans({}, "messages", locale) }}
+        </div>
+    {% endfor %}
+    {{ form_start(form, {'action': path('app_newsletter.FR')}) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.lastname) }}
+    {{ form_row(form.email) }}
+
+    {{ form_row(form.submit) }}
+    {{ form_end(form) }}
 {% endblock %}
