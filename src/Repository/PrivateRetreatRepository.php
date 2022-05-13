@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\PrivateRetreat;
+use App\Repository\Traits\ConferenceRepositoryTrait;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
@@ -16,6 +17,9 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PrivateRetreatRepository extends ServiceEntityRepository
 {
+
+    use ConferenceRepositoryTrait;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, PrivateRetreat::class);
@@ -45,32 +49,4 @@ class PrivateRetreatRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return PrivateRetreat[] Returns an array of PrivateRetreat objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?PrivateRetreat
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

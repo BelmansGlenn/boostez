@@ -17,10 +17,6 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 class NewsletterCrudController extends AbstractCrudController
 {
-    public function __construct(EntityManagerInterface $entityManager)
-    {
-        $this->entityManager = $entityManager;
-    }
 
     public static function getEntityFqcn(): string
     {
@@ -38,6 +34,12 @@ class NewsletterCrudController extends AbstractCrudController
         ];
     }
 
+    /**
+     * create a spreadsheet with all people who subscribe to the newsletter
+     * @param EntityManagerInterface $entityManager
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     * @throws \PhpOffice\PhpSpreadsheet\Writer\Exception
+     */
     public function renderExcel(EntityManagerInterface $entityManager)
     {
         $newsletters = $entityManager->getRepository(Newsletter::class)->findAll();

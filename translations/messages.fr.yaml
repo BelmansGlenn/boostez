@@ -12,3 +12,16 @@ form:
     firstname: PRENOM
     lastname: NOM
     email:  ADRESSE EMAIL
+  constraint:
+    unique: Cet email est déjà utilisé.
+    lastname:
+        minMessage: Votre nom de famille doit comporter au minimum 2 caractères.
+        maxMessage: Votre nom de famille doit comporter au maximum 50 caractères.
+        not_blank: Veuillez renseigner un nom de famille.
+    firstname:
+        minMessage: Votre prénom doit comporter au minimum 2 caractères.
+        maxMessage: Votre prénom doit comporter au maximum 50 caractères.
+        not_blank: Veuillez renseigner un prénom.
+    email:
+      type: Cette valeur n'est pas une adresse e-mail valide.
+      not_blank: Veuillez renseigner un email.

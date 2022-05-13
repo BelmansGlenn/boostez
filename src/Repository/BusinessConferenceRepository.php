@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\BusinessConference;
+use App\Repository\Traits\ConferenceRepositoryTrait;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
@@ -16,6 +17,10 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class BusinessConferenceRepository extends ServiceEntityRepository
 {
+    use ConferenceRepositoryTrait;
+
+
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, BusinessConference::class);
@@ -45,32 +50,7 @@ class BusinessConferenceRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return BusinessConference[] Returns an array of BusinessConference objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('b.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?BusinessConference
-    {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+
+
 }
