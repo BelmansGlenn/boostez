@@ -45,6 +45,30 @@ class SpeakerRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAllSpeakersGetDescriptionByLocaleOrderByImportance($locale)
+    {
+        $qb = $this->createQueryBuilder('s')
+            ->select('s.image', 's.firstname', 's.lastname')
+            ->andWhere('s.isVisible = true');
+        if ($locale === 'FR')
+        {
+            $qb->addSelect('s.DescriptionFR', 's.ConferenceFR');
+
+        }elseif ($locale === 'NL')
+        {
+            $qb->addSelect('s.DescriptionNL', 's.ConferenceNL');
+
+        }elseif ($locale === 'EN')
+        {
+            $qb->addSelect('s.DescriptionNL', 's.ConferenceNL');
+
+        }
+           return $qb
+            ->orderBy('s.inOrder', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Speaker[] Returns an array of Speaker objects
     //  */

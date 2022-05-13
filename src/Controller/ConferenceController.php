@@ -11,6 +11,7 @@ use App\Repository\BusinessConferenceRepository;
 use App\Repository\BusinessWorkshopRepository;
 use App\Repository\PrivateRetreatRepository;
 use App\Repository\PrivateWorkshopRepository;
+use App\Repository\SpeakerRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -82,6 +83,20 @@ class ConferenceController extends AbstractController
         return $this->render('conference/conference.html.twig', [
             'conference' => $privateRetreat,
             'targetedAudience' => self::PRIVATE_CONF
+        ]);
+    }
+
+
+    #[Route(['FR' => '/conferences/conferenciers', 'NL' => '/conferenties/sprekers', 'EN' => '/conferences/speakers'], name: 'app_conference_speakers')]
+    public function getSpeakers(SpeakerRepository $speakerRepository, Request $request): Response
+    {
+        $speakers = $speakerRepository->findAllSpeakersGetDescriptionByLocaleOrderByImportance($request->getLocale());
+
+        $form = $this->createForm(NewsletterFormType::class);
+
+        return $this->render('conference/speakers.html.twig', [
+            'speakers' => $speakers,
+            'form' => $form->createView(),
         ]);
     }
 }
