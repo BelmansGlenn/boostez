@@ -6,6 +6,7 @@ use App\Entity\BusinessConference;
 use App\Entity\BusinessWorkshop;
 use App\Entity\PrivateRetreat;
 use App\Entity\PrivateWorkshop;
+use App\Form\NewsletterFormType;
 use App\Repository\BusinessConferenceRepository;
 use App\Repository\BusinessWorkshopRepository;
 use App\Repository\PrivateRetreatRepository;
@@ -25,12 +26,14 @@ class ConferenceController extends AbstractController
     #[Route(['FR' => '/conferences', 'NL' => '/conferenties', 'EN' => '/conferences'], name: 'app_conference')]
     public function index(EntityManagerInterface $entityManager, Request $request): Response
     {
+        $form = $this->createForm(NewsletterFormType::class);
         $businessConf = $entityManager->getRepository(BusinessConference::class)->findAllConfNameByLocale($request->getLocale());
         $businessWorkshop = $entityManager->getRepository(BusinessWorkshop::class)->findAllConfNameByLocale($request->getLocale());
         $privateWorkshop = $entityManager->getRepository(PrivateWorkshop::class)->findAllConfNameByLocale($request->getLocale());
         $privateRetreat = $entityManager->getRepository(PrivateRetreat::class)->findAllConfNameByLocale($request->getLocale());
 
         return $this->render('conference/index.html.twig', [
+            'form' => $form,
             'businessConf' => $businessConf,
             'businessWorkshop' => $businessWorkshop,
             'privateWorkshop' => $privateWorkshop,

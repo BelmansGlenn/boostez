@@ -34,7 +34,11 @@ class BoostezController extends AbstractController
     #[Route(['FR' => '/boostez', 'NL' => '/boostez', 'EN' => '/boostez'], name: 'app_boostez')]
     public function boostez(): Response
     {
-        return $this->render('boostez/index.html.twig');
+        $form = $this->createForm(NewsletterFormType::class);
+
+        return $this->render('boostez/index.html.twig',[
+            'form' => $form->createView(),
+        ]);
     }
 
     #[Route(['FR' => '/newsletter'], name: 'app_newsletter')]

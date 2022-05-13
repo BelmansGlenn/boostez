@@ -7,15 +7,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BooksController extends AbstractController
+class ContactController extends AbstractController
 {
-    #[Route(['FR' => '/livres', 'NL' => '/boeken', 'EN' => '/books'], name: 'app_books')]
+    #[Route(['FR' => '/contact', 'NL' => '/contact', 'EN' => '/contact'], name: 'app_contact')]
     public function index(): Response
     {
+
         $form = $this->createForm(NewsletterFormType::class);
 
-        return $this->render('books/index.html.twig', [
-            'form' => $form
+
+        return $this->render('contact/index.html.twig', [
+            'form' => $form,
         ]);
     }
 }
