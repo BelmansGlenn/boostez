@@ -33,7 +33,7 @@ class ConferenceController extends AbstractController
         $privateRetreat = $entityManager->getRepository(PrivateRetreat::class)->findAllConfNameByLocale($request->getLocale());
 
         return $this->render('conference/index.html.twig', [
-            'form' => $form,
+            'form' => $form->createView(),
             'businessConf' => $businessConf,
             'businessWorkshop' => $businessWorkshop,
             'privateWorkshop' => $privateWorkshop,
