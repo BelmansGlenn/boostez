@@ -7,11 +7,15 @@ bibliography:
   title: Bibliografie
 
 form:
-  submit: REGISTER
+  submit:
+    subscribe: REGISTER
+    send: Versturen
   placeholder:
     firstname: VOORNAAM
     lastname: NAAM
     email: E-MAILADRES
+    company: BEDRIJFSNAAM
+    phone: TELEFOONNUMMER
   constraint:
     unique: Deze email is al in gebruik.
     lastname:

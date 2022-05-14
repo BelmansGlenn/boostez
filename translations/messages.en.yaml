@@ -7,11 +7,15 @@ bibliography:
   title: Bibliography
 
 form:
-  submit: SUBSCRIBE
+  submit:
+    subscribe: SUBSCRIBE
+    send: Send
   placeholder:
     firstname: FIRSTNAME
     lastname: LASTNAME
     email: EMAIL
+    company: COMPANY NAME
+    phone: PHONE NUMBER
   constraint:
     unique: This email is already used
     lastname:

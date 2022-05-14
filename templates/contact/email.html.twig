@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Demande de {{ mail.firstname }} {{ mail.lastname }}</h1>
+
+        <p>Email: {{ mail.email }}</p>
+        <p>Entreprise: {{ mail.Company }}</p>
+        <p>Telephone: {{ mail.phoneNumber }}</p>
+        <p>Message:</p>
+        <div>
+            {{ mail.message|raw }}
+        </div>
+    </body>
+</html>
