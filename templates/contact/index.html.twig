@@ -3,6 +3,7 @@
 {% block title %}Contact{% endblock %}
 
 {% block body %}
+<<<<<<< Updated upstream
 <section class="contact">
     <header>
         <h1>Contact</h1>
@@ -23,13 +24,30 @@
 
 
 
-
-
-
-
-
+=======
 
     {% set locale = app.request.locale %}
+>>>>>>> Stashed changes
+
+
+    {{ form_start(contactForm) }}
+    {{ form_errors(contactForm) }}
+
+    {{ form_row(contactForm.firstname) }}
+    {{ form_row(contactForm.lastname) }}
+    {{ form_row(contactForm.company) }}
+    {{ form_row(contactForm.phoneNumber) }}
+    {{ form_row(contactForm.email) }}
+
+<<<<<<< Updated upstream
+=======
+    {{ form_row(contactForm.message) }}
+
+    {{ form_row(contactForm.submit) }}
+    {{ form_end(contactForm) }}
+>>>>>>> Stashed changes
+
+
 
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">

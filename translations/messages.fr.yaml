@@ -7,11 +7,15 @@ bibliography:
   title: Bibliographie
 
 form:
-  submit: S'INSCRIRE
+  submit:
+    subscribe: S'INSCRIRE
+    send: Envoyez
   placeholder:
     firstname: PRENOM
     lastname: NOM
     email:  ADRESSE EMAIL
+    company: NOM DE L'ENTREPRISE
+    phone: TELEPHONE
   constraint:
     unique: Cet email est déjà utilisé.
     lastname:

@@ -2,22 +2,21 @@
 
 namespace App\Form;
 
-use App\Entity\Newsletter;
+use App\Model\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Unique;
-use Symfony\Contracts\Translation\TranslatorInterface;
 
-class NewsletterFormType extends AbstractType
+class ContactFormType extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -51,8 +50,36 @@ class NewsletterFormType extends AbstractType
                     'placeholder' => 'form.placeholder.email'
                 ]
             ])
+            ->add('phoneNumber', TelType::class,[
+                'label' => false,
+
+                'constraints' => [
+                    new NotBlank(message: 'form.constraint.tel.not_blank')
+                ],
+                'attr' => [
+                    'placeholder' => 'form.placeholder.phone'
+                ]
+            ])
+            ->add('company', TextType::class, [
+                'label' => false,
+                'required' =>false,
+                'empty_data' => 'Non communiquée',
+
+                'constraints' => [
+                    new Length(min: 2, max: 50, minMessage: 'form.constraint.company.minMessage',maxMessage: 'form.constraint.company.maxMessage')
+                ],
+                'attr' => [
+                    'placeholder' => 'form.placeholder.company'
+                ]
+            ])
+            ->add('message', TextareaType::class, [
+                'label' => false,
+                 'constraints' => [
+                     new NotBlank(message: 'form.constraint.message.not_blank')
+                 ]
+            ])
             ->add('submit', SubmitType::class, [
-                'label' => 'form.submit.subscribe'
+                'label' => 'form.submit.send'
             ])
         ;
     }
@@ -60,7 +87,7 @@ class NewsletterFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Newsletter::class,
+            'data_class' => Contact::class,
         ]);
     }
 }
