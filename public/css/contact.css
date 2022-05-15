@@ -16,10 +16,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+  padding: 0% 10%;
 }
 .contact footer section {
   line-height: 35px;
-  padding: 0% 10%;
 }
 .contact footer section p {
   font-size: 32px;
@@ -29,7 +29,7 @@
   font-size: 18px;
 }
 .contact footer figure img {
-  width: 500px;
+  width: 300px;
 }
 
 /*# sourceMappingURL=contact.css.map */

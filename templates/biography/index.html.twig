@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Biographie{% endblock %}
-
+{% block importCss %}
+    <link rel="stylesheet" href="{{ asset('css/bio.css') }}">
+{% endblock %}
 {% block body %}
 <section class="biography">
     <header>

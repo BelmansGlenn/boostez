@@ -36,6 +36,20 @@
 .boostez section header h2 span {
   text-decoration: underline;
 }
+.boostez section header div {
+  border: 2px solid #d41726;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 20px 0px;
+}
+.boostez section header div i {
+  color: #d41726;
+}
 .boostez section figure img {
   width: 100%;
 }
