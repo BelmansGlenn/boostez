@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Livres{% endblock %}
-
+{% block importCss %}
+    <link rel="stylesheet" href="{{ asset('css/books.css') }}">
+{% endblock %}
 {% block body %}
 <section class="books">
     <article>

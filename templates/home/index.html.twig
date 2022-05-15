@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Accueil{% endblock %}
-
+{% block importCss %}
+<link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
+{% endblock %}
 {% block body %}
 <section class="accueil">
     <article>
@@ -20,8 +22,9 @@
             <br>
             <br>
             <span class="blue600">I have a dream.
-            <br>
-            Que travailleurs et employeurs décident ensemble de booster le bien-être.</span>
+                <br>
+                Que travailleurs et employeurs décident ensemble de booster le bien-être.
+            </span>
             <br>
             <br>
             Allez hop, c’est parti !
@@ -34,7 +37,7 @@
     <footer>
         <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
         <a href="www.google.com">Découvrir</a>
-        <a href="www.google.com">Commander</a>
+        <a href="https://www.google.com/">Commander</a>
     </footer>
 </section>
 

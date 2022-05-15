@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Boostez{% endblock %}
-
+{% block importCss %}
+    <link rel="stylesheet" href="{{ asset('css/boostez.css') }}">
+{% endblock %}
 {% block body %}
 <section class="boostez">
     <header>
@@ -21,7 +23,9 @@
         <header>
             <h1>La méthode :</h1>
             <h2>Picorez dans la <span>table des matières</span> ci-dessous et faites votre propre plan d’action individuel « Boostez ! ».</h2>
-            <div>BOUTON</div>
+            <div>
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
         </header>
         <figure><img src="{{ asset('img/tablematiere.png') }}" alt="illustration-helicopter-taking-flight"></figure>
 
