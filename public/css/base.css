@@ -46,7 +46,6 @@
   list-style: none;
   display: flex;
   position: absolute;
-  top: 100%;
   right: -50%;
   display: none;
 }

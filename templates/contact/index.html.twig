@@ -5,12 +5,42 @@
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 {% endblock %}
 {% block body %}
-<<<<<<< Updated upstream
 <section class="contact">
     <header>
         <h1>Contact</h1>
         <h2>Vous êtes intéressé par «Boostez», par une conférence ou un atelier ?</h2>
     </header>
+    <article>
+        {% set locale = app.request.locale %}
+        {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+        {{ message|trans({}, "messages", locale) }}
+        </div>
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+        <div class="alert alert-error">
+        {{ message|trans({}, "messages", locale) }}
+        </div>
+        {% endfor %}
+        {{ form_start(contactForm) }}
+        {{ form_errors(contactForm) }}
+        <section>
+            <div>
+                {{ form_row(contactForm.firstname) }}
+                {{ form_row(contactForm.lastname) }}
+                {{ form_row(contactForm.company) }}
+            </div>
+            <div class="rForm">
+                {{ form_row(contactForm.phoneNumber) }}
+                {{ form_row(contactForm.email) }}
+            </div>
+        </section>
+        <div class="formText">
+            {{ form_row(contactForm.message) }}
+        </div>
+        {{ form_row(contactForm.submit) }}
+        {{ form_end(contactForm) }}
+    </article>
     <footer>
         <section>
             <p>Nos bureaux</p>
@@ -26,10 +56,8 @@
 
 
 
-=======
 
-    {% set locale = app.request.locale %}
->>>>>>> Stashed changes
+    {# {% set locale = app.request.locale %}
 
 
     {{ form_start(contactForm) }}
@@ -40,27 +68,12 @@
     {{ form_row(contactForm.company) }}
     {{ form_row(contactForm.phoneNumber) }}
     {{ form_row(contactForm.email) }}
-
-<<<<<<< Updated upstream
-=======
     {{ form_row(contactForm.message) }}
-
     {{ form_row(contactForm.submit) }}
-    {{ form_end(contactForm) }}
->>>>>>> Stashed changes
+    {{ form_end(contactForm) }} #}
 
 
 
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-success">
-            {{ message|trans({}, "messages", locale) }}
-        </div>
-    {% endfor %}
-    {% for message in app.flashes('error') %}
-        <div class="alert alert-success">
-            {{ message|trans({}, "messages", locale) }}
-        </div>
-    {% endfor %}
 
 
 

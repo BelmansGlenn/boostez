@@ -73,3 +73,61 @@
         }
     }
 }
+
+.zoomConference {
+    margin: 50px 0px 0px 0px;
+    .retourBtn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0% 0% 0% 5%;
+        cursor: pointer;
+        i {
+            rotate: 90deg;
+            margin: 0px 10px 0px 0px;
+            font-size: 24px;
+            opacity: 0.7;
+        }
+        h1 {
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+    }
+    header {
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 10px 0px;
+            text-align: center;
+            color: #d41726;
+        }
+        h2 {
+            font-size: 18px;
+            text-align: center;
+            color: #d41726;
+        }
+    }
+    article {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 50px 0px;
+        iframe {
+            width: 80%;
+            height: 500px;
+        }
+    }
+    footer {
+        padding: 0% 10%;
+        h1 {
+            text-transform: uppercase;
+            margin: 20px 0px;
+        }
+        ul {
+            li {
+                line-height: 25px;
+            }
+        }
+    }
+}

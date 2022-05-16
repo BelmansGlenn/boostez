@@ -17,7 +17,6 @@
         </header>
         <article>
             <h1>Conférences</h1>
-            {{ dump((businessConf))}}
             <section>
                 {% for conf in businessConf %}
                     <a href="{{ conf.slug }}" class="bgRed">{{ conf.name }}</a>
@@ -25,13 +24,9 @@
             </section>
             <h2>Ateliers</h2>
             <section>
-                <a href="{{ path('app_redirect') }}" class="bgRed">Boostez</a>
-                <a class="bgRed">Boostez</a>
-                <a class="bgRed">Boostez</a>
-                <a class="bgRed">Boostez</a>
-                <a class="bgRed">Boostez</a>
-                <a class="bgRed">Boostez</a>
-                <a class="bgRed">Boostez</a>
+                {% for conf in businessWorkshop %}
+                    <a href="{{ conf.slug }}" class="bgRed">{{ conf.name }}</a>
+                {% endfor %}
             </section>
         </article>
     </section>
@@ -46,21 +41,15 @@
         <article>
             <h1>Ateliers</h1>
             <section>
-                <a href="{{ path('app_redirect') }}" class="bgBlue">Boostez</a>
-                <a class="bgBlue">Boostez</a>
-                <a class="bgBlue">Boostez</a>
-                <a class="bgBlue">Boostez</a>
-                <a class="bgBlue">Boostez</a>
+                {% for conf in privateWorkshop %}
+                    <a href="{{ conf.slug }}" class="bgBlue">{{ conf.name }}</a>
+                {% endfor %}
             </section>
             <h2>Retraites</h2>
             <section>
-                <a href="{{ path('app_redirect') }}" class="bgBlue">Boostez</a>
-                <a class="bgBlue">Boostez</a>
-                <a class="bgBlue">Boostez</a>
-                <a class="bgBlue">Boostez</a>
-                <a class="bgBlue">Boostez</a>
-                <a class="bgBlue">Boostez</a>
-                <a class="bgBlue">Boostez</a>
+                {% for conf in privateRetreat %}
+                    <a href="{{ conf.slug }}" class="bgBlue">{{ conf.name }}</a>
+                {% endfor %}
             </section>
         </article>
     </section>
@@ -69,10 +58,21 @@
     </button>
 </section>
 
+<section class="clientOpinion">
+    <div>
+        <h1>Louis Dellal</h1>
+        <p><span>"</span>Chouettes idées de menu variés. Dommage de payer un supplément pour certaines recettes. Produits de bonne qualité mais en quantité insuffisante pour la viande et le poisson.<span>"</span></p>
+    </div>
+    <div>
+        <h1>Julie Rosama</h1>
+        <p><span>"</span>Les legumes sont en quantité suffisante.
+            Mais la viande ou ooulet ou poisson, e trop petite quantité.
+            Si on respecte à la lettre vos temps de cuisson, souvent ce n'est pas cuit.
+            Il faut adapter le remps et surtout goûter de temps en temps !<span>"</span></p>
+    </div>
+</section>
 
-{# {{ dump(businessWorkshop) }}
-{{ dump(privateWorkshop) }}
-{{ dump(privateRetreat) }} #}
+
 
 
 

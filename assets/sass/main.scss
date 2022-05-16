@@ -84,3 +84,34 @@
         }
     }
 }
+
+.clientOpinion {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 100px 0px 0px 0px;
+    border-top: 1px solid #d5d5d5;
+    padding: 40px 0px 0px 0px;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0% 8%;
+        width: 50%;
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0.7;
+            margin: 20px 0px;
+        }
+        p {
+            font-style: italic;
+            opacity: 0.6;
+            line-height: 25px;
+            text-align: center;
+            span {
+                margin: 0px 10px;
+            }
+        }
+    }
+}

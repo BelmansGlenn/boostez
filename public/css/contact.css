@@ -7,8 +7,54 @@
   margin: 60px 0px 40px 0px;
 }
 .contact header h2 {
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
+}
+.contact article {
+  padding: 0% 10%;
+  margin: 50px 0px 0px 0px;
+}
+.contact article form {
+  background: #f0f0f0;
+}
+.contact article form section {
+  display: flex;
+  padding: 20px 0px 0px 0px;
+}
+.contact article form section div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.contact article form section div input {
+  border: none;
+  border-bottom: 1px solid #22a7c6;
+  padding: 0px 0px 10px 0px;
+  color: #126d82;
+  background: none;
+  margin: 25px 0px;
+}
+.contact article form .formText {
+  padding: 0% 10%;
+  margin: 20px 0px 40px 0px;
+}
+.contact article form .formText textarea {
+  width: 100%;
+  resize: none;
+  border: none;
+  height: 250px;
+  padding: 4%;
+}
+.contact article form button {
+  width: 100%;
+  border: none;
+  height: 50px;
+  background-color: #126d82;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
 }
 .contact footer {
   display: flex;
@@ -17,6 +63,7 @@
   flex-wrap: wrap;
   align-items: center;
   padding: 0% 10%;
+  margin: 50px 0px 0px 0px;
 }
 .contact footer section {
   line-height: 35px;

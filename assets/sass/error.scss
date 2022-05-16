@@ -1,4 +1,15 @@
-section{
+.alert-success {
+  text-align: center;
+  margin: 20px 0px;
+  color: #389b51;
+}
+.alert-error {
+  text-align: center;
+  margin: 20px 0px;
+  color: #c64545;
+}
+
+.bundleTwig {
   display: flex;
   justify-content: center;
   .img{
@@ -25,7 +36,7 @@ section{
 
 }
 @media all and (max-width: 790px) {
-  .section{
+  .bundleTwig {
     flex-direction: column;
   }
 }
