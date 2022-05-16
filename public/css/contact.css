@@ -9,6 +9,7 @@
 .contact header h2 {
   font-size: 18px;
   text-align: center;
+  font-weight: normal;
 }
 .contact article {
   padding: 0% 10%;
@@ -71,9 +72,11 @@
 .contact footer section p {
   font-size: 32px;
   margin: 0px 0px 25px 0px;
+  font-weight: normal;
 }
 .contact footer section h1, .contact footer section h2, .contact footer section h3, .contact footer section h4 {
   font-size: 18px;
+  font-weight: normal;
 }
 .contact footer figure img {
   width: 300px;

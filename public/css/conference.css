@@ -12,9 +12,11 @@
   font-weight: 700;
   text-transform: uppercase;
   margin: 10px 0px;
+  font-weight: normal;
 }
 .conferences section header div h2 {
   font-size: 18px;
+  font-weight: normal;
 }
 .conferences section header figure img {
   width: 200px;
@@ -22,10 +24,12 @@
 .conferences section article h1 {
   text-transform: uppercase;
   font-size: 22px;
+  font-weight: normal;
 }
 .conferences section article h2 {
   text-transform: uppercase;
   font-size: 22px;
+  font-weight: normal;
 }
 .conferences section article section {
   display: flex;
@@ -35,6 +39,7 @@
   margin: 15px 0px 35px 0px;
 }
 .conferences section article section a {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: white;
   padding: 10px 45px;
   border-radius: 5px;
@@ -45,6 +50,7 @@
   text-align: center;
 }
 .conferences button {
+  margin: 80px 0px 0px 0px;
   background: none;
   border: none;
   display: flex;
@@ -84,6 +90,7 @@
 .zoomConference .retourBtn h1 {
   text-transform: uppercase;
   font-size: 14px;
+  font-weight: normal;
 }
 .zoomConference header h1 {
   font-size: 36px;
@@ -97,6 +104,7 @@
   font-size: 18px;
   text-align: center;
   color: #d41726;
+  font-weight: normal;
 }
 .zoomConference article {
   width: 100%;
@@ -114,9 +122,11 @@
 .zoomConference footer h1 {
   text-transform: uppercase;
   margin: 20px 0px;
+  font-weight: normal;
 }
 .zoomConference footer ul li {
   line-height: 25px;
+  font-weight: normal;
 }
 
 /*# sourceMappingURL=conference.css.map */
