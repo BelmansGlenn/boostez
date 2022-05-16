@@ -2,7 +2,34 @@
 {% block title %}
 
 {% endblock %}
+{% block importCss %}
+    <link rel="stylesheet" href="{{ asset('css/conference.css') }}">
+{% endblock %}
 {% block body %}
+<section class="zoomConference">
+    <a class="retourBtn">
+        <i class="fa-solid fa-arrow-down"></i>
+        <h1>Retour</h1>
+    </a>
+    <header>
+        <h1>Atelier sommeil</h1>
+        <h2>pour les entreprises</h2>
+    </header>
+    <article>
+         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe> 
+    </article>
+    <footer>
+        <h1>DANS CETTE CONFÉRENCE VOUS DÉCOUVRIREZ :</h1>
+        <ul>
+            <li>La différence entre fatigue, burn-out et dépression</li>
+            <li>La différence entre fatigue, burn-out et dépression</li>
+            <li>La différence entre fatigue, burn-out et dépression</li>
+            <li>La différence entre fatigue, burn-out et dépression</li>
+            <li>La différence entre fatigue, burn-out et dépression</li>
+            <li>La différence entre fatigue, burn-out et dépression</li>
+        </ul>
+    </footer>
+</section>
     {{ dump(conference) }}
 {% endblock %}
 

@@ -17,11 +17,14 @@
             {% endblock %}
             <link rel="stylesheet" href="{{ asset('css/base.css') }}">
             <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/error.css') }}">
 {#            {{ encore_entry_link_tags('app') }}#}
         {% endblock %}
 
         {% block javascripts %}
-            <script src="{{ asset('js/base.js') }}"></script>
+            {% block importJs %}
+            {% endblock %}
+            <script src="{{ asset('js/base.js') }}" defer></script>
 {#            {{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
@@ -36,11 +39,11 @@
                 <li><a href="{{ path('app_biography') }}">Bio</a></li>
                 <li><a href="{{ path('app_contact') }}">Contact</a></li>
             </ul>
-            <div class="languages">
-                <button>fr</button>
-                <ol>
+            <div class="language">
+                <button class="btnLang">fr</button>
+                <ol class="languageSelect">
                     <li><a href="{{ path('app_redirect') }}">fr</a></li>
-                    <li><a href="{{ path('app_redirect') }}">nl</a></li>
+                    <li><a href="{{ path('app_home') }}">nl</a></li>
                     <li><a href="{{ path('app_redirect') }}">eng</a></li>
                 </ol>
             </div>
@@ -66,5 +69,6 @@
             <h3>Site web réalisé par Glenn Belmans & Ayra Stelmaszewski</h3>
         </div>
         </footer>
+        
     </body>
 </html>

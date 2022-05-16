@@ -4,78 +4,60 @@
 {% block importCss %}
     <link rel="stylesheet" href="{{ asset('css/books.css') }}">
 {% endblock %}
+{% block importJs %}
+    <script src="{{ asset('js/carou.js') }}" defer></script>
+{% endblock %}
 {% block body %}
 <section class="books">
+
+    {% for book in bookLocale %}
     <article>
-        <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+        <figure><img src="{{asset('img')}}/{{book.image}}" alt="image-cover-livre-boostez"></figure>
         <section>
-            <h1>Boostez</h1>
-            <p>L’objectif de «Boostez» est de vous redonner une vue d’ensemble sur ce qui compte aujourd’hui pour être en forme dans son corps et dans sa tête et de performer selon ses objectifs. Vous y trouverez de nombreux trucs et astuces ainsi qu’une méthode pour vous mettre en mouvement et tenir dans la durée.</p>
+            <h1>{{ book.title}}</h1>
+            <p>{{ book.description}}</p>
             <a href="www.google.com">Commander</a>
         </section>
     </article>
-    <article>
-        <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
-        <section>
-            <h1>Boostez</h1>
-            <p>L’objectif de «Boostez» est de vous redonner une vue d’en- semble sur ce qui compte aujourd’hui pour être en forme dans son corps et dans sa tête et de performer selon ses objectifs. Vous y trouverez de nombreux trucs et astuces ain- si qu’une méthode pour vous mettre en mouvement et tenir dans la turée</p>
-            <a href="www.google.com">Commander</a>
-        </section>
-    </article>
+    {% endfor %}
     <footer>
         <header>
             <h1>Traduction :</h1>
         </header>
-        <section>
+        {# Récup img for carou  #}
+        <div class="hideFakeCarou">
+            {% for book in otherBooks %}
+                <div class="imgCarou">
+                    {# <figure><img src="{{ asset('img/{{ book.image }}') }}" alt="image-cover-livre-boostez"></figure> #}
+                    <figure><img src="{{asset('img')}}/{{book.image}}" alt="image-cover-livre-{{book.title}}"></figure>
+                    <h1>{{book.title}}</h1>
+                    <h2>{{book.language}}</h2>
+                    <a href="www.google.com">Commander</a>
+                </div>
+            {% endfor %}
+        </div>
+        {# Récup img for carou END  #}
+        <section class="caroussel">
             <div>
                 <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
                 <h1>Boostez</h1>
                 <h2>NL</h2>
                 <a href="www.google.com">Commander</a>
             </div>
+            <section class="barsCarou"></section>
             <div>
                 <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
                 <h1>Boostez</h1>
                 <h2>NL</h2>
                 <a href="www.google.com">Commander</a>
             </div>
+            <section class="barsCarou"></section>
             <div>
                 <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
                 <h1>Boostez</h1>
                 <h2>NL</h2>
                 <a href="www.google.com">Commander</a>
             </div>
-            <div>
-                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
-                <h1>Boostez</h1>
-                <h2>NL</h2>
-                <a href="www.google.com">Commander</a>
-            </div>
-            <div>
-                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
-                <h1>Boostez</h1>
-                <h2>NL</h2>
-                <a href="www.google.com">Commander</a>
-            </div>
-            <div>
-                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
-                <h1>Boostez</h1>
-                <h2>NL</h2>
-                <a href="www.google.com">Commander</a>
-            </div>
-            <div>
-                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
-                <h1>Boostez</h1>
-                <h2>NL</h2>
-                <a href="www.google.com">Commander</a>
-            </div>
-            <div>
-                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
-                <h1>Boostez</h1>
-                <h2>NL</h2>
-                <a href="www.google.com">Commander</a>
-            </div>
-            
         </section>
     </footer>
 </section>
@@ -95,27 +77,6 @@
 
 
 
-
-
-
-
-
-
-    <hr>
-
-    {{ dump(bookLocale) }}
-
-
-    <hr>
-
-
-    {{ dump(otherBooks) }}
-
-
-
-    <hr>
-
-
     {% set locale = app.request.locale %}
 
     {% for message in app.flashes('success') %}
@@ -128,7 +89,7 @@
             {{ message|trans({}, "messages", locale) }}
         </div>
     {% endfor %}
-    
+
 <section class="newsletter">
     <article>
         <h1>Newsletter</h1>
