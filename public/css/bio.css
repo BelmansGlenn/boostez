@@ -52,4 +52,12 @@
   margin: 15px 20px;
 }
 
+@media screen and (max-width: 778px) {
+  .biography header figure {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+  }
+}
+
 /*# sourceMappingURL=bio.css.map */

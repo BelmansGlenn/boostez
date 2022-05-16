@@ -43,4 +43,10 @@
   font-weight: 700;
 }
 
+@media screen and (max-width: 975px) {
+  .accueil footer a {
+    font-size: 12px;
+  }
+}
+
 /*# sourceMappingURL=accueil.css.map */

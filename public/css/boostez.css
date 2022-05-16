@@ -32,6 +32,7 @@
 .boostez section header h2 {
   font-size: 16px;
   text-align: center;
+  font-weight: normal;
 }
 .boostez section header h2 span {
   text-decoration: underline;
@@ -79,6 +80,21 @@
 .boostez article a:hover {
   background-color: #2290a9;
   font-weight: 700;
+}
+
+@media screen and (max-width: 778px) {
+  .boostez header figure img {
+    width: 350px;
+  }
+
+  .boostez article a {
+    font-size: 14px;
+  }
+
+  .clientOpinion div {
+    padding: 0% 5%;
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=boostez.css.map */

@@ -88,3 +88,16 @@
         }
     }
 }
+
+@media screen and (max-width: 778px) { 
+      .contact footer section h1, .contact footer section h2, .contact footer section h3, .contact footer section h4 {
+        font-size: 15px;
+        font-weight: normal;
+      }
+      .contact footer figure img {
+        width: 170px;
+      }
+      .contact header h1 {
+        font-size: 36px;
+      }
+}

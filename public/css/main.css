@@ -148,4 +148,15 @@
   margin: 0px 10px;
 }
 
+@media screen and (max-width: 975px) {
+  .newsletter article {
+    padding: 0% 4%;
+  }
+
+  .newsletter form button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
