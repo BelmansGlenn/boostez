@@ -38,5 +38,9 @@
   text-transform: uppercase;
   font-weight: 600;
 }
+.accueil footer a:hover {
+  background-color: #2290a9;
+  font-weight: 700;
+}
 
 /*# sourceMappingURL=accueil.css.map */

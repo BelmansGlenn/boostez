@@ -76,5 +76,9 @@
   text-transform: uppercase;
   font-weight: 600;
 }
+.boostez article a:hover {
+  background-color: #2290a9;
+  font-weight: 700;
+}
 
 /*# sourceMappingURL=boostez.css.map */
