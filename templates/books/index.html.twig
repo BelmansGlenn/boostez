@@ -12,7 +12,7 @@
 
     {% for book in bookLocale %}
     <article>
-        <figure><img src="{{asset('img')}}/{{book.image}}" alt="image-cover-livre-boostez"></figure>
+        <figure><img src="{{asset('uploads/images/books')}}/{{book.image}}" alt="image-cover-livre-boostez"></figure>
         <section>
             <h1>{{ book.title}}</h1>
             <p>{{ book.description}}</p>
