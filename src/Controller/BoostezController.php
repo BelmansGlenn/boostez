@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Newsletter;
 use App\Form\NewsletterFormType;
+use App\Repository\BookReviewRepository;
 use App\Services\EntityManager\EntityManagerService;
 use App\Services\Error\FormErrorService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,12 +33,16 @@ class BoostezController extends AbstractController
 
 
     #[Route(['FR' => '/boostez', 'NL' => '/boostez', 'EN' => '/boostez'], name: 'app_boostez')]
-    public function boostez(): Response
+    public function boostez(BookReviewRepository $bookReviewRepository, Request $request): Response
     {
         $form = $this->createForm(NewsletterFormType::class);
 
+        $review = $bookReviewRepository->findTwoBookReviewByLocale($request->getLocale());
+
+
         return $this->render('boostez/index.html.twig',[
             'form' => $form->createView(),
+            'review' => $review
         ]);
     }
 

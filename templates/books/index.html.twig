@@ -77,8 +77,6 @@
 
 
 
-    {% set locale = app.request.locale %}
-
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">
             {{ message|trans({}, "messages", locale) }}

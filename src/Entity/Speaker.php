@@ -16,14 +16,17 @@ class Speaker
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
     private $firstname;
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
     private $lastname;
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
     private $image;
 
     #[ORM\Column(type: 'text')]

@@ -3,8 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Book;
+use App\Entity\BookReview;
 use App\Entity\BusinessConference;
 use App\Entity\BusinessWorkshop;
+use App\Entity\ConferenceReview;
 use App\Entity\PrivateRetreat;
 use App\Entity\PrivateWorkshop;
 use App\Entity\Speaker;
@@ -52,5 +54,8 @@ class DashboardController extends AbstractDashboardController
          yield MenuItem::linkToCrud('Ateliers Particuliers', 'fa-solid fa-paintbrush', PrivateWorkshop::class);
          yield MenuItem::linkToCrud('Conferenciers', 'fa-solid fa-people-group', Speaker::class);
          yield MenuItem::linkToCrud('Livres', 'fa-solid fa-book', Book::class);
+         yield MenuItem::linkToCrud('Avis Livres', 'fa-solid fa-star', BookReview::class);
+         yield MenuItem::linkToCrud('Avis Conferences', 'fa-solid fa-star-half-stroke', ConferenceReview::class);
+
     }
 }
