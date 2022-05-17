@@ -22,16 +22,23 @@ lang.addEventListener('mouseenter', e => {
  })
 
 
-// menu scroll 
-const menu = document.querySelector(".menuMain")
-function checkScroll() {
-   if (window.scrollY > 99) {
-      // menu.style.position = "fixed"
-   } else {
-      // menu.style.position = "inherit"
-   }
+// Return top 
+const goBackBtn = document.querySelector("#goTop")
+goBackBtn.addEventListener('click', (e) => {
+    goTop()
+}) 
+function goTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    goBackBtn.style.animation = "popOff 1s ease-in forwards"
 }
-// checkScroll();
-window.addEventListener('scroll', (event) => {
-   checkScroll();
-});
+window.onscroll = function() {
+    checkScroll()
+};
+function checkScroll() {
+  if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+    goBackBtn.style.display = "inline-grid"
+    goBackBtn.style.animation = "popOn 1s ease-in forwards"
+  } else if (document.body.scrollTop < 350 || document.documentElement.scrollTop < 350) {
+    goBackBtn.style.animation = "popOff 1s ease-in forwards"
+  }
+}

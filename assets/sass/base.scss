@@ -4,7 +4,6 @@
 // Rouge : #d41726
 // Bleu : #007793
 // Gris : #4c4745 (jouer en le faisant plus clair)
-
 .menuMain {
   background-color:#d41726;
   width: 100%;
@@ -28,11 +27,11 @@
       font-family: 'Raleway', sans-serif;
       font-weight: 200;
       text-transform: uppercase;
-      font-size: 20px;
+      font-size: 18px;
       margin: 0px 20px;
       color: #eee;
-      a {
-        // text-decoration: none;
+      &:hover {
+        font-weight: 700 !important;
       }
     }
   }
@@ -101,10 +100,12 @@
     h2 {
       text-transform: uppercase;
       font-size: 16px;
+      font-weight: normal;
     }
     h3 {
       font-size: 12px;
       margin: 10px 0px 0px 0px;
+      font-weight: normal;
     }
   }
   .menuFoot {
@@ -130,6 +131,71 @@
     text-align: center;
     font-weight: 400;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
+    flex-direction: column;
+    nav {
+      ul {
+        display: flex;
+        li {
+          list-style: none;
+          margin: 20px 10px 0px 10px;
+        }
+        i {
+          font-size: 22px;
+          &:hover {
+            color: #d41726;
+            animation: bounceAccount 1s cubic-bezier(0.280, 0.840, 0.420, 1) forwards;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#goTop {
+  cursor: pointer;
+  background: #d41726;
+  color: white;
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  right: 3%;
+  bottom: 5%;
+  animation: goTop 1s ease-in-out 1;
+  z-index: 5;
+  border: 1px dotted black;
+  @keyframes goTop {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
+  }
+  display: none;
+}
+@keyframes popOff {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      display: none;
+  }
+}
+@keyframes popOn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+      display: inline-grid;
   }
 }
