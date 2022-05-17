@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% set locale = app.request.locale %}
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
@@ -32,21 +33,23 @@
         <header class="menuMain">
             <h1>Anne Everard</h1>
             <ul>
-                <li><a href="{{ path('app_redirect') }}">Accueil</a></li>
+                <li><a href="{{ path('app_home')}}">Accueil</a></li>
                 <li><a href="{{ path('app_boostez') }}">Boostez</a></li>
                 <li><a href="{{ path('app_conference') }}">Conférences</a></li>
                 <li><a href="{{ path('app_books') }}">Livres</a></li>
                 <li><a href="{{ path('app_biography') }}">Bio</a></li>
                 <li><a href="{{ path('app_contact') }}">Contact</a></li>
             </ul>
+            {% block language %}
             <div class="language">
                 <button class="btnLang">fr</button>
                 <ol class="languageSelect">
-                    <li><a href="{{ path('app_redirect') }}">fr</a></li>
-                    <li><a href="{{ path('app_home') }}">nl</a></li>
-                    <li><a href="{{ path('app_redirect') }}">eng</a></li>
+                    <li><a href="{{ path(app.request.attributes.get('_route') ~ '.FR') }}">fr</a></li>
+                    <li><a href="{{ path(app.request.attributes.get('_route') ~ '.NL') }}">nl</a></li>
+                    <li><a href="{{ path(app.request.attributes.get('_route') ~ '.EN') }}">eng</a></li>
                 </ol>
             </div>
+            {% endblock %}
         </header>
         {% block body %}{% endblock %}
         <footer class="footerMain">

@@ -9,6 +9,7 @@ use App\Entity\PrivateWorkshop;
 use App\Form\NewsletterFormType;
 use App\Repository\BusinessConferenceRepository;
 use App\Repository\BusinessWorkshopRepository;
+use App\Repository\ConferenceReviewRepository;
 use App\Repository\PrivateRetreatRepository;
 use App\Repository\PrivateWorkshopRepository;
 use App\Repository\SpeakerRepository;
@@ -20,69 +21,72 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ConferenceController extends AbstractController
 {
-    CONST BUSINESS_CONF = 'pour les entreprises';
-    CONST PRIVATE_CONF = 'pour les particuliers';
+    CONST BUSINESS_COLOR = 'business_color';
+    CONST PRIVATE_COLOR = 'private_color';
 
 
     #[Route(['FR' => '/conferences', 'NL' => '/conferenties', 'EN' => '/conferences'], name: 'app_conference')]
-    public function index(EntityManagerInterface $entityManager, Request $request): Response
+    public function index(EntityManagerInterface $entityManager, Request $request, ConferenceReviewRepository $conferenceReviewRepository): Response
     {
+        $locale = $request->getLocale();
         $form = $this->createForm(NewsletterFormType::class);
-        $businessConf = $entityManager->getRepository(BusinessConference::class)->findAllConfNameByLocale($request->getLocale());
-        $businessWorkshop = $entityManager->getRepository(BusinessWorkshop::class)->findAllConfNameByLocale($request->getLocale());
-        $privateWorkshop = $entityManager->getRepository(PrivateWorkshop::class)->findAllConfNameByLocale($request->getLocale());
-        $privateRetreat = $entityManager->getRepository(PrivateRetreat::class)->findAllConfNameByLocale($request->getLocale());
+        $businessConf = $entityManager->getRepository(BusinessConference::class)->findAllConfNameByLocale($locale);
+        $businessWorkshop = $entityManager->getRepository(BusinessWorkshop::class)->findAllConfNameByLocale($locale);
+        $privateWorkshop = $entityManager->getRepository(PrivateWorkshop::class)->findAllConfNameByLocale($locale);
+        $privateRetreat = $entityManager->getRepository(PrivateRetreat::class)->findAllConfNameByLocale($locale);
+        $review = $conferenceReviewRepository->findTwoConfReviewByLocale($locale);
 
         return $this->render('conference/index.html.twig', [
             'form' => $form->createView(),
             'businessConf' => $businessConf,
             'businessWorkshop' => $businessWorkshop,
             'privateWorkshop' => $privateWorkshop,
-            'privateRetreat' => $privateRetreat
+            'privateRetreat' => $privateRetreat,
+            'review' => $review
         ]);
     }
 
-    #[Route(['FR' => '/entreprise/conference/{slug}', 'NL' => '/bedrif/conferentie/{slug}', 'EN' => '/business/conference/{slug}'], name: 'app_business_conference')]
+    #[Route(['FR' => '/entreprises/conference/{slug}', 'NL' => '/bedrijven/conferentie/{slug}', 'EN' => '/businesses/conference/{slug}'], name: 'app_business_conference')]
     public function businessConference($slug, BusinessConferenceRepository $businessConferenceRepository, Request $request): Response
     {
         $businessConf = $businessConferenceRepository->findOneConfBySlugAndByLocale($slug, $request->getLocale());
 
         return $this->render('conference/conference.html.twig', [
             'conference' => $businessConf,
-            'targetedAudience' => self::BUSINESS_CONF
+            'color' => self::BUSINESS_COLOR
         ]);
     }
 
-    #[Route(['FR' => '/entreprise/atelier/{slug}', 'NL' => '/bedrif/werkplaats/{slug}', 'EN' => '/business/workshop/{slug}'], name: 'app_business_workshop')]
+    #[Route(['FR' => '/entreprises/atelier/{slug}', 'NL' => '/bedrijven/werkplaats/{slug}', 'EN' => '/businesses/workshop/{slug}'], name: 'app_business_workshop')]
     public function businessWorkshop($slug, BusinessWorkshopRepository $businessWorkshopRepository, Request $request): Response
     {
         $businessWorkshop = $businessWorkshopRepository->findOneConfBySlugAndByLocale($slug, $request->getLocale());
 
         return $this->render('conference/conference.html.twig', [
             'conference' => $businessWorkshop,
-            'targetedAudience' => self::BUSINESS_CONF
+            'color' => self::BUSINESS_COLOR
         ]);
     }
 
-    #[Route(['FR' => '/particulier/atelier/{slug}', 'NL' => '/bijzonder/werkplaats/{slug}', 'EN' => '/private/workshop/{slug}'], name: 'app_private_workshop')]
+    #[Route(['FR' => '/particuliers/atelier/{slug}', 'NL' => '/bijzonders/werkplaats/{slug}', 'EN' => '/individuals/workshop/{slug}'], name: 'app_private_workshop')]
     public function privateWorkshop($slug, PrivateWorkshopRepository $privateWorkshopRepository, Request $request): Response
     {
         $privateWorkshop = $privateWorkshopRepository->findOneConfBySlugAndByLocale($slug, $request->getLocale());
 
         return $this->render('conference/conference.html.twig', [
             'conference' => $privateWorkshop,
-            'targetedAudience' => self::PRIVATE_CONF
+            'color' => self::PRIVATE_COLOR
         ]);
     }
 
-    #[Route(['FR' => '/particulier/retraite/{slug}', 'NL' => '/bijzonder/toevluchtsoord/{slug}', 'EN' => '/private/retreat/{slug}'], name: 'app_private_retreat')]
+    #[Route(['FR' => '/particuliers/retraite/{slug}', 'NL' => '/bijzonders/toevluchtsoord/{slug}', 'EN' => '/individuals/retreat/{slug}'], name: 'app_private_retreat')]
     public function privateRetreat($slug, PrivateRetreatRepository $privateRetreatRepository, Request $request): Response
     {
         $privateRetreat = $privateRetreatRepository->findOneConfBySlugAndByLocale($slug, $request->getLocale());
         
         return $this->render('conference/conference.html.twig', [
             'conference' => $privateRetreat,
-            'targetedAudience' => self::PRIVATE_CONF
+            'color' => self::PRIVATE_COLOR
         ]);
     }
 

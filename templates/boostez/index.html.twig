@@ -38,7 +38,7 @@
             Les patrons et les DRH peuvent l’acquérir pour leur personnel dans le cadre de leurs actions en faveur du bien-être au travail.
             Ils peuvent en outre choisir de le personnaliser avec le mot du patron et les coordonnées des personnes de contact pour le bien-être au travail.
         </p>
-        <a href="{{ path('app_redirect') }}">Contacez-nous</a>
+        <a href="{{ path('app_contact') }}">Contacez-nous</a>
     </article>
 </section>
 <section class="clientOpinion">
@@ -54,7 +54,6 @@
             Il faut adapter le remps et surtout goûter de temps en temps !<span>"</span></p>
     </div>
 </section>
-    {% set locale = app.request.locale %}
 
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">
@@ -81,4 +80,10 @@
     {{ form_row(form.submit) }}
     {{ form_end(form) }}
 </section>
+
+
+    {{ dump(review) }}
+
 {% endblock %}
+
+

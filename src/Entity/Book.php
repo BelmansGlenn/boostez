@@ -17,6 +17,7 @@ class Book
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
     private $title;
 
     #[ORM\Column(type: 'text')]
@@ -25,6 +26,7 @@ class Book
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
     private $image;
 
     #[ORM\Column(type: 'string', length: 2)]

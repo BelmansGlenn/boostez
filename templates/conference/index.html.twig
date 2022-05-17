@@ -19,13 +19,13 @@
             <h1>Conférences</h1>
             <section>
                 {% for conf in businessConf %}
-                    <a href="{{ conf.slug }}" class="bgRed">{{ conf.name }}</a>
+                    <a href="{{ path('app_business_conference', {'slug': conf.slug}) }}" class="bgRed">{{ conf.name }}</a>
                 {% endfor %}
             </section>
             <h2>Ateliers</h2>
             <section>
                 {% for conf in businessWorkshop %}
-                    <a href="{{ conf.slug }}" class="bgRed">{{ conf.name }}</a>
+                    <a href="{{ path('app_business_workshop', {'slug': conf.slug}) }}" class="bgRed">{{ conf.name }}</a>
                 {% endfor %}
             </section>
         </article>
@@ -42,19 +42,19 @@
             <h1>Ateliers</h1>
             <section>
                 {% for conf in privateWorkshop %}
-                    <a href="{{ conf.slug }}" class="bgBlue">{{ conf.name }}</a>
+                    <a href="{{ path('app_private_workshop', {'slug': conf.slug }) }}" class="bgBlue">{{ conf.name }}</a>
                 {% endfor %}
             </section>
             <h2>Retraites</h2>
             <section>
                 {% for conf in privateRetreat %}
-                    <a href="{{ conf.slug }}" class="bgBlue">{{ conf.name }}</a>
+                    <a href="{{ path('app_private_retreat', {'slug': conf.slug })  }}" class="bgBlue">{{ conf.name }}</a>
                 {% endfor %}
             </section>
         </article>
     </section>
     <button>
-        <a href="{{ path('app_redirect') }}">Nos conférenciers</a>
+        <a href="{{ path('app_conference_speakers') }}">Nos conférenciers</a>
     </button>
 </section>
 
@@ -76,9 +76,6 @@
 
 
 
-
-
-    {% set locale = app.request.locale %}
 
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">
@@ -105,4 +102,8 @@
     {{ form_row(form.submit) }}
     {{ form_end(form) }}
 </section>
+
+
+    {{ dump(review) }}
+
 {% endblock %}

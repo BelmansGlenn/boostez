@@ -3,8 +3,10 @@
 namespace App\DataFixtures;
 
 use App\Factory\BookFactory;
+use App\Factory\BookReviewFactory;
 use App\Factory\BusinessConferenceFactory;
 use App\Factory\BusinessWorkshopFactory;
+use App\Factory\ConferenceReviewFactory;
 use App\Factory\PrivateRetreatFactory;
 use App\Factory\PrivateWorkshopFactory;
 use App\Factory\SpeakerFactory;
@@ -25,6 +27,10 @@ class AppFixtures extends Fixture
 
         BookFactory::createMany(12);
         SpeakerFactory::createMany(8);
+
+        BookReviewFactory::createMany(3);
+
+        ConferenceReviewFactory::createMany(4);
 
         $manager->flush();
     }

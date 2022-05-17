@@ -5,18 +5,22 @@
 {% block importCss %}
     <link rel="stylesheet" href="{{ asset('css/conference.css') }}">
 {% endblock %}
+{% block language %}
+{% endblock %}
 {% block body %}
-<section class="zoomConference">
+    {% set confInfo = app.request.pathInfo|split('/') %}
+
+    <section class="zoomConference">
     <a class="retourBtn">
         <i class="fa-solid fa-arrow-down"></i>
-        <h1>Retour</h1>
+        <a href="{{ path('app_conference') }}">Retour</a>
     </a>
     <header>
-        <h1>Atelier sommeil</h1>
-        <h2>pour les entreprises</h2>
+        <h1 class="{{ color }}">{{ confInfo[3] }} sommeil</h1>
+        <h2 class="{{ color }}">pour les {{ confInfo[2] }}</h2>
     </header>
     <article>
-         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe> 
+         <iframe src="{{ conference.video }}"></iframe>
     </article>
     <footer>
         <h1>DANS CETTE CONFÉRENCE VOUS DÉCOUVRIREZ :</h1>
