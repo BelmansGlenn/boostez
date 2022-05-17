@@ -48,5 +48,10 @@
     font-size: 12px;
   }
 }
+@media screen and (max-width: 778px) {
+  .accueil article img {
+    width: 200px;
+  }
+}
 
 /*# sourceMappingURL=accueil.css.map */

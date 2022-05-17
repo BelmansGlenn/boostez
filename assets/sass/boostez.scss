@@ -89,15 +89,16 @@
         }
     }
 }
+@media screen and (max-width: 975px) { 
+    .boostez header figure img {
+        width: 400px;
+      }
+}
 @media screen and (max-width: 778px) { 
     .boostez header figure img {
-        width: 350px;
+        width: 250px;
     }
     .boostez article a {
-        font-size: 14px;
-    }
-    .clientOpinion div {
-        padding: 0% 5%;
         font-size: 14px;
     }
 }

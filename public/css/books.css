@@ -35,6 +35,10 @@
   font-weight: 600;
   align-self: flex-end;
 }
+.books article section a:hover {
+  background-color: #2290a9;
+  font-weight: 700;
+}
 .books footer {
   display: flex;
   flex-direction: column;
@@ -44,6 +48,7 @@
   font-size: 22px;
   text-align: center;
   margin: 50px 0px;
+  font-weight: normal;
 }
 .books footer .hideFakeCarou {
   display: none;
@@ -76,6 +81,7 @@
 .books footer section div h1 {
   text-transform: uppercase;
   margin: 50px 0px 0px 0px;
+  font-weight: normal;
 }
 .books footer section div h2 {
   text-transform: uppercase;
@@ -89,6 +95,10 @@
   border-radius: 35px;
   text-transform: uppercase;
   font-weight: 600;
+}
+.books footer section div a:hover {
+  background-color: #2290a9;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 778px) {
@@ -110,6 +120,10 @@
     font-weight: 600;
     align-self: flex-end;
     font-size: 14px;
+  }
+
+  .books footer section div a {
+    font-size: 12px;
   }
 }
 

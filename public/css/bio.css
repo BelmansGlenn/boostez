@@ -58,6 +58,14 @@
     width: 300px;
     height: 300px;
   }
+
+  .biography article figure img {
+    width: 145px;
+  }
+
+  .biography article h1 {
+    font-size: 18px;
+  }
 }
 
 /*# sourceMappingURL=bio.css.map */

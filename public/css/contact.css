@@ -57,6 +57,10 @@
   color: white;
   cursor: pointer;
 }
+.contact article form button:hover {
+  background-color: #56b6cc;
+  font-weight: 700;
+}
 .contact footer {
   display: flex;
   flex-direction: row;
