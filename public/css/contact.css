@@ -57,6 +57,10 @@
   color: white;
   cursor: pointer;
 }
+.contact article form button:hover {
+  background-color: #56b6cc;
+  font-weight: 700;
+}
 .contact footer {
   display: flex;
   flex-direction: row;
@@ -80,6 +84,21 @@
 }
 .contact footer figure img {
   width: 300px;
+}
+
+@media screen and (max-width: 778px) {
+  .contact footer section h1, .contact footer section h2, .contact footer section h3, .contact footer section h4 {
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  .contact footer figure img {
+    width: 170px;
+  }
+
+  .contact header h1 {
+    font-size: 36px;
+  }
 }
 
 /*# sourceMappingURL=contact.css.map */

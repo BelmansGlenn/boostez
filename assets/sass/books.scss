@@ -35,6 +35,10 @@
                 text-transform: uppercase;
                 font-weight: 600;
                 align-self: flex-end;
+                &:hover {
+                    background-color: #2290a9;
+                    font-weight: 700;
+                }
             }
         }
     }
@@ -47,6 +51,7 @@
                 font-size: 22px;
                 text-align: center;
                 margin: 50px 0px;
+                font-weight: normal;
             }
         }
         .hideFakeCarou {
@@ -78,6 +83,7 @@
                 h1 {
                     text-transform: uppercase;
                     margin: 50px 0px 0px 0px;
+                    font-weight: normal;
                 }
                 h2 {
                     text-transform: uppercase;
@@ -91,8 +97,35 @@
                     border-radius: 35px;
                     text-transform: uppercase;
                     font-weight: 600;
+                    &:hover {
+                        background-color: #2290a9;
+                        font-weight: 700;
+                    }
                 }
             }
         }
     }
+}
+
+@media screen and (max-width: 778px) { 
+    .clientOpinion div {
+        padding: 0% 5%;
+        font-size: 14px;
+    }
+    .books article figure img {
+        height: 300px;
+    }
+    .books article section a {
+        background-color: #007793;
+        color: white;
+        padding: 10px 45px;
+        border-radius: 35px;
+        text-transform: uppercase;
+        font-weight: 600;
+        align-self: flex-end;
+        font-size: 14px;
+    }
+    .books footer section div a {
+        font-size: 12px;
+      }
 }
