@@ -16,19 +16,10 @@
     <article>
         <h1>Ils nous font déjà confiance</h1>
         <figure>
-            <img src="{{ asset('img/orange.png') }}" alt="logo-marque-soutient-confiance">
-            {# <img src="{{ asset('img/orange.png') }}" alt="logo-marque-soutient-confiance">
-            <img src="{{ asset('img/orange.png') }}" alt="logo-marque-soutient-confiance">
-            <img src="{{ asset('img/orange.png') }}" alt="logo-marque-soutient-confiance">
-            <img src="{{ asset('img/orange.png') }}" alt="logo-marque-soutient-confiance">
-            <img src="{{ asset('img/orange.png') }}" alt="logo-marque-soutient-confiance">
-            <img src="{{ asset('img/orange.png') }}" alt="logo-marque-soutient-confiance">
-            <img src="{{ asset('img/orange.png') }}" alt="logo-marque-soutient-confiance"> #}
+            {% for img in logo %}
+                <img src="{{asset('uploads/images/logo')}}/{{img.image}}" alt="logo-marque-soutient-confiance">
+            {% endfor %}
         </figure>
     </article>
 </section>
-
-{# for each ...... <img src="{{ asset('uploads/images/logo') }}/{{ logo.images }}"> #}
-    {{ dump(logo) }}
-
 {% endblock %}
