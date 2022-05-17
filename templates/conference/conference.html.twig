@@ -11,9 +11,9 @@
     {% set confInfo = app.request.pathInfo|split('/') %}
 
     <section class="zoomConference">
-    <a class="retourBtn">
+    <a href ={{ path('app_conference') }} class="retourBtn">
         <i class="fa-solid fa-arrow-down"></i>
-        <a href="{{ path('app_conference') }}">Retour</a>
+        <h1>Retour</h1>
     </a>
     <header>
         <h1 class="{{ color }}">{{ confInfo[3] }} sommeil</h1>
@@ -25,16 +25,12 @@
     <footer>
         <h1>DANS CETTE CONFÉRENCE VOUS DÉCOUVRIREZ :</h1>
         <ul>
-            <li>La différence entre fatigue, burn-out et dépression</li>
-            <li>La différence entre fatigue, burn-out et dépression</li>
-            <li>La différence entre fatigue, burn-out et dépression</li>
-            <li>La différence entre fatigue, burn-out et dépression</li>
-            <li>La différence entre fatigue, burn-out et dépression</li>
-            <li>La différence entre fatigue, burn-out et dépression</li>
+            {% for point in conference.point %}
+            <li>{{ point }}</li>
+            {% endfor %}
         </ul>
     </footer>
 </section>
-    {{ dump(conference) }}
 {% endblock %}
 
 

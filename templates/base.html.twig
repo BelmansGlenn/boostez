@@ -43,7 +43,7 @@
             </ul>
             {% block language %}
             <div class="language">
-                <button class="btnLang">fr</button>
+                <button class="btnLang">{{ locale }}</button>
                 <ol class="languageSelect">
                     <li><a href="{{ path(app.request.attributes.get('_route') ~ '.FR') }}">fr</a></li>
                     <li><a href="{{ path(app.request.attributes.get('_route') ~ '.NL') }}">nl</a></li>

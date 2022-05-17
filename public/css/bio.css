@@ -48,7 +48,7 @@
   margin: 50px 0px 20px 0px;
 }
 .biography article figure img {
-  width: 190px;
+  height: 150px;
   margin: 15px 20px;
 }
 
@@ -60,7 +60,7 @@
   }
 
   .biography article figure img {
-    width: 145px;
+    height: 100px;
   }
 
   .biography article h1 {
