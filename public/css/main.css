@@ -148,4 +148,25 @@
   margin: 0px 10px;
 }
 
+@media screen and (max-width: 975px) {
+  .newsletter article {
+    padding: 0% 4%;
+  }
+
+  .newsletter form button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 778px) {
+  .clientOpinion div {
+    padding: 0% 4%;
+    font-size: 14px;
+  }
+
+  .clientOpinion div h1 {
+    font-size: 14px;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
