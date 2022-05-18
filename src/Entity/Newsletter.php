@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: NewsletterRepository::class)]
-#[UniqueEntity('email', message: 'form.constraint.unique')]
+#[UniqueEntity('email', message: 'form.constraint.email.unique')]
 class Newsletter
 {
     #[ORM\Id]

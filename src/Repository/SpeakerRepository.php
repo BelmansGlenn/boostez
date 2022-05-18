@@ -52,15 +52,15 @@ class SpeakerRepository extends ServiceEntityRepository
             ->andWhere('s.isVisible = true');
         if ($locale === 'FR')
         {
-            $qb->addSelect('s.DescriptionFR', 's.ConferenceFR');
+            $qb->addSelect('s.DescriptionFR', 's.ConferenceFR', 's.ConferenceNL', 's.ConferenceEN');
 
         }elseif ($locale === 'NL')
         {
-            $qb->addSelect('s.DescriptionNL', 's.ConferenceNL');
+            $qb->addSelect('s.DescriptionNL', 's.ConferenceNL', 's.ConferenceFR', 's.ConferenceEN');
 
         }elseif ($locale === 'EN')
         {
-            $qb->addSelect('s.DescriptionNL', 's.ConferenceNL');
+            $qb->addSelect('s.DescriptionEN', 's.ConferenceEN', 's.ConferenceFR', 's.ConferenceNL');
 
         }
            return $qb

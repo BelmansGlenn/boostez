@@ -19,23 +19,21 @@ trait ReviewTrait
     #[Assert\Length(max: 255)]
     private $lastname;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank]
-    #[Assert\Length(min: 3, max: 255)]
-    private string $reviewFR;
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Assert\Length(max: 255)]
+    private $company;
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank]
     #[Assert\Length(min: 3, max: 255)]
-    private string $reviewNL;
+    private $review;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 2)]
     #[Assert\NotBlank]
-    #[Assert\Length(min: 3, max: 255)]
-    private string $reviewEN;
+    private $language;
 
     #[ORM\Column(type: 'integer')]
-    private int $inOrder;
+    private $inOrder;
 
     /**
      * @return mixed
@@ -70,65 +68,65 @@ trait ReviewTrait
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getReviewFR(): string
+    public function getCompany()
     {
-        return $this->reviewFR;
+        return $this->company;
     }
 
     /**
-     * @param string $reviewFR
+     * @param mixed $company
      */
-    public function setReviewFR(string $reviewFR): void
+    public function setCompany($company): void
     {
-        $this->reviewFR = $reviewFR;
+        $this->company = $company;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getReviewNL(): string
+    public function getReview()
     {
-        return $this->reviewNL;
+        return $this->review;
     }
 
     /**
-     * @param string $reviewNL
+     * @param mixed $review
      */
-    public function setReviewNL(string $reviewNL): void
+    public function setReview($review): void
     {
-        $this->reviewNL = $reviewNL;
+        $this->review = $review;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getReviewEN(): string
+    public function getLanguage()
     {
-        return $this->reviewEN;
+        return $this->language;
     }
 
     /**
-     * @param string $reviewEN
+     * @param mixed $language
      */
-    public function setReviewEN(string $reviewEN): void
+    public function setLanguage($language): void
     {
-        $this->reviewEN = $reviewEN;
+        $this->language = $language;
     }
 
     /**
-     * @return int
+     * @return mixed
      */
-    public function getInOrder(): int
+    public function getInOrder()
     {
         return $this->inOrder;
     }
 
     /**
-     * @param int $inOrder
+     * @param mixed $inOrder
      */
-    public function setInOrder(int $inOrder): void
+    public function setInOrder($inOrder): void
     {
         $this->inOrder = $inOrder;
     }

@@ -40,11 +40,11 @@ final class ConferenceReviewFactory extends ModelFactory
         return [
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
             'firstname' => self::faker()->firstName(),
-            'lastname' => self::faker()->lastName(),
-            'reviewFR' => self::faker()->text(),
-            'reviewNL' => self::faker()->text(),
-            'reviewEN' => self::faker()->text(),
-            'inOrder' => self::faker()->randomNumber(),
+            'lastname' => self::faker()->lastName,
+            'company' => self::faker()->company(),
+            'review' => self::faker()->text(),
+            'language' => self::faker()->randomElement(['FR','NL','EN']),
+            'inOrder' => self::faker()->randomElement([1,2,3,4,5,6]),
         ];
     }
 

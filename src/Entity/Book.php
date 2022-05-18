@@ -29,6 +29,11 @@ class Book
     #[Assert\Length(max: 255)]
     private $image;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
+    private $link;
+
     #[ORM\Column(type: 'string', length: 2)]
     #[Assert\NotBlank]
     private $language;
@@ -40,80 +45,132 @@ class Book
     #[ORM\Column(type: 'boolean')]
     private $isVisible = true;
 
-    public function getId(): ?int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
     {
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title): void
     {
         $this->title = $title;
-
-        return $this;
     }
 
-    public function getDescription(): ?string
+    /**
+     * @return mixed
+     */
+    public function getDescription()
     {
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): void
     {
         $this->description = $description;
-
-        return $this;
     }
 
-    public function getImage(): ?string
+    /**
+     * @return mixed
+     */
+    public function getImage()
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): void
     {
         $this->image = $image;
-
-        return $this;
     }
 
-    public function getLanguage(): ?string
+    /**
+     * @return mixed
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * @param mixed $link
+     */
+    public function setLink($link): void
+    {
+        $this->link = $link;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguage()
     {
         return $this->language;
     }
 
-    public function setLanguage(string $language): self
+    /**
+     * @param mixed $language
+     */
+    public function setLanguage($language): void
     {
         $this->language = $language;
-
-        return $this;
     }
 
-    public function getInOrder(): ?int
+    /**
+     * @return mixed
+     */
+    public function getInOrder()
     {
         return $this->inOrder;
     }
 
-    public function setInOrder(int $inOrder): self
+    /**
+     * @param mixed $inOrder
+     */
+    public function setInOrder($inOrder): void
     {
         $this->inOrder = $inOrder;
-
-        return $this;
     }
 
-    public function getIsVisible(): ?bool
+    /**
+     * @return bool
+     */
+    public function isVisible(): bool
     {
         return $this->isVisible;
     }
 
-    public function setIsVisible(bool $isVisible): self
+    /**
+     * @param bool $isVisible
+     */
+    public function setIsVisible(bool $isVisible): void
     {
         $this->isVisible = $isVisible;
-
-        return $this;
     }
+
 }
