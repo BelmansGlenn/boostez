@@ -47,8 +47,11 @@
 <section class="clientOpinion">
     {% for avis in review %}
         <div>
-            <h1>{{avis.firstname}}{{avis.lastname}}</h1>
-            <p><span>"</span>{{avis.reviewFR}}<span>"</span></p>
+            <h1>{{avis.firstname}} {{avis.lastname}}</h1>
+            {% if avis.company is defined and avis.company is not null %}
+            <p>{{ avis.company }}</p>
+            {% endif %}
+            <p><span>"</span>{{avis.review}}<span>"</span></p>
         </div>
     {% endfor %}
 </section>

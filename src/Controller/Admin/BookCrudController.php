@@ -30,6 +30,7 @@ class BookCrudController extends AbstractCrudController
             ->setUploadDir('public/uploads/images/books')
             ->setUploadedFileNamePattern('[randomhash].[extension]')
             ->setRequired(false),
+            TextField::new('link', 'Lien pour commander')->hideOnIndex(),
             ChoiceField::new('language', 'Langue')->setChoices(['FR'=>'FR', 'NL'=>'NL', 'EN'=>'EN']),
             IntegerField::new('inOrder', 'Ordre'),
             BooleanField::new('isVisible', 'Est visible?')

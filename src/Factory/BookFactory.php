@@ -42,6 +42,7 @@ final class BookFactory extends ModelFactory
             'title' => self::faker()->name(),
             'description' => self::faker()->text(),
             'image' => 'front.jpeg',
+            'link' => 'https://www.google.com/',
             'language' => self::faker()->randomElement(['FR','NL','EN']),
             'inOrder' => self::faker()->randomElement([1,2,3,4,5,6]),
             'isVisible' => true,

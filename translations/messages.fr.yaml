@@ -17,7 +17,6 @@ form:
     company: NOM DE L'ENTREPRISE
     phone: TELEPHONE
   constraint:
-    unique: Cet email est déjà utilisé.
     lastname:
         minMessage: Votre nom de famille doit comporter au minimum 2 caractères.
         maxMessage: Votre nom de famille doit comporter au maximum 50 caractères.
@@ -29,3 +28,11 @@ form:
     email:
       type: Cette valeur n'est pas une adresse e-mail valide.
       not_blank: Veuillez renseigner un email.
+      unique: Cet email est déjà utilisé.
+    tel:
+      not_blank: Veuillez renseigner un numero de téléphone.
+    company:
+      minMessage: Votre nom d'entreprise doit comporter au minimum 2 caractères.
+      maxMessage: Votre nom d'entreprise doit comporter au maximum 50 caractères.
+    message:
+      not_blank: Veuillez renseigner un message à envoyer.

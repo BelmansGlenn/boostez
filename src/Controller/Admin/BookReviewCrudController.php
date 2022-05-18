@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\BookReview;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -22,9 +23,9 @@ class BookReviewCrudController extends AbstractCrudController
             IdField::new('id')->hideOnIndex()->hideOnForm(),
             TextField::new('firstname', 'Prénom'),
             TextField::new('lastname', 'Nom'),
-            TextField::new('reviewFR', 'Avis en francais'),
-            TextField::new('reviewNL', 'Avis en néerlandais')->hideOnIndex(),
-            TextField::new('reviewEN', 'Avis en anglais')->hideOnIndex(),
+            TextField::new('company', 'Poste and entreprise')->setRequired(false)->hideOnIndex(),
+            TextField::new('review', 'Avis'),
+            ChoiceField::new('language', 'Langue')->setChoices(['FR'=>'FR','NL'=>'NL','EN'=>'EN']),
             IntegerField::new('inOrder', 'Ordre'),
         ];
     }

@@ -34,11 +34,11 @@ class SpeakerCrudController extends AbstractCrudController
             TextEditorField::new('descriptionFR', 'Description Francais'),
             TextEditorField::new('descriptionNL', 'Description Neerlandais')->hideOnIndex(),
             TextEditorField::new('descriptionEN', 'Description Anglais')->hideOnIndex(),
-            ArrayField::new('conferenceFR', 'Conference Francais'),
-            ArrayField::new('conferenceNL', 'Conference Neerlandais')->hideOnIndex(),
-            ArrayField::new('conferenceEN', 'Conference Anglais')->hideOnIndex(),
+            ArrayField::new('conferenceFR', 'Conference Francais')->setRequired(false),
+            ArrayField::new('conferenceNL', 'Conference Neerlandais')->hideOnIndex()->setRequired(false),
+            ArrayField::new('conferenceEN', 'Conference Anglais')->hideOnIndex()->setRequired(false),
             ChoiceField::new('language', 'Langues')
-                ->setChoices(['FR'=>'Français', 'NL'=>'Néerlandais', 'EN'=>'Anglais'])
+                ->setChoices(['FR'=>'FR', 'NL'=>'NL', 'EN'=>'EN'])
                 ->allowMultipleChoices(),
             IntegerField::new('inOrder', 'Ordre'),
             BooleanField::new('isVisible', 'Est visible?')

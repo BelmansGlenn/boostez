@@ -47,22 +47,10 @@ class BookReviewRepository extends ServiceEntityRepository
 
     public function findTwoBookReviewByLocale($locale)
     {
-        $qb = $this->createQueryBuilder('b')
-            ->select('b.firstname', 'b.lastname');
-        if ($locale === 'FR')
-        {
-            $qb->addSelect('b.reviewFR');
-
-        }elseif ($locale === 'NL')
-        {
-            $qb->addSelect('b.reviewNL');
-
-        }elseif ($locale === 'EN')
-        {
-            $qb->addSelect('b.reviewEN');
-
-        }
-        return $qb
+        return $this->createQueryBuilder('b')
+            ->select('b.firstname', 'b.lastname', 'b.company', 'b.review')
+            ->andWhere('b.language = :locale')
+            ->setParameter('locale', $locale)
             ->orderBy('b.inOrder', 'ASC')
             ->setMaxResults(2)
             ->getQuery()

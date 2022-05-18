@@ -76,22 +76,10 @@ class ConferenceReviewRepository extends ServiceEntityRepository
 
     public function findTwoConfReviewByLocale($locale)
     {
-        $qb = $this->createQueryBuilder('c')
-            ->select('c.firstname', 'c.lastname');
-        if ($locale === 'FR')
-        {
-            $qb->addSelect('c.reviewFR');
-
-        }elseif ($locale === 'NL')
-        {
-            $qb->addSelect('c.reviewNL');
-
-        }elseif ($locale === 'EN')
-        {
-            $qb->addSelect('c.reviewEN');
-
-        }
-        return $qb
+        return $this->createQueryBuilder('c')
+            ->select('c.firstname', 'c.lastname', 'c.company', 'c.review')
+            ->andWhere('c.language = :locale')
+            ->setParameter('locale', $locale)
             ->orderBy('c.inOrder', 'ASC')
             ->setMaxResults(2)
             ->getQuery()

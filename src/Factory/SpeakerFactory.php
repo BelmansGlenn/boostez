@@ -48,7 +48,7 @@ final class SpeakerFactory extends ModelFactory
             'ConferenceFR' => ['fr', 'fr'],
             'ConferenceNL' => ['nl','nl'],
             'ConferenceEN' => ['en','en'],
-            'language' => ['Francais','Neerlandais'],
+            'language' => ['FR','NL'],
             'inOrder' => self::faker()->randomElement([1,2,3,4,5,6]),
             'isVisible' => 'true',
         ];

@@ -28,9 +28,9 @@ class AppFixtures extends Fixture
         BookFactory::createMany(12);
         SpeakerFactory::createMany(8);
 
-        BookReviewFactory::createMany(3);
+        BookReviewFactory::createMany(10);
 
-        ConferenceReviewFactory::createMany(4);
+        ConferenceReviewFactory::createMany(10);
 
         $manager->flush();
     }

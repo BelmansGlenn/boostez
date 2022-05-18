@@ -42,15 +42,12 @@ class Speaker
     private $DescriptionEN;
 
     #[ORM\Column(type: 'array')]
-    #[Assert\NotBlank]
     private $ConferenceFR;
 
     #[ORM\Column(type: 'array')]
-    #[Assert\NotBlank]
     private $ConferenceNL;
 
     #[ORM\Column(type: 'array')]
-    #[Assert\NotBlank]
     private $ConferenceEN;
 
     #[ORM\Column(type: 'array')]

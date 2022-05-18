@@ -7,6 +7,7 @@ use App\Repository\BookReviewRepository;
 use Zenstruck\Foundry\RepositoryProxy;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
+use function Symfony\Component\DependencyInjection\Loader\Configurator\service_locator;
 
 /**
  * @extends ModelFactory<BookReview>
@@ -41,10 +42,10 @@ final class BookReviewFactory extends ModelFactory
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
             'firstname' => self::faker()->firstName(),
             'lastname' => self::faker()->lastName,
-            'reviewFR' => self::faker()->text(),
-            'reviewNL' => self::faker()->text(),
-            'reviewEN' => self::faker()->text(),
-            'inOrder' => self::faker()->randomNumber(),
+            'company' => self::faker()->company(),
+            'review' => self::faker()->text(),
+            'language' => self::faker()->randomElement(['FR','NL','EN']),
+            'inOrder' => self::faker()->randomElement([1,2,3,4,5,6]),
         ];
     }
 

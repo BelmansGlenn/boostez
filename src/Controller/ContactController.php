@@ -6,6 +6,7 @@ use App\Exception\CustomBadRequestException;
 use App\Form\ContactFormType;
 use App\Form\NewsletterFormType;
 use App\Model\Contact;
+use App\Services\Error\FormErrorService;
 use App\Services\Mailer\MailerService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +17,7 @@ class ContactController extends AbstractController
 {
 
     #[Route(['FR' => '/contact', 'NL' => '/contact', 'EN' => '/contact'], name: 'app_contact')]
-    public function index(Request $request, MailerService $mailerService): Response
+    public function index(Request $request, MailerService $mailerService, FormErrorService $formErrorService): Response
     {
 
         $form = $this->createForm(NewsletterFormType::class);
@@ -44,6 +45,11 @@ class ContactController extends AbstractController
                 return $this->redirect($request->headers->get('referer'));
             }
 
+        }
+
+        $errors = $formErrorService->getErrorsFromForm($form);
+        foreach ($errors as $error){
+            $this->addFlash('error', $error[0]);
         }
 
 
