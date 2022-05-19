@@ -60,7 +60,7 @@ class BookRepository extends ServiceEntityRepository
     public function findAllBooksWhereLocaleIsNotEqualOrderByImportance($locale)
     {
         return $this->createQueryBuilder('b')
-            ->select('b.image', 'b.title', 'b.language')
+            ->select('b.image', 'b.title', 'b.language', 'b.link')
             ->andWhere('b.language <> :locale')
             ->setParameter('locale', $locale)
             ->andWhere('b.isVisible = true')
