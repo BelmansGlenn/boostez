@@ -131,6 +131,7 @@
     }
     footer {
         padding: 0% 10%;
+        margin: 0px 0px 50px 0px;
         h1 {
             text-transform: uppercase;
             margin: 20px 0px;
@@ -160,4 +161,42 @@
         width: 135px;
     }
     
+}  
+@media screen and (max-width: 620px) { 
+    .conferences {
+        padding: 0% 4%;
+      }
+    .conferences section header {
+        margin: 40px 0px 0px 0px;
+      }
+    .conferences section header div h2 {
+        font-size: 16px;
+      }
+      .conferences section header div h1 {
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .conferences section header figure img {
+        width: 100px;
+      }
+    
+}
+@media screen and (max-width: 480px) { 
+    .conferences section header {
+        flex-direction: column;
+      }
+      .conferences section article h1 {
+        font-size: 20px;
+        text-align: center;
+      }
+      .conferences section article section {
+        justify-content: center;
+      }
+      .conferences section article h2 {
+        font-size: 20px;
+        text-align: center;
+      }
+      .conferences button a {
+        padding: 15px 60px;
+      }
 }

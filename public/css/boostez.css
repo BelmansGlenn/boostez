@@ -55,7 +55,7 @@
   width: 100%;
 }
 .boostez article {
-  border-top: 10px solid #d41726;
+  border-top: 3px solid #d41726;
   padding: 50px 10% 0px 10%;
   text-align: center;
   line-height: 25px;
@@ -94,6 +94,26 @@
 
   .boostez article a {
     font-size: 14px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .boostez header {
+    margin: 40px 0px 0px 0px;
+    flex-direction: column;
+    padding: 0% 6%;
+  }
+
+  .boostez header div {
+    text-align: center;
+  }
+
+  .boostez header figure img {
+    width: 150px;
+  }
+
+  .boostez section header h1 {
+    font-size: 22px;
+    margin: 20px 0px;
   }
 }
 

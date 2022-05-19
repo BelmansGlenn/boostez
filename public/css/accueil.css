@@ -53,5 +53,35 @@
     width: 200px;
   }
 }
+@media screen and (max-width: 620px) {
+  .accueil article img {
+    width: 100px;
+  }
+
+  .accueil article p {
+    font-size: 14px;
+  }
+
+  .accueil footer {
+    flex-direction: column;
+  }
+
+  .accueil footer figure img {
+    height: 300px;
+    rotate: 0deg;
+    margin: 50px 0px;
+  }
+
+  .accueil footer a {
+    margin: 0px 0px 20px 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .accueil article .signature {
+    position: inherit;
+    right: inherit;
+    margin: 20px 0px 0px 0px;
+  }
+}
 
 /*# sourceMappingURL=accueil.css.map */
