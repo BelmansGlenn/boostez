@@ -157,6 +157,20 @@
       .books article section a {
         padding: 10px 32px;
       }
+      .books article {
+        flex-direction: column;
+      }
+      .books article figure img {
+        height: 300px;
+      }
+      .books article section {
+        width: inherit;
+        padding: 0% 9%;
+      }
+      .books article section h1 {
+        text-align: center;
+        margin: 50px 0px 0px 0px;
+      }
 }
 
 

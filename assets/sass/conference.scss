@@ -110,12 +110,12 @@
             text-transform: uppercase;
             margin: 10px 0px;
             text-align: center;
-            color: #d41726;
+            // color: #d41726;
         }
         h2 {
             font-size: 18px;
             text-align: center;
-            color: #d41726;
+            // color: #d41726;
             font-weight: normal;
         }
     }
@@ -146,6 +146,12 @@
     }
 }
 
+.business_color {
+    color: #d41726;
+}
+.private_color {
+    color: #007793;
+}
 
 
 // responsive start 

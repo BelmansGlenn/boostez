@@ -101,12 +101,10 @@
   text-transform: uppercase;
   margin: 10px 0px;
   text-align: center;
-  color: #d41726;
 }
 .zoomConference header h2 {
   font-size: 18px;
   text-align: center;
-  color: #d41726;
   font-weight: normal;
 }
 .zoomConference article {
@@ -131,6 +129,14 @@
 .zoomConference footer ul li {
   line-height: 25px;
   font-weight: normal;
+}
+
+.business_color {
+  color: #d41726;
+}
+
+.private_color {
+  color: #007793;
 }
 
 @media screen and (max-width: 1280px) {

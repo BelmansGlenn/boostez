@@ -59,17 +59,15 @@
 </section>
 
 <section class="clientOpinion">
-    <div>
-        <h1>Louis Dellal</h1>
-        <p><span>"</span>Chouettes idées de menu variés. Dommage de payer un supplément pour certaines recettes. Produits de bonne qualité mais en quantité insuffisante pour la viande et le poisson.<span>"</span></p>
-    </div>
-    <div>
-        <h1>Julie Rosama</h1>
-        <p><span>"</span>Les legumes sont en quantité suffisante.
-            Mais la viande ou ooulet ou poisson, e trop petite quantité.
-            Si on respecte à la lettre vos temps de cuisson, souvent ce n'est pas cuit.
-            Il faut adapter le remps et surtout goûter de temps en temps !<span>"</span></p>
-    </div>
+    {% for avis in review %}
+        <div>
+            <h1>{{avis.firstname}} {{avis.lastname}}</h1>
+            {% if avis.company is defined and avis.company is not null %}
+            <h2>{{ avis.company }}</h2>
+            {% endif %}
+            <p><span>"</span>{{avis.review}}<span>"</span></p>
+        </div>
+    {% endfor %}
 </section>
 
 

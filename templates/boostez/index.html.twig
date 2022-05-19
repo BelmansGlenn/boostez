@@ -49,7 +49,7 @@
         <div>
             <h1>{{avis.firstname}} {{avis.lastname}}</h1>
             {% if avis.company is defined and avis.company is not null %}
-            <p>{{ avis.company }}</p>
+            <h2>{{ avis.company }}</h2>
             {% endif %}
             <p><span>"</span>{{avis.review}}<span>"</span></p>
         </div>
