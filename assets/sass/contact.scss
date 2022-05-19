@@ -35,6 +35,7 @@
                         color: #126d82;
                         background: none;
                         margin: 25px 0px;
+                        font-size: 20px;
                     }
                 }
             }
@@ -47,6 +48,8 @@
                     border: none;
                     height: 250px;
                     padding: 4%;
+                    color: #126d82;
+                    font-size: 18px;
                 }
             }
             button {
@@ -103,5 +106,27 @@
       }
       .contact header h1 {
         font-size: 36px;
+      }
+      .contact article form section div input {
+        font-size: 14px;
+      }
+      textarea {
+        font-size: 18px;
+      }
+}
+@media screen and (max-width: 620px) { 
+    .contact header h1 {
+        font-size: 30px;
+      }
+      .contact header h2 {
+        font-size: 14px;
+      }
+}
+@media screen and (max-width: 480px) { 
+    .contact article {
+        padding: 0% 0%;
+      }
+      .contact header h2 {
+        padding: 0% 4%;
       }
 }
