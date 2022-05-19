@@ -8,23 +8,41 @@ use App\Form\NewsletterFormType;
 use App\Model\Contact;
 use App\Services\Error\FormErrorService;
 use App\Services\Mailer\MailerService;
+use Flasher\Prime\FlasherInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ContactController extends AbstractController
 {
 
     #[Route(['FR' => '/contact', 'NL' => '/contact', 'EN' => '/contact'], name: 'app_contact')]
-    public function index(Request $request, MailerService $mailerService, FormErrorService $formErrorService): Response
+    public function index(): Response
     {
 
         $form = $this->createForm(NewsletterFormType::class);
 
         $contact = new Contact();
 
+        $contactForm = $this->createForm(ContactFormType::class);
+
+
+        return $this->render('contact/index.html.twig', [
+            'form' => $form->createView(),
+            'contactForm' => $contactForm->createView()
+        ]);
+    }
+
+    #[Route(['FR' => '/envoyer_mail/{locale}'], name: 'app_mail')]
+    public function send($locale, Request $request, MailerService $mailerService, FormErrorService $formErrorService, FlasherInterface $flasher, TranslatorInterface $translator): Response
+    {
+
+        $contact = new Contact();
+
         $contactForm = $this->createForm(ContactFormType::class, $contact);
+
         $contactForm->handleRequest($request);
 
         if ($contactForm->isSubmitted() && $contactForm->isValid())
@@ -35,27 +53,21 @@ class ContactController extends AbstractController
                     'Nouveau message',
                     'contact/email.html.twig',
                     $contact
-                    );
-
-                $this->addFlash('success', 'Merci pour votre email, nous allons revenir vers vous au plus vite!');
+                );
+                $flasher->addSuccess($translator->trans('form.flash.success.contact', [], 'messages', $locale));
                 return $this->redirect($request->headers->get('referer'));
             }catch (CustomBadRequestException)
             {
-                $this->addFlash('error', 'Une erreur est survenue lors de l\envoie du mail');
+                $flasher->addWarning($translator->trans('form.flash.error.contact', [], 'messages', $locale));
                 return $this->redirect($request->headers->get('referer'));
             }
 
         }
-
-        $errors = $formErrorService->getErrorsFromForm($form);
+        $errors = $formErrorService->getErrorsFromForm($contactForm);
         foreach ($errors as $error){
-            $this->addFlash('error', $error[0]);
+            $flasher->addError($translator->trans($error[0], [], 'messages', $locale));
         }
+        return $this->redirect($request->headers->get('referer'));
 
-
-        return $this->render('contact/index.html.twig', [
-            'form' => $form->createView(),
-            'contactForm' => $contactForm->createView()
-        ]);
     }
 }

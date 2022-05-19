@@ -7,10 +7,12 @@ use App\Form\NewsletterFormType;
 use App\Repository\BookReviewRepository;
 use App\Services\EntityManager\EntityManagerService;
 use App\Services\Error\FormErrorService;
+use Flasher\Prime\FlasherInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class BoostezController extends AbstractController
 {
@@ -46,8 +48,8 @@ class BoostezController extends AbstractController
         ]);
     }
 
-    #[Route(['FR' => '/newsletter'], name: 'app_newsletter')]
-    public function handleNewsletter(Request $request, FormErrorService $formErrorService, EntityManagerService $entityManagerService)
+    #[Route(['FR' => '/newsletter/{locale}'], name: 'app_newsletter')]
+    public function handleNewsletter($locale,Request $request, FormErrorService $formErrorService, EntityManagerService $entityManagerService, FlasherInterface $flasher, TranslatorInterface $translator)
     {
         $newsletter = new Newsletter();
         $form = $this->createForm(NewsletterFormType::class, $newsletter);
@@ -55,12 +57,12 @@ class BoostezController extends AbstractController
         if ($form->isSubmitted() && $form->isValid())
         {
             $entityManagerService->create($newsletter);
-            $this->addFlash('success', 'Vous êtes bien inscrit à la newsletter.');
+            $flasher->addSuccess($translator->trans('form.flash.success.newsletter', [], 'messages', $locale));
             return $this->redirect($request->headers->get('referer'));
         }
         $errors = $formErrorService->getErrorsFromForm($form);
         foreach ($errors as $error){
-            $this->addFlash('error', $error[0]);
+            $flasher->addError($translator->trans($error[0], [], 'messages', $locale));
         }
         return $this->redirect($request->headers->get('referer'));
 

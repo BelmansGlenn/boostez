@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "622811d0030c4f61c8c212dec62a4f68",
+    "content-hash": "316310e6720418e591e76c76044e2c70",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2077,6 +2077,166 @@
                 }
             ],
             "time": "2021-07-05T08:18:36+00:00"
+        },
+        {
+            "name": "php-flasher/flasher",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-flasher/flasher.git",
+                "reference": "c35cdf16fdc9cabcd0a94709365eca1a4bb12473"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-flasher/flasher/zipball/c35cdf16fdc9cabcd0a94709365eca1a4bb12473",
+                "reference": "c35cdf16fdc9cabcd0a94709365eca1a4bb12473",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Flasher\\Prime\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Younes KHOUBZA",
+                    "email": "younes.khoubza@gmail.com",
+                    "homepage": "https://www.linkedin.com/in/younes-khoubza",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A powerful and flexible flash notification system for PHP",
+            "homepage": "https://php-flasher.io",
+            "keywords": [
+                "Flasher",
+                "alerts",
+                "flash",
+                "laravel",
+                "lumen",
+                "messages",
+                "notifications",
+                "notify",
+                "noty",
+                "notyf",
+                "php",
+                "pnotify",
+                "sweet alert",
+                "symfony",
+                "toastr"
+            ],
+            "support": {
+                "issues": "https://github.com/php-flasher/flasher/issues",
+                "source": "https://github.com/php-flasher/flasher/tree/v1.0.3"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/yoeunes",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://ko-fi.com/yoeunes",
+                    "type": "ko_fi"
+                },
+                {
+                    "url": "https://opencollective.com/php-flasher",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://www.patreon.com/yoeunes",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-05-18T04:23:34+00:00"
+        },
+        {
+            "name": "php-flasher/flasher-symfony",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-flasher/flasher-symfony.git",
+                "reference": "c8b2c55edb5a5e03bac5c6c320bd9af0d491d854"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-flasher/flasher-symfony/zipball/c8b2c55edb5a5e03bac5c6c320bd9af0d491d854",
+                "reference": "c8b2c55edb5a5e03bac5c6c320bd9af0d491d854",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "php-flasher/flasher": "^1.0",
+                "symfony/config": "^2.0|^3.0|^4.0|^5.0|^6.0",
+                "symfony/console": "^2.0|^3.0|^4.0|^5.0|^6.0",
+                "symfony/dependency-injection": "^2.0|^3.0|^4.0|^5.0|^6.0",
+                "symfony/http-kernel": "^2.0|^3.0|^4.0|^5.0|^6.0",
+                "symfony/twig-bundle": "^2.0|^3.0|^4.0|^5.0|^6.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Flasher\\Symfony\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Younes KHOUBZA",
+                    "email": "younes.khoubza@gmail.com",
+                    "homepage": "https://www.linkedin.com/in/younes-khoubza",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Symfony bundle integrating PHP Flasher into Symfony applications",
+            "homepage": "https://php-flasher.io",
+            "keywords": [
+                "alerts",
+                "bundle",
+                "flex",
+                "laravel",
+                "lumen",
+                "messages",
+                "notifications",
+                "notify",
+                "php",
+                "pnotify",
+                "symfony",
+                "toastr",
+                "yoeunes"
+            ],
+            "support": {
+                "issues": "https://github.com/php-flasher/flasher-symfony/issues",
+                "source": "https://github.com/php-flasher/flasher-symfony/tree/v1.0.3"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/yoeunes",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://ko-fi.com/yoeunes",
+                    "type": "ko_fi"
+                },
+                {
+                    "url": "https://opencollective.com/php-flasher",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://www.patreon.com/yoeunes",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-05-18T04:23:34+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -9054,5 +9214,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

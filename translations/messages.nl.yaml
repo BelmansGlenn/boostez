@@ -29,4 +29,9 @@ form:
     email:
       type: Deze waarde is geen geldig e-mailadres.
       not_blank: Voer een email in.
-
+  flash:
+    success:
+      newsletter: U bent geabonneerd op onze nieuwsbrief.
+      contact: Bedankt voor je e-mail, we nemen zo snel mogelijk contact met je op!
+    error:
+      contact: Er is een fout opgetreden tijdens het verzenden van de e-mail. Probeer het opnieuw.

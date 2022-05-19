@@ -44,25 +44,12 @@
 
  
 
-
-    {% set locale = app.request.locale %}
-
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-success">
-            {{ message|trans({}, "messages", locale) }}
-        </div>
-    {% endfor %}
-    {% for message in app.flashes('error') %}
-        <div class="alert alert-success">
-            {{ message|trans({}, "messages", locale) }}
-        </div>
-    {% endfor %}
 <section class="newsletter">
     <article>
         <h1>Newsletter</h1>
         <p>Pour recevoir des informations sur les thématiques de «Booster», les conférences et séminaires, je vous invite à vous inscrire à ma newsletter.</p>
     </article>
-    {{ form_start(form, {'action': path('app_newsletter.FR')}) }}
+    {{ form_start(form, {'action': path('app_newsletter.FR', { 'locale': locale})}) }}
     {{ form_errors(form) }}
     <section>
         {{ form_row(form.firstname) }}

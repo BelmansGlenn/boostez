@@ -36,3 +36,9 @@ form:
       maxMessage: Votre nom d'entreprise doit comporter au maximum 50 caractères.
     message:
       not_blank: Veuillez renseigner un message à envoyer.
+  flash:
+    success:
+      newsletter: Vous êtes bien inscrit à la newsletter.
+      contact: Merci pour votre email, nous allons revenir vers vous au plus vite!
+    error:
+      contact: Une erreur est survenue lors de l'envoie du mail. Veuillez recommencer.
