@@ -29,7 +29,6 @@
     </footer>
 </section>
 
-
 {# SLIDER #}
 <section id="slider">
             <div class="container">
@@ -37,8 +36,8 @@
                     <div class="side-wrapper">
                         <div class="controller">
                             <div id="controls"> 
-                                <button class="previous">Précédent</button>
-                                <button class="next">Suivant</button>
+                                <button class="previous"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
                             </div>
                         </div>
                         <br>
@@ -52,7 +51,7 @@
                                     <div class="infoBooks">
                                         <h1>{{ book.title }}</h1>
                                         <h2>{{ book.language }}</h2>
-                                        <a href="www.google.com">Commander</a>
+                                        <a href="{{ book.link }}">Commander</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,24 +60,6 @@
                     </div>
                 </div>
             </div>
-</section>
-
-
-
-<section class="newsletter">
-    <article>
-        <h1>Newsletter</h1>
-        <p>Pour recevoir des informations sur les thématiques de «Booster», les conférences et séminaires, je vous invite à vous inscrire à ma newsletter.</p>
-    </article>
-    {{ form_start(form, {'action': path('app_newsletter.FR', { 'locale': locale})}) }}
-    {{ form_errors(form) }}
-    <section>
-        {{ form_row(form.firstname) }}
-        {{ form_row(form.lastname) }}
-        {{ form_row(form.email) }}
-    </section>
-    {{ form_row(form.submit) }}
-    {{ form_end(form) }}
 </section>
     {% include 'partials/newsletter.html.twig' %}
 {% endblock %}
