@@ -48,19 +48,19 @@ class SpeakerRepository extends ServiceEntityRepository
     public function findAllSpeakersGetDescriptionByLocaleOrderByImportance($locale)
     {
         $qb = $this->createQueryBuilder('s')
-            ->select('s.image', 's.firstname', 's.lastname')
+            ->select('s.image', 's.firstname', 's.lastname', 's.language', 's.ConferenceFR', 's.ConferenceNL', 's.ConferenceEN')
             ->andWhere('s.isVisible = true');
         if ($locale === 'FR')
         {
-            $qb->addSelect('s.DescriptionFR', 's.ConferenceFR', 's.ConferenceNL', 's.ConferenceEN');
+            $qb->addSelect('s.DescriptionFR');
 
         }elseif ($locale === 'NL')
         {
-            $qb->addSelect('s.DescriptionNL', 's.ConferenceNL', 's.ConferenceFR', 's.ConferenceEN');
+            $qb->addSelect('s.DescriptionNL');
 
         }elseif ($locale === 'EN')
         {
-            $qb->addSelect('s.DescriptionEN', 's.ConferenceEN', 's.ConferenceFR', 's.ConferenceNL');
+            $qb->addSelect('s.DescriptionEN');
 
         }
            return $qb

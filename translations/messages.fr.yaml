@@ -42,3 +42,15 @@ form:
       contact: Merci pour votre email, nous allons revenir vers vous au plus vite!
     error:
       contact: Une erreur est survenue lors de l'envoie du mail. Veuillez recommencer.
+
+navbar:
+  home: ACCUEIL
+  boost: BOOSTEZ
+  keynotes: CONFERENCES
+  books: LIVRES
+
+footer:
+  social: Suivez notre actualité sur les réseaux sociaux
+  copyright:
+    rights: Tous droits réservés
+    website: Site web réalisé par
