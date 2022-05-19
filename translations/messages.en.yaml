@@ -47,3 +47,18 @@ footer:
   copyright:
     rights: All rights reserved
     website: Website built by
+
+home:
+  text:
+    welcome: Bienvenue dans l’univers “Boostez”
+    text1: Vous voulez chaque matin disposer de <b> 50 petites cuillères d’énergie </b> pour réaliser tous vos projets ?
+    text2: Vous voulez booster vos <b> collègues </b> et vos <b> équipes </b>?
+    text3: Notre mission est de vous redonner la <b> vue d’ensemble </b> sur ce qui compte aujourd’hui pour performer! Levez le nez du guidon et <b> réajustez </b> régulièrement.
+    text4: Nos <b> objectifs </b> pour vous
+    text5: énergie, performance, bienveillance et <b> plaisir </b>!
+    text6: Allez hop, on y va !
+  button:
+    discover: Découvrir
+    order: Commander
+
+newsletter: Do you want to follow our activities, publications, keynotes or workshops?

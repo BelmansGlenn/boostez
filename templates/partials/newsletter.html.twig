@@ -1,0 +1,15 @@
+<section class="newsletter">
+    <article>
+        <h1>Newsletter</h1>
+        <p>{% trans into locale %}newsletter{% endtrans %}</p>
+    </article>
+    {{ form_start(form, {'action': path('app_newsletter.FR', { 'locale': locale})}) }}
+    {{ form_errors(form) }}
+    <section>
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.email) }}
+    </section>
+    {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+</section>
