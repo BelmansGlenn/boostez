@@ -13,28 +13,70 @@
         <figure><img src="{{ asset('img/cerveau.gif') }}" alt="illustration-helicopter-taking-flight"></figure>
     </header>
     <article>
+        {# {% for speaker in speakers %}
         <div>
             <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
+            <h1>{{speaker.firstname}}{{speaker.lastname}}</h1>
+            {% if speaker.language same as("NL") %}
+                <h2>{{speaker.language}}</h2>
+                <h3>{{speaker.ConferenceNL}}</h3>
+                <p>{{speaker.DescriptionNL}}</p>
+            {% elseif speaker.language same as("FR") %}
+                <h2>{{speaker.language}}</h2>
+                <h3>{{speaker.ConferenceFR}}</h3>
+                <p>{{speaker.DescriptionFR}}</p>
+            {% elseif speaker.language same as("NL") %}
+                <h2>{{speaker.language}}</h2>
+                <h3>{{speaker.ConferenceEN}}</h3>
+                <p>{{speaker.DescriptionEN}}</p>
+            {% endif %}
+        </div>
+        {% endfor %} #}
+
+        {% for speaker in speakers %}
+        <div>
+            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
+            <h1>{{speaker.firstname}}{{speaker.lastname}}</h1>
+                {# <h2>{{speaker.language}}</h2> #}
+                {# <h3>{{speaker.ConferenceNL}}</h3> #}
+                {# <p>{{speaker.DescriptionNL}}</p> #}
+        </div>
+        {% endfor %}
+        {# <div>
+            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
             <h1>Marc Lavoine</h1>
+            <h3>NL</h3>
             <h2>Boostez pendant sommeil</h2>
             <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
         </div>
-        <div>
+                <div>
             <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
             <h1>Marc Lavoine</h1>
-            <h2>Boostez pendant sommeil</h2>
-            <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
-        </div><div>
-            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
-            <h1>Marc Lavoine</h1>
-            <h2>Boostez pendant sommeil</h2>
-            <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
-        </div><div>
-            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
-            <h1>Marc Lavoine</h1>
+            <h3>NL</h3>
             <h2>Boostez pendant sommeil</h2>
             <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
         </div>
+                <div>
+            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
+            <h1>Marc Lavoine</h1>
+            <h3>NL</h3>
+            <h2>Boostez pendant sommeil</h2>
+            <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
+        </div>
+                <div>
+            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
+            <h1>Marc Lavoine</h1>
+            <h3>NL</h3>
+            <h2>Boostez pendant sommeil</h2>
+            <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
+        </div>
+                <div>
+            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
+            <h1>Marc Lavoine</h1>
+            <h3>NL</h3>
+            <h2>Boostez pendant sommeil</h2>
+            <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
+        </div> #}
     </article>
 </section>
     {{ dump(speakers) }}
