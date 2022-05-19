@@ -3,13 +3,15 @@
 {% block title %}Livres{% endblock %}
 {% block importCss %}
     <link rel="stylesheet" href="{{ asset('css/books.css') }}">
-{% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" integrity="sha512-eMxdaSf5XW3ZW1wZCrWItO2jZ7A9FhuZfjVdztr7ZsKNOmt6TUMTQgfpNoVRyfPE5S9BC0A4suXzsGSrAOWcoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />{% endblock %}
 {% block importJs %}
     <script src="{{ asset('js/carou.js') }}" defer></script>
 {% endblock %}
 {% block body %}
-<section class="books">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js" integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<section class="books">
     {% for book in bookLocale %}
     <article>
         <figure><img src="{{asset('uploads/images/books')}}/{{book.image}}" alt="image-cover-livre-boostez"></figure>
@@ -24,46 +26,59 @@
         <header>
             <h1>Traduction :</h1>
         </header>
-        {# Récup img for carou  #}
-        <div class="hideFakeCarou">
-            {% for book in otherBooks %}
-                <div class="imgCarou">
-                    {# <figure><img src="{{ asset('img/{{ book.image }}') }}" alt="image-cover-livre-boostez"></figure> #}
-                    <figure><img src="{{asset('img')}}/{{book.image}}" alt="image-cover-livre-{{book.title}}"></figure>
-                    <h1>{{book.title}}</h1>
-                    <h2>{{book.language}}</h2>
-                    <a href="www.google.com">Commander</a>
-                </div>
-            {% endfor %}
-        </div>
-        {# Récup img for carou END  #}
-         <button class="carouLeft">Left</button>
-        <button class="carouRight">Right</button>
-        <section class="caroussel">
-            <div class="carouBoxs carou1">
-                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
-                <h1>Boostez</h1>
-                <h2>NL</h2>
-                <a href="www.google.com">Commander</a>
-            </div>
-            <section class="barsCarou"></section>
-            <div class="carouBoxs carou2">
-                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
-                <h1>Boostez</h1>
-                <h2>NL</h2>
-                <a href="www.google.com">Commander</a>
-            </div>
-            <section class="barsCarou"></section>
-            <div class="carouBoxs carou3">
-                <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
-                <h1>Boostez</h1>
-                <h2>NL</h2>
-                <a href="www.google.com">Commander</a>
-            </div>
-        </section>
     </footer>
 </section>
 
-    {% include 'partials/newsletter.html.twig' %}
 
+{# SLIDER #}
+<section id="slider">
+            <div class="container">
+                <div class="subcontainer">
+                    <div class="side-wrapper">
+                        <div class="controller">
+                            <div id="controls"> 
+                                <button class="previous">Précédent</button>
+                                <button class="next">Suivant</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="my-slider">
+                         {% for book in otherBooks %}
+                            <div>
+                                <div class="slide">
+                                    <div class="slide-img img-1">
+                                        <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+                                    </div>
+                                    <div class="infoBooks">
+                                        <h1>{{ book.title }}</h1>
+                                        <h2>{{ book.language }}</h2>
+                                        <a href="www.google.com">Commander</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+
+
+
+<section class="newsletter">
+    <article>
+        <h1>Newsletter</h1>
+        <p>Pour recevoir des informations sur les thématiques de «Booster», les conférences et séminaires, je vous invite à vous inscrire à ma newsletter.</p>
+    </article>
+    {{ form_start(form, {'action': path('app_newsletter.FR', { 'locale': locale})}) }}
+    {{ form_errors(form) }}
+    <section>
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.email) }}
+    </section>
+    {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+</section>
+    {% include 'partials/newsletter.html.twig' %}
 {% endblock %}
