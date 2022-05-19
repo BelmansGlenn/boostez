@@ -35,3 +35,15 @@ form:
       contact: Bedankt voor je e-mail, we nemen zo snel mogelijk contact met je op!
     error:
       contact: Er is een fout opgetreden tijdens het verzenden van de e-mail. Probeer het opnieuw.
+
+navbar:
+  home: HOME
+  boost: BOOST jezelf
+  keynotes: KEYNOTES
+  books: BOEKEN
+
+footer:
+  social: Volg ons op social media
+  copyright:
+    rights: Alle rechten voorbehouden
+    website: Website gemaakt door
