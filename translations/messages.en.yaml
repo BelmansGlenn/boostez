@@ -23,12 +23,19 @@ form:
       maxMessage: Your lastname must have a maximum of 50 characters.
       not_blank: Please enter a lastname.
     firstname:
-      minMessage: Your firstname must contain at least 2 characters.
-      maxMessage: Your firstname must have a maximum of 50 characters.
+      minMessage: The firstname must contain at least 2 characters.
+      maxMessage: The firstname must have a maximum of 50 characters.
       not_blank: Please enter a firstname.
     email:
-      type: This value is not a valid email address.
-      not_blank: Please enter an email.
+      type: This is not a valid email address.
+      not_blank: Please enter an email address.
+    tel:
+      not_blank: Please enter a phone number.
+    company:
+      minMessage: The name of the company must contain at least 2 characters.
+      maxMessage: The name of the company must contain a maximum of 50 characters.
+    message:
+      not_blank: Please enter a message to send.
   flash:
     success:
       newsletter: You are subscribed to our newsletter.

@@ -9,26 +9,32 @@ bibliography:
 form:
   submit:
     subscribe: INSCHRIJVEN
-    send: Versturen
+    send: Verzenden
   placeholder:
     firstname: VOORNAAM
     lastname: NAAM
     email: EMAIL
-    company: BEDRIJFSNAAM
+    company: NAAM VAN HET BEDRIJF
     phone: TELEFOONNUMMER
   constraint:
     unique: Deze email is al in gebruik.
     lastname:
-      minMessage: Uw achternaam moet minimaal 2 tekens bevatten.
-      maxMessage: Uw achternaam mag maximaal 50 tekens bevatten.
-      not_blank: Voer een achternaam in.
+      minMessage: De naam moet minimaal 2 karakters bevatten.
+      maxMessage: De naam mag maximaal 50 tekens bevatten.
+      not_blank: Vul een achternaam in
     firstname:
-      minMessage: Uw voornaam moet minimaal 2 tekens bevatten.
-      maxMessage: Uw voornaam mag maximaal 50 tekens bevatten.
-      not_blank: Voer een voornaam in.
+      minMessage: De voornaam moet minimaal 2 karakters bevatten.
+      maxMessage: De voornaam mag maximaal 50 tekens bevatten.
+      not_blank: Vul een voornaam in
     email:
-      type: Deze waarde is geen geldig e-mailadres.
-      not_blank: Voer een email in.
+      type: Dit is geen geldig emailadres.
+      not_blank: Vul een email in
+    tel:
+      not_blank: Vul aub een telefoonnummer in.
+    company:
+      maxMessage: De bedrijfsnaam mag maximaal 50 tekens bevatten.
+    message:
+      not_blank: Vul aub een bootschap te verzenden in.
   flash:
     success:
       newsletter: U bent geabonneerd op onze nieuwsbrief.

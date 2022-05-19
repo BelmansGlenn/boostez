@@ -34,7 +34,7 @@ class BoostezController extends AbstractController
     }
 
 
-    #[Route(['FR' => '/boostez', 'NL' => '/boostez', 'EN' => '/boostez'], name: 'app_boostez')]
+    #[Route(['FR' => '/boostez', 'NL' => '/boostjezelf', 'EN' => '/boostyourself'], name: 'app_boostez')]
     public function boostez(BookReviewRepository $bookReviewRepository, Request $request): Response
     {
         $form = $this->createForm(NewsletterFormType::class);

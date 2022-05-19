@@ -66,7 +66,7 @@ class ContactFormType extends AbstractType
                 'empty_data' => 'Non communiquée',
 
                 'constraints' => [
-                    new Length(min: 2, max: 50, minMessage: 'form.constraint.company.minMessage',maxMessage: 'form.constraint.company.maxMessage')
+                    new Length(max: 50 , maxMessage: 'form.constraint.company.maxMessage')
                 ],
                 'attr' => [
                     'placeholder' => 'form.placeholder.company'
