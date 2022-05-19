@@ -15,8 +15,11 @@
         }
         .signature {
             position: absolute;
-            bottom: 0;
+            bottom: -45px;
             right: 10%;
+            img {
+                width: 200px;
+            }
         }
     }
     footer {
@@ -74,6 +77,11 @@
       }
       .accueil footer a {
         margin: 0px 0px 20px 0px;
+      }
+      .accueil article .signature {
+        position: relative;
+        bottom: inherit;
+        right: inherit;
       }
 }
 @media screen and (max-width: 480px) { 
