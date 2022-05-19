@@ -1,3 +1,105 @@
+#slider {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 100px 0px;
+    .container {
+        width: 1600px;
+        margin: auto;
+    }
+    .subcontainer {
+        width: 85%;
+        margin:auto;
+    }
+    .controller {
+        display: flex;
+        justify-content: center;
+        button {
+            margin: 0px 20px;
+            padding: 5px 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            background-color: inherit;
+            border: 2px solid black;
+            border-radius: 5px;
+            color: black;
+            font-weight: 501;
+            cursor: pointer;
+            opacity: 0.7;
+            &:hover {
+                background-color: #007793;
+                font-weight: 600;
+                color: white;
+                opacity: 0.9;
+            }
+        }
+    }
+    #controls {
+        font-size: 19px;
+    }
+    .slide-img {
+        width: 100%;
+        height: 400px;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        figure {
+            img {
+                height: 300px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            }
+        }
+    }
+    .slide-img a {
+        color: rebeccapurple;
+        opacity: 0;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .my-slider {
+        .infoBooks {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-transform: uppercase;
+            margin: 0px 0px 0px 0px;
+            font-weight: normal;
+            font-size: 22px;
+        }
+        h2 {
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 20px 0px;
+            font-size: 19px;
+        }
+        a {
+            background-color: #007793;
+            color: white;
+            padding: 10px 45px;
+            border-radius: 35px;
+            text-transform: uppercase;
+            font-weight: 600;
+            &:hover {
+                background-color: #2290a9;
+                font-weight: 700;
+            }
+        }
+    }
+
+    @media(max-width:1600px) {
+        .container {
+            width: 100%;
+        }
+    }
+}
+
 .books {
     article {
         display: flex;

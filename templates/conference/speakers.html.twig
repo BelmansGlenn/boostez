@@ -1,10 +1,47 @@
 {% extends 'base.html.twig' %}
-{% block title %}
-
+{% block title %}Conférenciers{% endblock %}
+{% block importCss %}
+    <link rel="stylesheet" href="{{ asset('css/conference.css') }}">
 {% endblock %}
 {% block body %}
+<section class="conferencier">
+    <header>
+        <div>
+            <h1>Nos conférenciers</h1>
+            <h2>Découvrez nos conférenciers et leurs conferences.</h2>
+        </div>
+        <figure><img src="{{ asset('img/cerveau.gif') }}" alt="illustration-helicopter-taking-flight"></figure>
+    </header>
+    <article>
+        <div>
+            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
+            <h1>Marc Lavoine</h1>
+            <h2>Boostez pendant sommeil</h2>
+            <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
+        </div>
+        <div>
+            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
+            <h1>Marc Lavoine</h1>
+            <h2>Boostez pendant sommeil</h2>
+            <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
+        </div><div>
+            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
+            <h1>Marc Lavoine</h1>
+            <h2>Boostez pendant sommeil</h2>
+            <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
+        </div><div>
+            <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="conferencier-blabla-portrait"></figure>
+            <h1>Marc Lavoine</h1>
+            <h2>Boostez pendant sommeil</h2>
+            <p>"DescriptionFR" => "In dolorum est vero quo molestias aperiam. Officia inventore similique incidunt voluptatem. Repellat voluptatem qui architecto dignissimos commodi in reprehende</p>
+        </div>
+    </article>
+</section>
     {{ dump(speakers) }}
 {% endblock %}
 
 
 
+ {% for conf in speakers %}
+
+{% endfor %}
