@@ -11,18 +11,7 @@
         <h2>Vous êtes intéressé par «Boostez», par une conférence ou un atelier ?</h2>
     </header>
     <article>
-        {% for message in app.flashes('success') %}
-        <div class="alert alert-success">
-        {{ message|trans({}, "messages", locale) }}
-        </div>
-        {% endfor %}
-        {% for message in app.flashes('error') %}
-        <div class="alert alert-error">
-        {{ message|trans({}, "messages", locale) }}
-        </div>
-        {% endfor %}
-        {{ form_start(contactForm) }}
-        {{ form_errors(contactForm) }}
+        {{ form_start(contactForm,{'action': path('app_mail.FR', {'locale': locale })}) }}
         <section>
             <div>
                 {{ form_row(contactForm.firstname) }}
@@ -53,35 +42,12 @@
     </footer>
 </section>
 
-
-
-
-    {# {% set locale = app.request.locale %}
-
-
-    {{ form_start(contactForm) }}
-    {{ form_errors(contactForm) }}
-
-    {{ form_row(contactForm.firstname) }}
-    {{ form_row(contactForm.lastname) }}
-    {{ form_row(contactForm.company) }}
-    {{ form_row(contactForm.phoneNumber) }}
-    {{ form_row(contactForm.email) }}
-    {{ form_row(contactForm.message) }}
-    {{ form_row(contactForm.submit) }}
-    {{ form_end(contactForm) }} #}
-
-
-
-
-
-
 <section class="newsletter">
     <article>
         <h1>Newsletter</h1>
         <p>Pour recevoir des informations sur les thématiques de «Booster», les conférences et séminaires, je vous invite à vous inscrire à ma newsletter.</p>
     </article>
-    {{ form_start(form, {'action': path('app_newsletter.FR')}) }}
+    {{ form_start(form, {'action': path('app_newsletter.FR', { 'locale': locale})}) }}
     {{ form_errors(form) }}
     <section>
         {{ form_row(form.firstname) }}

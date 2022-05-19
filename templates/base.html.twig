@@ -27,6 +27,7 @@
             <script src="{{ asset('js/base.js') }}" defer></script>
 {#            {{ encore_entry_script_tags('app') }}#}
         {% endblock %}
+        {{ flasher_render() }}
     </head>
     <body>
         <div id="goTop"><i class="fas fa-long-arrow-alt-up"></i></div>
@@ -51,6 +52,7 @@
             </div>
             {% endblock %}
         </header>
+
         {% block body %}{% endblock %}
         <footer class="footerMain">
         <div class="socialFoot">

@@ -29,3 +29,9 @@ form:
     email:
       type: This value is not a valid email address.
       not_blank: Please enter an email.
+  flash:
+    success:
+      newsletter: You are subscribed to our newsletter.
+      contact: Thank you for your email, we will get back to you as soon as possible!
+    error:
+      contact: An error occurred while sending the email. Please try again.
