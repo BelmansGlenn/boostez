@@ -18,12 +18,18 @@
         <article>
             <h1>Conférences</h1>
             <section>
+                {% if businessConf is empty %}
+                    <h3>Aucunes conférences n'est disponible pour le moment.</h3>
+                {% endif %}
                 {% for conf in businessConf %}
                     <a href="{{ path('app_business_conference', {'slug': conf.slug}) }}" class="bgRed">{{ conf.name }}</a>
                 {% endfor %}
             </section>
             <h2>Ateliers</h2>
             <section>
+                {% if businessWorkshop is empty %}
+                    <h3>Aucun ateliers n'est disponible pour le moment.</h3>
+                {% endif %}
                 {% for conf in businessWorkshop %}
                     <a href="{{ path('app_business_workshop', {'slug': conf.slug}) }}" class="bgRed">{{ conf.name }}</a>
                 {% endfor %}
@@ -41,12 +47,18 @@
         <article>
             <h1>Ateliers</h1>
             <section>
+                {% if privateWorkshop is empty %}
+                    <h3>Aucun ateliers n'est disponible pour le moment.</h3>
+                {% endif %}
                 {% for conf in privateWorkshop %}
                     <a href="{{ path('app_private_workshop', {'slug': conf.slug }) }}" class="bgBlue">{{ conf.name }}</a>
                 {% endfor %}
             </section>
             <h2>Retraites</h2>
             <section>
+                {% if privateRetreat is empty %}
+                    <h3>Aucune retraite n'est disponible pour le moment.</h3>
+                {% endif %}
                 {% for conf in privateRetreat %}
                     <a href="{{ path('app_private_retreat', {'slug': conf.slug })  }}" class="bgBlue">{{ conf.name }}</a>
                 {% endfor %}
