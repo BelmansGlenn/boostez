@@ -6,6 +6,7 @@ use App\Entity\Speaker;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
+use Doctrine\ORM\Query\Expr\Join;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -48,25 +49,25 @@ class SpeakerRepository extends ServiceEntityRepository
     public function findAllSpeakersGetDescriptionByLocaleOrderByImportance($locale)
     {
         $qb = $this->createQueryBuilder('s')
-            ->select('s.image', 's.firstname', 's.lastname', 's.language', 's.ConferenceFR', 's.ConferenceNL', 's.ConferenceEN')
+            ->select( 's.id', 's.image', 's.firstname', 's.lastname', 's.language')
             ->andWhere('s.isVisible = true');
         if ($locale === 'FR')
         {
-            $qb->addSelect('s.DescriptionFR');
+            $qb->addSelect('s.DescriptionFR AS desc');
 
         }elseif ($locale === 'NL')
         {
-            $qb->addSelect('s.DescriptionNL');
+            $qb->addSelect('s.DescriptionNL AS desc');
 
         }elseif ($locale === 'EN')
         {
-            $qb->addSelect('s.DescriptionEN');
+            $qb->addSelect('s.DescriptionEN AS desc');
 
         }
            return $qb
-            ->orderBy('s.inOrder', 'ASC')
-            ->getQuery()
-            ->getResult();
+                ->orderBy('s.inOrder', 'ASC')
+                ->getQuery()
+                ->getArrayResult();
     }
 
     // /**

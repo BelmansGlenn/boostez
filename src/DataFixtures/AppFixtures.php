@@ -26,7 +26,6 @@ class AppFixtures extends Fixture
         PrivateRetreatFactory::createMany(10);
 
         BookFactory::createMany(12);
-        SpeakerFactory::createMany(8);
 
         BookReviewFactory::createMany(10);
 

@@ -2,7 +2,10 @@
 
 namespace App\Entity\Traits;
 
+use App\Entity\Speaker;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use JetBrains\PhpStorm\Pure;
 use Symfony\Component\Validator\Constraints as Assert;
 
 trait ConferenceTrait
@@ -34,6 +37,7 @@ trait ConferenceTrait
 
     #[ORM\Column(type: 'boolean')]
     private bool $isVisible = true;
+
 
     /**
      * @return string
@@ -146,6 +150,12 @@ trait ConferenceTrait
     public function setIsVisible(bool $isVisible): void
     {
         $this->isVisible = $isVisible;
+    }
+
+    #[Pure]
+    public function __toString()
+    {
+        return $this->getName();
     }
 
 
