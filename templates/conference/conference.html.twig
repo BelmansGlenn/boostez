@@ -9,7 +9,6 @@
 {% endblock %}
 {% block body %}
     {% set confInfo = app.request.pathInfo|split('/') %}
-
     <section class="zoomConference">
     <a href ={{ path('app_conference') }} class="retourBtn">
         <i class="fa-solid fa-arrow-down"></i>

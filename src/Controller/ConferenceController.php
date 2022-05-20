@@ -50,7 +50,6 @@ class ConferenceController extends AbstractController
     public function businessConference($slug, BusinessConferenceRepository $businessConferenceRepository, Request $request): Response
     {
         $businessConf = $businessConferenceRepository->findOneConfBySlugAndByLocale($slug, $request->getLocale());
-
         return $this->render('conference/conference.html.twig', [
             'conference' => $businessConf,
             'color' => self::BUSINESS_COLOR
@@ -92,15 +91,30 @@ class ConferenceController extends AbstractController
 
 
     #[Route(['FR' => '/conferences/conferenciers', 'NL' => '/keynotes/sprekers', 'EN' => '/keynotes/speakers'], name: 'app_conference_speakers')]
-    public function getSpeakers(SpeakerRepository $speakerRepository, Request $request): Response
+    public function getSpeakers(SpeakerRepository $speakerRepository, Request $request, EntityManagerInterface $entityManager): Response
     {
         $speakers = $speakerRepository->findAllSpeakersGetDescriptionByLocaleOrderByImportance($request->getLocale());
 
+        $businessConf = [];
+        $businessWorkshop = [];
+        $privateRetreat = [];
+        $privateWorkshop = [];
+        foreach ($speakers as $speaker)
+        {
+            $businessConf[] = $entityManager->getRepository(BusinessConference::class)->findNameAndSlugFromConfById($speaker['id']);
+            $businessWorkshop[] = $entityManager->getRepository(BusinessWorkshop::class)->findNameAndSlugFromConfById($speaker['id']);
+            $privateRetreat[] = $entityManager->getRepository(PrivateRetreat::class)->findNameAndSlugFromConfById($speaker['id']);
+            $privateWorkshop[] = $entityManager->getRepository(PrivateWorkshop::class)->findNameAndSlugFromConfById($speaker['id']);
+        }
         $form = $this->createForm(NewsletterFormType::class);
 
         return $this->render('conference/speakers.html.twig', [
             'speakers' => $speakers,
             'form' => $form->createView(),
+            'business_conf' => $businessConf,
+            'business_workshop' => $businessWorkshop,
+            'private_retreat' => $privateRetreat,
+            'private_workshop' => $privateWorkshop
         ]);
     }
 }

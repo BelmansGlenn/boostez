@@ -31,4 +31,16 @@ trait ConferenceRepositoryTrait
             ->orderBy('c.inOrder', 'ASC')
             ->getQuery()->getOneOrNullResult();
     }
+
+    public function findNameAndSlugFromConfById($id)
+    {
+        return $this->createQueryBuilder('c')
+            ->select('c.name', 'c.slug', 'c.language')
+            ->leftJoin('c.speakers', 'speakers')
+            ->addSelect('speakers.id')
+            ->andWhere('speakers.id = :val')
+            ->setParameter('val', $id)
+            ->getQuery()
+            ->getResult();
+    }
 }

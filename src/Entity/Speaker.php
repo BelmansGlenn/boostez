@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\SpeakerRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -42,15 +44,6 @@ class Speaker
     private $DescriptionEN;
 
     #[ORM\Column(type: 'array')]
-    private $ConferenceFR;
-
-    #[ORM\Column(type: 'array')]
-    private $ConferenceNL;
-
-    #[ORM\Column(type: 'array')]
-    private $ConferenceEN;
-
-    #[ORM\Column(type: 'array')]
     #[Assert\NotBlank]
     private $language;
 
@@ -60,6 +53,28 @@ class Speaker
 
     #[ORM\Column(type: 'boolean')]
     private $isVisible = true;
+
+    #[ORM\ManyToMany(targetEntity: BusinessConference::class, inversedBy: 'speakers')]
+    private $businessConferences;
+
+    #[ORM\ManyToMany(targetEntity: BusinessWorkshop::class, inversedBy: 'speakers')]
+    private $businessWorkshops;
+
+    #[ORM\ManyToMany(targetEntity: PrivateRetreat::class, inversedBy: 'speakers')]
+    private $privateRetreats;
+
+    #[ORM\ManyToMany(targetEntity: PrivateWorkshop::class, inversedBy: 'speakers')]
+    private $privateWorkshops;
+
+    public function __construct()
+    {
+        $this->businessConferences = new ArrayCollection();
+        $this->businessWorkshops = new ArrayCollection();
+        $this->privateRetreats = new ArrayCollection();
+        $this->privateWorkshops = new ArrayCollection();
+    }
+
+
 
     public function getId(): ?int
     {
@@ -138,55 +153,6 @@ class Speaker
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getConferenceFR()
-    {
-        return $this->ConferenceFR;
-    }
-
-    /**
-     * @param mixed $ConferenceFR
-     */
-    public function setConferenceFR($ConferenceFR): void
-    {
-        $this->ConferenceFR = $ConferenceFR;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getConferenceNL()
-    {
-        return $this->ConferenceNL;
-    }
-
-    /**
-     * @param mixed $ConferenceNL
-     */
-    public function setConferenceNL($ConferenceNL): void
-    {
-        $this->ConferenceNL = $ConferenceNL;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getConferenceEN()
-    {
-        return $this->ConferenceEN;
-    }
-
-    /**
-     * @param mixed $ConferenceEN
-     */
-    public function setConferenceEN($ConferenceEN): void
-    {
-        $this->ConferenceEN = $ConferenceEN;
-    }
-
-
 
     /**
      * @return mixed
@@ -229,4 +195,101 @@ class Speaker
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, BusinessConference>
+     */
+    public function getBusinessConferences(): Collection
+    {
+        return $this->businessConferences;
+    }
+
+    public function addBusinessConference(BusinessConference $businessConference): self
+    {
+        if (!$this->businessConferences->contains($businessConference)) {
+            $this->businessConferences[] = $businessConference;
+        }
+
+        return $this;
+    }
+
+    public function removeBusinessConference(BusinessConference $businessConference): self
+    {
+        $this->businessConferences->removeElement($businessConference);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, BusinessWorkshop>
+     */
+    public function getBusinessWorkshops(): Collection
+    {
+        return $this->businessWorkshops;
+    }
+
+    public function addBusinessWorkshop(BusinessWorkshop $businessWorkshop): self
+    {
+        if (!$this->businessWorkshops->contains($businessWorkshop)) {
+            $this->businessWorkshops[] = $businessWorkshop;
+        }
+
+        return $this;
+    }
+
+    public function removeBusinessWorkshop(BusinessWorkshop $businessWorkshop): self
+    {
+        $this->businessWorkshops->removeElement($businessWorkshop);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, PrivateRetreat>
+     */
+    public function getPrivateRetreats(): Collection
+    {
+        return $this->privateRetreats;
+    }
+
+    public function addPrivateRetreat(PrivateRetreat $privateRetreat): self
+    {
+        if (!$this->privateRetreats->contains($privateRetreat)) {
+            $this->privateRetreats[] = $privateRetreat;
+        }
+
+        return $this;
+    }
+
+    public function removePrivateRetreat(PrivateRetreat $privateRetreat): self
+    {
+        $this->privateRetreats->removeElement($privateRetreat);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, PrivateWorkshop>
+     */
+    public function getPrivateWorkshops(): Collection
+    {
+        return $this->privateWorkshops;
+    }
+
+    public function addPrivateWorkshop(PrivateWorkshop $privateWorkshop): self
+    {
+        if (!$this->privateWorkshops->contains($privateWorkshop)) {
+            $this->privateWorkshops[] = $privateWorkshop;
+        }
+
+        return $this;
+    }
+
+    public function removePrivateWorkshop(PrivateWorkshop $privateWorkshop): self
+    {
+        $this->privateWorkshops->removeElement($privateWorkshop);
+
+        return $this;
+    }
+
 }
