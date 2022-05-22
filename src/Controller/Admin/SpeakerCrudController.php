@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -32,6 +33,9 @@ class SpeakerCrudController extends AbstractCrudController
                 ->setRequired(false),
             TextField::new('firstname', 'Prénom'),
             TextField::new('lastname', 'Nom de famille'),
+            TextField::new('statusFR'),
+            TextField::new('statusNL')->hideOnIndex(),
+            TextField::new('statusEN')->hideOnIndex(),
             TextEditorField::new('descriptionFR', 'Description Francais'),
             TextEditorField::new('descriptionNL', 'Description Neerlandais')->hideOnIndex(),
             TextEditorField::new('descriptionEN', 'Description Anglais')->hideOnIndex(),

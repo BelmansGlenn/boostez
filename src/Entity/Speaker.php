@@ -29,6 +29,21 @@ class Speaker
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank]
     #[Assert\Length(max: 255)]
+    private $statusFR;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
+    private $statusNL;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
+    private $statusEN;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
     private $image;
 
     #[ORM\Column(type: 'text')]
@@ -74,85 +89,166 @@ class Speaker
         $this->privateWorkshops = new ArrayCollection();
     }
 
-
-
-    public function getId(): ?int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getFirstname(): ?string
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getFirstname()
     {
         return $this->firstname;
     }
 
-    public function setFirstname(string $firstname): self
+    /**
+     * @param mixed $firstname
+     */
+    public function setFirstname($firstname): void
     {
         $this->firstname = $firstname;
-
-        return $this;
     }
 
-    public function getLastname(): ?string
+    /**
+     * @return mixed
+     */
+    public function getLastname()
     {
         return $this->lastname;
     }
 
-    public function setLastname(string $lastname): self
+    /**
+     * @param mixed $lastname
+     */
+    public function setLastname($lastname): void
     {
         $this->lastname = $lastname;
-
-        return $this;
     }
 
-    public function getImage(): ?string
+    /**
+     * @return mixed
+     */
+    public function getStatusFR()
+    {
+        return $this->statusFR;
+    }
+
+    /**
+     * @param mixed $statusFR
+     */
+    public function setStatusFR($statusFR): void
+    {
+        $this->statusFR = $statusFR;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatusNL()
+    {
+        return $this->statusNL;
+    }
+
+    /**
+     * @param mixed $statusNL
+     */
+    public function setStatusNL($statusNL): void
+    {
+        $this->statusNL = $statusNL;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatusEN()
+    {
+        return $this->statusEN;
+    }
+
+    /**
+     * @param mixed $statusEN
+     */
+    public function setStatusEN($statusEN): void
+    {
+        $this->statusEN = $statusEN;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): void
     {
         $this->image = $image;
-
-        return $this;
     }
 
-    public function getDescriptionFR(): ?string
+    /**
+     * @return mixed
+     */
+    public function getDescriptionFR()
     {
         return $this->DescriptionFR;
     }
 
-    public function setDescriptionFR(string $DescriptionFR): self
+    /**
+     * @param mixed $DescriptionFR
+     */
+    public function setDescriptionFR($DescriptionFR): void
     {
         $this->DescriptionFR = $DescriptionFR;
-
-        return $this;
     }
 
-    public function getDescriptionNL(): ?string
+    /**
+     * @return mixed
+     */
+    public function getDescriptionNL()
     {
         return $this->DescriptionNL;
     }
 
-    public function setDescriptionNL(string $DescriptionNL): self
+    /**
+     * @param mixed $DescriptionNL
+     */
+    public function setDescriptionNL($DescriptionNL): void
     {
         $this->DescriptionNL = $DescriptionNL;
-
-        return $this;
     }
 
-    public function getDescriptionEN(): ?string
+    /**
+     * @return mixed
+     */
+    public function getDescriptionEN()
     {
         return $this->DescriptionEN;
     }
 
-    public function setDescriptionEN(string $DescriptionEN): self
+    /**
+     * @param mixed $DescriptionEN
+     */
+    public function setDescriptionEN($DescriptionEN): void
     {
         $this->DescriptionEN = $DescriptionEN;
-
-        return $this;
     }
-
 
     /**
      * @return mixed
@@ -170,31 +266,39 @@ class Speaker
         $this->language = $language;
     }
 
-
-
-    public function getInOrder(): ?int
+    /**
+     * @return mixed
+     */
+    public function getInOrder()
     {
         return $this->inOrder;
     }
 
-    public function setInOrder(int $inOrder): self
+    /**
+     * @param mixed $inOrder
+     */
+    public function setInOrder($inOrder): void
     {
         $this->inOrder = $inOrder;
-
-        return $this;
     }
 
-    public function getIsVisible(): ?bool
+    /**
+     * @return bool
+     */
+    public function isVisible(): bool
     {
         return $this->isVisible;
     }
 
-    public function setIsVisible(bool $isVisible): self
+    /**
+     * @param bool $isVisible
+     */
+    public function setIsVisible(bool $isVisible): void
     {
         $this->isVisible = $isVisible;
-
-        return $this;
     }
+
+
 
     /**
      * @return Collection<int, BusinessConference>
@@ -291,5 +395,4 @@ class Speaker
 
         return $this;
     }
-
 }

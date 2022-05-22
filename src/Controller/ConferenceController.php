@@ -6,6 +6,7 @@ use App\Entity\BusinessConference;
 use App\Entity\BusinessWorkshop;
 use App\Entity\PrivateRetreat;
 use App\Entity\PrivateWorkshop;
+use App\Exception\RouteNotFoundException;
 use App\Form\NewsletterFormType;
 use App\Repository\BusinessConferenceRepository;
 use App\Repository\BusinessWorkshopRepository;
@@ -17,6 +18,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ConferenceController extends AbstractController
@@ -91,30 +93,42 @@ class ConferenceController extends AbstractController
 
 
     #[Route(['FR' => '/conferences/conferenciers', 'NL' => '/keynotes/sprekers', 'EN' => '/keynotes/speakers'], name: 'app_conference_speakers')]
-    public function getSpeakers(SpeakerRepository $speakerRepository, Request $request, EntityManagerInterface $entityManager): Response
+    public function getSpeakers(SpeakerRepository $speakerRepository, Request $request): Response
     {
-        $speakers = $speakerRepository->findAllSpeakersGetDescriptionByLocaleOrderByImportance($request->getLocale());
+        $speakers = $speakerRepository->findAllSpeakersGetSimpleDataByLocaleOrderByImportance($request->getLocale());
 
-        $businessConf = [];
-        $businessWorkshop = [];
-        $privateRetreat = [];
-        $privateWorkshop = [];
-        foreach ($speakers as $speaker)
-        {
-            $businessConf[] = $entityManager->getRepository(BusinessConference::class)->findNameAndSlugFromConfById($speaker['id']);
-            $businessWorkshop[] = $entityManager->getRepository(BusinessWorkshop::class)->findNameAndSlugFromConfById($speaker['id']);
-            $privateRetreat[] = $entityManager->getRepository(PrivateRetreat::class)->findNameAndSlugFromConfById($speaker['id']);
-            $privateWorkshop[] = $entityManager->getRepository(PrivateWorkshop::class)->findNameAndSlugFromConfById($speaker['id']);
-        }
+
         $form = $this->createForm(NewsletterFormType::class);
 
         return $this->render('conference/speakers.html.twig', [
             'speakers' => $speakers,
             'form' => $form->createView(),
-            'business_conf' => $businessConf,
-            'business_workshop' => $businessWorkshop,
-            'private_retreat' => $privateRetreat,
-            'private_workshop' => $privateWorkshop
+        ]);
+    }
+
+    #[Route(['FR' => '/conferences/conferenciers/{id}', 'NL' => '/keynotes/sprekers/{id}', 'EN' => '/keynotes/speakers/{id}'], name: 'app_conference_speaker')]
+    public function getSpeaker($id, SpeakerRepository $speakerRepository, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $locale = $request->getLocale();
+        $speaker = $speakerRepository->findOneSpeakerGetFullDataByLocaleOrderByImportance($locale, $id);
+        if (empty($speaker))
+        {
+            throw new NotFoundHttpException();
+        }
+        $businessConf = $entityManager->getRepository(BusinessConference::class)->findNameAndSlugByLocaleFromConfBySpeakerId($id, $locale);
+        $businessWorkshop = $entityManager->getRepository(BusinessWorkshop::class)->findNameAndSlugByLocaleFromConfBySpeakerId($id, $locale);
+        $privateRetreat = $entityManager->getRepository(PrivateRetreat::class)->findNameAndSlugByLocaleFromConfBySpeakerId($id, $locale);
+        $privateWorkshop = $entityManager->getRepository(PrivateWorkshop::class)->findNameAndSlugByLocaleFromConfBySpeakerId($id, $locale);
+
+        $form = $this->createForm(NewsletterFormType::class);
+
+        return $this->render('conference/speaker.html.twig', [
+            'speaker' => $speaker,
+            'businessConf' => $businessConf,
+            'businessWorkshop' => $businessWorkshop,
+            'privateRetreat' => $privateRetreat,
+            'privateWorkshop' => $privateWorkshop,
+            'form' => $form->createView(),
         ]);
     }
 }

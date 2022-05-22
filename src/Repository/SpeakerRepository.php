@@ -46,28 +46,54 @@ class SpeakerRepository extends ServiceEntityRepository
         }
     }
 
-    public function findAllSpeakersGetDescriptionByLocaleOrderByImportance($locale)
+    public function findAllSpeakersGetSimpleDataByLocaleOrderByImportance($locale)
     {
         $qb = $this->createQueryBuilder('s')
-            ->select( 's.id', 's.image', 's.firstname', 's.lastname', 's.language')
+            ->select( 's.id', 's.image', 's.firstname', 's.lastname')
             ->andWhere('s.isVisible = true');
         if ($locale === 'FR')
         {
-            $qb->addSelect('s.DescriptionFR AS desc');
+            $qb->addSelect('s.statusFR AS status');
 
         }elseif ($locale === 'NL')
         {
-            $qb->addSelect('s.DescriptionNL AS desc');
+            $qb->addSelect('s.statusNL AS status');
 
         }elseif ($locale === 'EN')
         {
-            $qb->addSelect('s.DescriptionEN AS desc');
+            $qb->addSelect('s.statusEN AS status');
 
         }
            return $qb
                 ->orderBy('s.inOrder', 'ASC')
                 ->getQuery()
-                ->getArrayResult();
+                ->getResult();
+    }
+
+    public function findOneSpeakerGetFullDataByLocaleOrderByImportance($locale, $id)
+    {
+        $qb = $this->createQueryBuilder('s')
+            ->select( 's.image', 's.firstname', 's.lastname', 's.language')
+            ->andWhere('s.id = :id')
+            ->setParameter('id', $id)
+            ->andWhere('s.isVisible = true');
+        if ($locale === 'FR')
+        {
+            $qb->addSelect('s.statusFR AS status', 's.DescriptionFR AS desc');
+
+        }elseif ($locale === 'NL')
+        {
+            $qb->addSelect('s.statusNL AS status', 's.DescriptionNL AS desc');
+
+        }elseif ($locale === 'EN')
+        {
+            $qb->addSelect('s.statusEN AS status', 's.DescriptionEN AS desc');
+
+        }
+        return $qb
+            ->orderBy('s.inOrder', 'ASC')
+            ->getQuery()
+            ->getResult();
     }
 
     // /**
