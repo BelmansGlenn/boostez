@@ -32,15 +32,20 @@ trait ConferenceRepositoryTrait
             ->getQuery()->getOneOrNullResult();
     }
 
-    public function findNameAndSlugFromConfById($id)
+    public function findNameAndSlugByLocaleFromConfBySpeakerId($id, $locale)
     {
-        return $this->createQueryBuilder('c')
-            ->select('c.name', 'c.slug', 'c.language')
-            ->leftJoin('c.speakers', 'speakers')
-            ->addSelect('speakers.id')
-            ->andWhere('speakers.id = :val')
-            ->setParameter('val', $id)
-            ->getQuery()
-            ->getResult();
+            return $this->createQueryBuilder('c')
+                ->select('c.name', 'c.slug')
+                ->leftJoin('c.speakers', 'speakers')
+                ->addSelect('CASE WHEN c.language = :locale THEN 1 ELSE 0 END AS HIDDEN sortCondition')
+                ->andWhere('speakers.id = :val')
+                ->setParameter('val', $id)
+                ->setParameter('locale', $locale)
+                ->orderBy('sortCondition', 'DESC')
+                ->addOrderBy('c.inOrder', 'ASC')
+                ->getQuery()
+                ->getResult();
     }
+
+
 }

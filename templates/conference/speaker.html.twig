@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block importCss %}
+    {% block language %}
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+
+    {{ dump(speaker) }}
+    {{ dump(businessConf) }}
+    {{ dump(businessWorkshop) }}
+    {{ dump(privateRetreat) }}
+    {{ dump(privateWorkshop) }}
+
+{% endblock %}
+

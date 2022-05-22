@@ -37,81 +37,83 @@
         <section>
             <figure><img src="{{ asset('uploads/images/speakers/') }}/{{ speaker.image }}" alt="conferencier-blabla-portrait"></figure>
             <h1>{{speaker.firstname}} {{speaker.lastname}}</h1>
-            <br>
-             <p>{{speaker.desc|raw}}</p>
-            <h5>Conference Entreprise :</h5>
-            {% set bconf_count = 0 %}
-            {% for bconf in business_conf %}
-                {% for bc in bconf %}
-                        {% if (bc['id'] == speaker.id) and (bc['language'] is same as locale)  %}
-                            <a class="importantLink" href="{{ path('app_business_conference'~'.'~ bc['language'], {'slug': bc['slug'] }) }}">{{ bc['name'] }}</a>
-                            {% set bconf_count = bconf_count + 1 %}
-                        {% elseif (bc['id'] == speaker.id) and (bc['language'] is not same as locale) %}
-            <p>{{ bc['language'] }}: </p><a class="smallConfLink" href="{{ path('app_business_conference'~'.'~ bc['language'], {'slug': bc['slug'] }) }}">{{ bc['name'] }}</a>
-                            {% set bconf_count = bconf_count + 1 %}
-                        {% endif %}
-                {% endfor %}
-            {% endfor %}
-            {% if bconf_count == 0 %}
-                <p class="noConf">Pas de conférence d'entreprise donnée par ce conferencier.</p>
-            {% endif %}
-            <h5>Atelier Entreprise :</h5>
-            {% set bwork_count = 0 %}
-            {% for bwork in business_workshop %}
-                {% for bw in bwork %}
-                        {% if (bw['id'] == speaker.id) and (bw['language'] is same as locale)  %}
-                            <a class="importantLink" href="{{ path('app_business_conference'~'.'~ bw['language'], {'slug': bw['slug'] }) }}">{{ bw['name'] }}</a>
-                            {% set bwork_count = bwork_count + 1 %}
-                        {% elseif (bw['id'] == speaker.id) and (bw['language'] is not same as locale) %}
-            <p>{{ bw['language'] }}: </p><a class="smallConfLink" href="{{ path('app_business_conference'~'.'~ bw['language'], {'slug': bw['slug'] }) }}">{{ bw['name'] }}</a>
-                            {% set bwork_count = bwork_count + 1 %}
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-            {% if bwork_count == 0 %}
-                <p class="noConf">Pas d'ateliers d'entreprise donné par ce conferencier.</p>
-            {% endif %}
-            <h5>Retraite Particulier :</h5>
-            {% set pretreat_count = 0 %}
-            {% for pretreat in private_retreat %}
-                {% for pr in pretreat %}
-                        {% if (pr['id'] == speaker.id) and (pr['language'] is same as locale)  %}
-                            <a class="importantLink" href="{{ path('app_business_conference'~'.'~ pr['language'], {'slug': pr['slug'] }) }}">{{ pr['name'] }}</a>
-                            {% set pretreat_count = pretreat_count + 1 %}
-                        {% elseif (pr['id'] == speaker.id) and (pr['language'] is not same as locale) %}
-            <p>{{ pr['language'] }}: </p><a class="smallConfLink" href="{{ path('app_business_conference'~'.'~ pr['language'], {'slug': pr['slug'] }) }}">{{ pr['name'] }}</a>
-                            {% set pretreat_count = pretreat_count + 1 %}
+            <p>{{ speaker.status }}</p>
+            <a href="{{ path('app_conference_speaker', {'id': speaker.id}) }}">plus</a>
+{#            <br>#}
+{#             <p>{{speaker.desc|raw}}</p>#}
+{#            <h5>Conference Entreprise :</h5>#}
+{#            {% set bconf_count = 0 %}#}
+{#            {% for bconf in business_conf %}#}
+{#                {% for bc in bconf %}#}
+{#                        {% if (bc['id'] == speaker.id) and (bc['language'] is same as locale)  %}#}
+{#                            <a class="importantLink" href="{{ path('app_business_conference'~'.'~ bc['language'], {'slug': bc['slug'] }) }}">{{ bc['name'] }}</a>#}
+{#                            {% set bconf_count = bconf_count + 1 %}#}
+{#                        {% elseif (bc['id'] == speaker.id) and (bc['language'] is not same as locale) %}#}
+{#            <p>{{ bc['language'] }}: </p><a class="smallConfLink" href="{{ path('app_business_conference'~'.'~ bc['language'], {'slug': bc['slug'] }) }}">{{ bc['name'] }}</a>#}
+{#                            {% set bconf_count = bconf_count + 1 %}#}
+{#                        {% endif %}#}
+{#                {% endfor %}#}
+{#            {% endfor %}#}
+{#            {% if bconf_count == 0 %}#}
+{#                <p class="noConf">Pas de conférence d'entreprise donnée par ce conferencier.</p>#}
+{#            {% endif %}#}
+{#            <h5>Atelier Entreprise :</h5>#}
+{#            {% set bwork_count = 0 %}#}
+{#            {% for bwork in business_workshop %}#}
+{#                {% for bw in bwork %}#}
+{#                        {% if (bw['id'] == speaker.id) and (bw['language'] is same as locale)  %}#}
+{#                            <a class="importantLink" href="{{ path('app_business_conference'~'.'~ bw['language'], {'slug': bw['slug'] }) }}">{{ bw['name'] }}</a>#}
+{#                            {% set bwork_count = bwork_count + 1 %}#}
+{#                        {% elseif (bw['id'] == speaker.id) and (bw['language'] is not same as locale) %}#}
+{#            <p>{{ bw['language'] }}: </p><a class="smallConfLink" href="{{ path('app_business_conference'~'.'~ bw['language'], {'slug': bw['slug'] }) }}">{{ bw['name'] }}</a>#}
+{#                            {% set bwork_count = bwork_count + 1 %}#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+{#            {% endfor %}#}
+{#            {% if bwork_count == 0 %}#}
+{#                <p class="noConf">Pas d'ateliers d'entreprise donné par ce conferencier.</p>#}
+{#            {% endif %}#}
+{#            <h5>Retraite Particulier :</h5>#}
+{#            {% set pretreat_count = 0 %}#}
+{#            {% for pretreat in private_retreat %}#}
+{#                {% for pr in pretreat %}#}
+{#                        {% if (pr['id'] == speaker.id) and (pr['language'] is same as locale)  %}#}
+{#                            <a class="importantLink" href="{{ path('app_business_conference'~'.'~ pr['language'], {'slug': pr['slug'] }) }}">{{ pr['name'] }}</a>#}
+{#                            {% set pretreat_count = pretreat_count + 1 %}#}
+{#                        {% elseif (pr['id'] == speaker.id) and (pr['language'] is not same as locale) %}#}
+{#            <p>{{ pr['language'] }}: </p><a class="smallConfLink" href="{{ path('app_business_conference'~'.'~ pr['language'], {'slug': pr['slug'] }) }}">{{ pr['name'] }}</a>#}
+{#                            {% set pretreat_count = pretreat_count + 1 %}#}
 
-                        {% endif %}
-                {% endfor %}
-            {% endfor %}
-            {% if pretreat_count == 0 %}
-                <p class="noConf">Pas de retraite pour les particuliers données par ce conferencier.</p>
-            {% endif %}
-            
-            <h5>Atelier Particulier :</h5>
-            {% set pwork_count = 0 %}
-            {% for pwork in private_workshop %}
-                {% for pw in pwork %}
-                        {% if (pw['id'] == speaker.id) and (pw['language'] is same as locale)  %}
-                            <a class="importantLink" href="{{ path('app_business_conference'~'.'~ pw['language'], {'slug': pw['slug'] }) }}">{{ pw['name'] }}</a>
-                            {% set pwork_count = pwork_count + 1 %}
-                        {% elseif (pw['id'] == speaker.id) and (pw['language'] is not same as locale) %}
-            <p>{{ pw['language'] }}: </p><a class="smallConfLink" href="{{ path('app_business_conference'~'.'~ pw['language'], {'slug': pw['slug'] }) }}">{{ pw['name'] }}</a>
-                            {% set pwork_count = pwork_count + 1 %}
+{#                        {% endif %}#}
+{#                {% endfor %}#}
+{#            {% endfor %}#}
+{#            {% if pretreat_count == 0 %}#}
+{#                <p class="noConf">Pas de retraite pour les particuliers données par ce conferencier.</p>#}
+{#            {% endif %}#}
+{#            #}
+{#            <h5>Atelier Particulier :</h5>#}
+{#            {% set pwork_count = 0 %}#}
+{#            {% for pwork in private_workshop %}#}
+{#                {% for pw in pwork %}#}
+{#                        {% if (pw['id'] == speaker.id) and (pw['language'] is same as locale)  %}#}
+{#                            <a class="importantLink" href="{{ path('app_business_conference'~'.'~ pw['language'], {'slug': pw['slug'] }) }}">{{ pw['name'] }}</a>#}
+{#                            {% set pwork_count = pwork_count + 1 %}#}
+{#                        {% elseif (pw['id'] == speaker.id) and (pw['language'] is not same as locale) %}#}
+{#            <p>{{ pw['language'] }}: </p><a class="smallConfLink" href="{{ path('app_business_conference'~'.'~ pw['language'], {'slug': pw['slug'] }) }}">{{ pw['name'] }}</a>#}
+{#                            {% set pwork_count = pwork_count + 1 %}#}
 
-                        {% endif %}
-                {% endfor %}
-            {% endfor %}
-            {% if pwork_count == 0 %}
-                <p class="noConf">Pas d'ateliers pour les particuliers données par ce conferencier.</p>
-            {% endif %}
-            <h6>Langue parlée par le conferencier:</h6>
-            <span class="langConf">
-                {% for language in speaker.language %}
-                <p>{{language}}</p>
-                {% endfor %}
-            </span>
+{#                        {% endif %}#}
+{#                {% endfor %}#}
+{#            {% endfor %}#}
+{#            {% if pwork_count == 0 %}#}
+{#                <p class="noConf">Pas d'ateliers pour les particuliers données par ce conferencier.</p>#}
+{#            {% endif %}#}
+{#            <h6>Langue parlée par le conferencier:</h6>#}
+{#            <span class="langConf">#}
+{#                {% for language in speaker.language %}#}
+{#                <p>{{language}}</p>#}
+{#                {% endfor %}#}
+{#            </span>#}
 
         </section>
         {% endfor %}
