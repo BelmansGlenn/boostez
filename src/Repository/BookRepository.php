@@ -48,7 +48,7 @@ class BookRepository extends ServiceEntityRepository
     public function findAllBooksByLocaleOrderByImportance($locale)
     {
         return $this->createQueryBuilder('b')
-            ->select('b.image', 'b.title', 'b.description')
+            ->select('b.image', 'b.title', 'b.description', 'b.link')
             ->andWhere('b.language = :locale')
             ->setParameter('locale', $locale)
             ->andWhere('b.isVisible = true')

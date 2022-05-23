@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Boostez{% endblock %}
+{% block title %}{% trans into locale %}boostez.pageTitle{% endtrans %}{% endblock %}
 {% block importCss %}
     <link rel="stylesheet" href="{{ asset('css/boostez.css') }}">
 {% endblock %}
@@ -12,20 +12,17 @@
     <header>
         <figure><img src="{{ asset('img/helicopter.jpg') }}" alt="illustration-helicopter-taking-flight"></figure>
         <div>
-            <h1>Boostez</h1>
+            <h1>{% trans into locale %}navbar.boost{% endtrans %}</h1>
             <p>
-                L’objectif de « Boostez ! » est de vous redonner une <span class="blue600">vue d’ensemble</span>
-                sur ce qui compte aujourd’hui <span class="blue600">pour être en forme</span> dans son corps,
-                dans sa tête et performer selon ses objectifs.
+                {% trans into locale %}boostez.desc.part1{% endtrans %}
                 <br>
-                Vous y trouverez de <span class="blue600">nombreux trucs et astuces</span>, ainsi qu’une méthode pour vous mettre en mouvement et tenir dans la durée
+                {% trans into locale %}boostez.desc.part2{% endtrans %}
             </p>
         </div>
     </header>
     <section>
         <header>
-            <h1>La méthode :</h1>
-            <h2>Picorez dans la <span>table des matières</span> ci-dessous et faites votre propre plan d’action individuel « Boostez ! ».</h2>
+            <h2>{% trans into locale %}boostez.contents{% endtrans %}</h2>
             <div class="btnTb">
                 <i class="fa-solid fa-arrow-down"></i>
             </div>
@@ -35,13 +32,11 @@
         {# Picture here with colum flex section  #}
     </section>
     <article>
-        <h1>Vous êtes une entreprise ou une organisation ?</h1>
-        <p> 
-            Le livre peut être lu par tous, même si il a été particulièrement conçu pour les travailleurs de tous secteurs et de toutes fonctions.
-            Les patrons et les DRH peuvent l’acquérir pour leur personnel dans le cadre de leurs actions en faveur du bien-être au travail.
-            Ils peuvent en outre choisir de le personnaliser avec le mot du patron et les coordonnées des personnes de contact pour le bien-être au travail.
+        <h1>{% trans into locale %}boostez.company.title{% endtrans %}</h1>
+        <p>
+            {% trans into locale %}boostez.company.desc{% endtrans %}
         </p>
-        <a href="{{ path('app_contact') }}">Contacez-nous</a>
+        <a href="{{ path('app_contact') }}">{% trans into locale %}boostez.company.contact{% endtrans %}</a>
     </article>
 </section>
 <section class="clientOpinion">

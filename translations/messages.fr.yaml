@@ -56,16 +56,73 @@ footer:
     website: Site web réalisé par
 
 home:
+  page:
+    home: Accueil
+    book: Livres
   text:
     welcome: Bienvenue dans l’univers “Boostez”
     text1: Vous voulez chaque matin disposer de <b> 50 petites cuillères d’énergie </b> pour réaliser tous vos projets ?
-    text2: Vous voulez booster vos <b> collègues </b> et vos <b> équipes </b>?
-    text3: Notre mission est de vous redonner la <b> vue d’ensemble </b> sur ce qui compte aujourd’hui pour performer! Levez le nez du guidon et <b> réajustez </b> régulièrement.
-    text4: Nos <b> objectifs </b> pour vous
-    text5: énergie, performance, bienveillance et <b> plaisir </b>!
-    text6: Allez hop, on y va !
+    text2: Vous voulez des <b> équipes enthousiastes </b>?
+    text3: Notre mission est de vous redonner la <b> vue d’ensemble </b> sur ce qui compte aujourd’hui pour être en forme durablement!
+    text4: « <b>Boostez</b> » est un <b>guide pratique et ludique</b> pour votre politique de <b>bien-être au travail</b> et pour votre bien-être global.
+    text5: Le tout encadré par nos <span class="blue600">experts de terrain</span>
+    text6: conférenciers, formateurs, coachs.
+    text7: Allez hop, on y va !
   button:
     discover: Découvrir
     order: Commander
+  translation: Traductions
 
-newsletter: Vous voulez suivre nos activités, publications, conférences ou ateliers
+newsletter:
+  title: Newsletter
+  desc: Vous voulez suivre nos activités, publications, conférences ou ateliers
+
+boostez:
+  pageTitle: Boostez
+  desc:
+    part1: L’objectif de « Boostez » est de vous redonner une <b>vue d’ensemble</b> sur ce qui compte aujourd’hui pour être en forme dans son corps et dans sa tête et performer selon ses objectifs.
+    part2: Vous y trouverez de nombreux <b>trucs et astuces</b>, ainsi qu’une <b>méthode</b> pour vous mettre en mouvement et tenir dans la durée.
+  contents: Parcourez la table des matières et <b>piochez</b> dans les thèmes qui vous parlent à vous. Créez ensuite votre <b>plan d’action individuel</b> pour avancer petit pas par petit pas.
+  company:
+    title: Vous êtes une organisation ou une entreprise ?
+    desc: Boostez vos équipes ! <b>Personnalisez le livre</b> avec le mot du patron et votre logo et mettez en avant vos ressources humaines. Un <b>cadeau idéal</b> pour vos travailleurs ! Pensez aussi à la conférence et aux ateliers <b>bien-être au travail</b>.
+    contact: Contactez-nous
+
+conference:
+  pageTitle: Conference
+  speakers: Nos conférenciers, formateurs et coachs
+  title:
+    business:
+      part1: Pour les entreprises
+      part2: Découvrez nos conférences et ateliers pour booster vos équipes.
+    private:
+      part1: Pour les particuliers
+      part2: Rejoignez-nous pour un atelier ou une retraite pour vous boostez.
+  business:
+    conf:
+      title: Conferences
+      empty: Indisponible.
+    workshop:
+      title: Ateliers
+      empty: Indisponible.
+  private:
+    retreat:
+      title: Retraites
+      empty: Indisponible.
+
+bio:
+  title: BIOGRAPHIE
+  desc:
+    part1: Anne Everard est auteure, conférencière et formatrice. Passionnée par l’humain, elle est spécialisée dans le bien-être au travail et le bien-être global.
+    part2: Elle est l'auteure de « Boostez » (2022) qui est traduit en anglais et en néerlandais, ainsi que du « Guide du burn-out. Comment l’éviter, comment en sortir » (Albin Michel, 2017 - Livre de Poche, 2019) et de « 50 lepeltjes energie per dag. Je praktische gids om een burnout te voorkomen en te genezen » (Lannoo, 2018).
+    part3: Anne Everard est juriste de formation et a travaillé pendant une vingtaine d’années dans le secteur des télécommunications. Grâce à son expérience variée tant comme avocate chez Allen & Overy que dans les secteurs public (directrice-adjointe du Ministre fédéral de l’Économie) et privé (Directrice juridique et des ressources humaines chez TELE2) et comme entrepreneure (co-fondatrice du bureau de conférencier Read My Lips), elle a une vision holistique du monde du travail et peut facilement s'adapter à ses différents publics.
+    part4: Elle donne des conférences et anime des ateliers dans quatre langues (anglais, français, néerlandais, allemand).
+  logo: Ils nous font déjà confiance
+
+
+contact:
+  title: Comment pouvons-nous vous aider ?
+  info:
+    srl: SRL
+    country: Belgique
+    tva: TVA

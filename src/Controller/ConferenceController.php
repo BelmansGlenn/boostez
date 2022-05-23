@@ -27,7 +27,7 @@ class ConferenceController extends AbstractController
     CONST PRIVATE_COLOR = 'private_color';
 
 
-    #[Route(['FR' => '/conferences', 'NL' => '/keynotes', 'EN' => '/keynotes'], name: 'app_conference')]
+    #[Route(['FR' => '/conferences', 'NL' => '/keynotes', 'EN' => '/conferences'], name: 'app_conference')]
     public function index(EntityManagerInterface $entityManager, Request $request, ConferenceReviewRepository $conferenceReviewRepository): Response
     {
         $locale = $request->getLocale();
@@ -48,7 +48,7 @@ class ConferenceController extends AbstractController
         ]);
     }
 
-    #[Route(['FR' => '/entreprises/conference/{slug}', 'NL' => '/bedrijven/keynote/{slug}', 'EN' => '/companies/keynote/{slug}'], name: 'app_business_conference')]
+    #[Route(['FR' => '/entreprises/conference/{slug}', 'NL' => '/bedrijven/keynote/{slug}', 'EN' => '/companies/conference/{slug}'], name: 'app_business_conference')]
     public function businessConference($slug, BusinessConferenceRepository $businessConferenceRepository, Request $request): Response
     {
         $businessConf = $businessConferenceRepository->findOneConfBySlugAndByLocale($slug, $request->getLocale());
@@ -92,7 +92,7 @@ class ConferenceController extends AbstractController
     }
 
 
-    #[Route(['FR' => '/conferences/conferenciers', 'NL' => '/keynotes/sprekers', 'EN' => '/keynotes/speakers'], name: 'app_conference_speakers')]
+    #[Route(['FR' => '/conferences/conferenciers', 'NL' => '/keynotes/sprekers', 'EN' => '/conferences/speakers'], name: 'app_conference_speakers')]
     public function getSpeakers(SpeakerRepository $speakerRepository, Request $request): Response
     {
         $speakers = $speakerRepository->findAllSpeakersGetSimpleDataByLocaleOrderByImportance($request->getLocale());
@@ -106,7 +106,7 @@ class ConferenceController extends AbstractController
         ]);
     }
 
-    #[Route(['FR' => '/conferences/conferenciers/{id}', 'NL' => '/keynotes/sprekers/{id}', 'EN' => '/keynotes/speakers/{id}'], name: 'app_conference_speaker')]
+    #[Route(['FR' => '/conferences/conferenciers/{id}', 'NL' => '/keynotes/sprekers/{id}', 'EN' => '/conferences/speakers/{id}'], name: 'app_conference_speaker')]
     public function getSpeaker($id, SpeakerRepository $speakerRepository, Request $request, EntityManagerInterface $entityManager): Response
     {
         $locale = $request->getLocale();
