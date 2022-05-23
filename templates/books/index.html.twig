@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Livres{% endblock %}
+{% block title %}{% trans into locale %}home.page.books{% endtrans %}{% endblock %}
 {% block importCss %}
     <link rel="stylesheet" href="{{ asset('css/books.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
@@ -17,14 +17,14 @@
         <figure><img src="{{asset('uploads/images/books')}}/{{book.image}}" alt="image-cover-livre-boostez"></figure>
         <section>
             <h1>{{ book.title}}</h1>
-            <p>{{ book.description}}</p>
-            <a href="www.google.com">Commander</a>
+            <p>{{ book.description|raw}}</p>
+            <a href="{{ book.link }}">{% trans into locale %}home.button.order{% endtrans %}</a>
         </section>
     </article>
     {% endfor %}
     <footer>
         <header>
-            <h1>Traduction :</h1>
+            <h1>{% trans into locale %}home.translation{% endtrans %}</h1>
         </header>
     </footer>
 </section>
@@ -51,7 +51,7 @@
                                     <div class="infoBooks">
                                         <h1>{{ book.title }}</h1>
                                         <h2>{{ book.language }}</h2>
-                                        <a href="{{ book.link }}">Commander</a>
+                                        <a href="{{ book.link }}">{% trans into locale %}home.button.order{% endtrans %}</a>
                                     </div>
                                 </div>
                             </div>

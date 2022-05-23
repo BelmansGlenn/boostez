@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Biographie{% endblock %}
+{% block title %}Bio{% endblock %}
 {% block importCss %}
     <link rel="stylesheet" href="{{ asset('css/bio.css') }}">
 {% endblock %}
@@ -9,18 +9,23 @@
     <header>
         <figure><img src="{{ asset('img/anne-portrait.jpg') }}" alt="portrait-anne-everard-auteure-conferenciere-formatrice"></figure>
         <section>
-            <h1>Biographie</h1>
-            <p>Anne Everard est auteure, conférencière et formatrice. Passionnée par l’humain, elle est spécialisée dans le bien-être au travail et le bien-être global. Dans son corps et dans sa tête et de performer selon ses objectifs. Vous y trouverez de nombreux trucs et astuces ainsi qu’une méthode pour vous mettre en mouvement et tenir dans la durée.
+            <h1>{% trans into locale %}bio.title{% endtrans %}</h1>
+            <p>{% trans into locale %}bio.desc.part1{% endtrans %}</p>
+            <p>{% trans into locale %}bio.desc.part2{% endtrans %}</p>
+            <p>{% trans into locale %}bio.desc.part3{% endtrans %}</p>
+            <p>{% trans into locale %}bio.desc.part4{% endtrans %}</p>
         </section>
     </header>
+    {% if logo is not empty %}
     <article>
-        <h1>Ils nous font déjà confiance</h1>
+        <h1>{% trans into locale %}bio.logo{% endtrans %}</h1>
         <figure>
             {% for img in logo %}
                 <img src="{{asset('uploads/images/logo')}}/{{img.image}}" alt="logo-marque-soutient-confiance">
             {% endfor %}
         </figure>
     </article>
+    {% endif %}
 </section>
 
     {% include 'partials/newsletter.html.twig' %}

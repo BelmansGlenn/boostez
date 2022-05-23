@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% trans into locale %}navbar.home{% endtrans %}{% endblock %}
+{% block title %}{% trans into locale %}home.page.home{% endtrans %}{% endblock %}
 {% block importCss %}
 <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
 {% endblock %}
@@ -20,10 +20,13 @@
                 {% trans into locale %}home.text.text3{% endtrans %}
             <br>
             <br>
-            {% trans into locale %}home.text.text4{% endtrans %}: {% trans into locale %}home.text.text5{% endtrans %}
+                {% trans into locale %}home.text.text4{% endtrans %}
             <br>
             <br>
-            {% trans into locale %}home.text.text6{% endtrans %}
+            {% trans into locale %}home.text.text5{% endtrans %}: {% trans into locale %}home.text.text6{% endtrans %}
+            <br>
+            <br>
+            {% trans into locale %}home.text.text7{% endtrans %}
             <br>
             <br>
         </p>

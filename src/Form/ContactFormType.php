@@ -78,7 +78,7 @@ class ContactFormType extends AbstractType
                      new NotBlank(message: 'form.constraint.message.not_blank')
                  ],
                  'attr' => [
-                    'placeholder' => 'Comment pouvons-nous vous aider ?'
+                    'placeholder' => 'contact.title'
                 ]
             ])
             ->add('submit', SubmitType::class, [

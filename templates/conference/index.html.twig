@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Conférences{% endblock %}
+{% block title %}{% trans into locale %}conference.pageTitle{% endtrans %}{% endblock %}
 {% block importCss %}
     <link rel="stylesheet" href="{{ asset('css/conference.css') }}">
 {% endblock %}
@@ -10,25 +10,25 @@
     <section class="confEntreprise">
         <header>
             <div>
-                <h1 class="red">Pour les entreprises</h1>
-                <h2>Découvrez nos conférences et nos ateliers</h2>
+                <h1 class="red">{% trans into locale %}conference.title.business.part1{% endtrans %}</h1>
+                <h2>{% trans into locale %}conference.title.business.part2{% endtrans %}</h2>
             </div>
             <figure><img src="{{ asset('img/cerveau1.gif') }}" alt="illustration-helicopter-taking-flight"></figure>
         </header>
         <article>
-            <h1>Conférences</h1>
+            <h1>{% trans into locale %}conference.business.conf.title{% endtrans %}</h1>
             <section>
                 {% if businessConf is empty %}
-                    <h3>Aucunes conférences n'est disponible pour le moment.</h3>
+                    <h3>{% trans into locale %}conference.business.conf.empty{% endtrans %}</h3>
                 {% endif %}
                 {% for conf in businessConf %}
                     <a href="{{ path('app_business_conference', {'slug': conf.slug}) }}" class="bgRed">{{ conf.name }}</a>
                 {% endfor %}
             </section>
-            <h2>Ateliers</h2>
+            <h2>{% trans into locale %}conference.business.workshop.title{% endtrans %}</h2>
             <section>
                 {% if businessWorkshop is empty %}
-                    <h3>Aucun ateliers n'est disponible pour le moment.</h3>
+                    <h3>{% trans into locale %}conference.business.workshop.empty{% endtrans %}</h3>
                 {% endif %}
                 {% for conf in businessWorkshop %}
                     <a href="{{ path('app_business_workshop', {'slug': conf.slug}) }}" class="bgRed">{{ conf.name }}</a>
@@ -39,25 +39,25 @@
     <section class="confEntreprise">
         <header>
             <div>
-                <h1 class="blue">Pour les particuliers</h1>
-                <h2>Découvrez nos ateliers et retraites</h2>
+                <h1 class="blue">{% trans into locale %}conference.title.private.part1{% endtrans %}</h1>
+                <h2>{% trans into locale %}conference.title.private.part2{% endtrans %}</h2>
             </div>
             <figure><img src="{{ asset('img/cerveau.gif') }}" alt="illustration-helicopter-taking-flight"></figure>
         </header>
         <article>
-            <h1>Ateliers</h1>
+            <h1>{% trans into locale %}conference.business.workshop.title{% endtrans %}</h1>
             <section>
                 {% if privateWorkshop is empty %}
-                    <h3>Aucun ateliers n'est disponible pour le moment.</h3>
+                    <h3>{% trans into locale %}conference.business.workshop.empty{% endtrans %}</h3>
                 {% endif %}
                 {% for conf in privateWorkshop %}
                     <a href="{{ path('app_private_workshop', {'slug': conf.slug }) }}" class="bgBlue">{{ conf.name }}</a>
                 {% endfor %}
             </section>
-            <h2>Retraites</h2>
+            <h2>{% trans into locale %}conference.private.retreat.title{% endtrans %}</h2>
             <section>
                 {% if privateRetreat is empty %}
-                    <h3>Aucune retraite n'est disponible pour le moment.</h3>
+                    <h3>{% trans into locale %}conference.private.retreat.empty{% endtrans %}</h3>
                 {% endif %}
                 {% for conf in privateRetreat %}
                     <a href="{{ path('app_private_retreat', {'slug': conf.slug })  }}" class="bgBlue">{{ conf.name }}</a>
@@ -66,7 +66,7 @@
         </article>
     </section>
     <button>
-        <a href="{{ path('app_conference_speakers') }}">Nos conférenciers</a>
+        <a href="{{ path('app_conference_speakers') }}">{% trans into locale %}conference.speakers{% endtrans %}</a>
     </button>
 </section>
 
