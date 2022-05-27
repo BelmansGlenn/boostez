@@ -1,0 +1,194 @@
+.speaker {
+  padding: 0% 10%;
+}
+.speaker header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0px;
+}
+.speaker header div h1 {
+  font-size: 26px;
+  color: #007793;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 10px 0px;
+  font-weight: normal;
+}
+.speaker header div h2 {
+  font-weight: 400;
+  font-size: 18px;
+  margin: 10px 0px 0px 0px;
+}
+.speaker header div h2 .langSpeak {
+  font-weight: 700;
+  font-size: 14px;
+  opacity: 0.7;
+}
+.speaker header div h2 .speakRole {
+  text-transform: lowercase;
+}
+.speaker header div section {
+  line-height: 25px;
+  margin: 20px 0px 0px 0px;
+}
+.speaker header figure {
+  width: 300px;
+  height: 300px;
+}
+.speaker header figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.speaker article h1 {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: normal;
+}
+.speaker article h2 {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: normal;
+}
+.speaker article h3 {
+  font-size: 18px;
+  font-weight: normal;
+  opacity: 0.6;
+}
+.speaker article section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin: 15px 0px 35px 0px;
+}
+.speaker article section a {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: white;
+  padding: 10px 45px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 30%;
+  margin: 10px 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conferencier {
+  padding: 0% 10%;
+}
+.conferencier header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0px;
+}
+.conferencier header div h1 {
+  font-size: 26px;
+  color: #007793;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 10px 0px;
+  font-weight: normal;
+}
+.conferencier header div h2 {
+  font-size: 18px;
+  font-weight: normal;
+}
+.conferencier article {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.conferencier article section {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0px 0px 50px 0px;
+}
+.conferencier article section figure {
+  height: 330px;
+  width: 100%;
+}
+.conferencier article section figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.conferencier article section h1 {
+  font-size: 22px;
+  margin: 40px 0px 10px 0px;
+  text-align: center;
+  font-weight: 600;
+  text-align: center;
+}
+.conferencier article section p {
+  font-size: 16px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin: 5px 0px 10px 0px;
+  font-weight: 600;
+  text-align: center;
+}
+.conferencier article section .linkSpeaker {
+  background-color: #007793;
+  color: white;
+  padding: 10px 45px;
+  border-radius: 35px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 15px 0px 0px 0px;
+}
+.conferencier article section .linkSpeaker:hover {
+  font-weight: 700;
+  background-color: #39b4d0;
+}
+
+.red {
+  color: #d41726 !important;
+}
+
+.retourBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0% 0% 0% 5%;
+  margin: 50px 0px 0px 0px;
+  cursor: pointer;
+}
+.retourBtn i {
+  rotate: 90deg;
+  margin: 0px 10px 0px 0px;
+  font-size: 24px;
+  opacity: 0.7;
+}
+.retourBtn h1 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 778px) {
+  .conferencier article section {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .conferencier article section {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=speakers.css.map */

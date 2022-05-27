@@ -3,15 +3,100 @@
 {% block importCss %}
     {% block language %}
     {% endblock %}
+    <link rel="stylesheet" href="{{ asset('css/speakers.css') }}">
 {% endblock %}
 
 {% block body %}
+    <a href ={{ path('app_conference_speakers') }} class="retourBtn">
+        <i class="fa-solid fa-arrow-down"></i>
+        <h1>Retour</h1>
+    </a>
+<section class="speaker">
+    <header>
+        <div>
+            {% for speaker in speaker %}
+            <h1>{{speaker.firstname}} {{speaker.lastname}}</h1>
+            <section>{{speaker.desc|raw}}</section>
+            <h2>{{speaker.firstname}} {{speaker.lastname}} vous propose des conférences en 
+                {% for lang in speaker.language %}
+                    <span class="langSpeak">{{ lang }}</span>
+                {% endfor %}.
+            </h2>
+            {% endfor %}
+        </div>
+        {% for speaker in speaker %}
+        <figure><img src="{{ asset('uploads/images/speakers/') }}/{{ speaker.image }}" alt="conferencier-{{speaker.firstname}}{{speaker.lastname}}-portrait"></img></figure>
+        {% endfor %}
+    </header>
 
-    {{ dump(speaker) }}
+    {% for speaker in speaker %}
+    <section class="confEntreprise">
+        <header>
+            <div>
+                {# <h1 class="red">{% trans into locale %}conference.title.business.part1{% endtrans %}</h1> #}
+                <h2 class="red">Découvez les conférences de {{speaker.firstname}} {{speaker.lastname}}.</h2>
+            </div>
+            {# <figure><img src="{{ asset('img/cerveau1.gif') }}" alt="illustration-helicopter-taking-flight"></figure> #}
+        </header>
+        <article>
+            <h1>{% trans into locale %}conference.business.conf.title{% endtrans %}</h1>
+            <section>
+                {% if businessConf is empty %}
+                    <h3>{% trans into locale %}conference.business.conf.empty{% endtrans %}</h3>
+                {% endif %}
+                {% for conf in businessConf %}
+                    <a href="{{ path('app_business_conference', {'slug': conf.slug}) }}" class="bgRed">{{ conf.name }}</a>
+                {% endfor %}
+            </section>
+            <h2>{% trans into locale %}conference.business.workshop.title{% endtrans %}</h2>
+            <section>
+                {% if businessWorkshop is empty %}
+                    <h3>{% trans into locale %}conference.business.workshop.empty{% endtrans %}</h3>
+                {% endif %}
+                {% for conf in businessWorkshop %}
+                    <a href="{{ path('app_business_workshop', {'slug': conf.slug}) }}" class="bgRed">{{ conf.name }}</a>
+                {% endfor %}
+            </section>
+        </article>
+    </section>
+
+    <section class="confEntreprise">
+        <header>
+            <div>
+                {# <h1 class="blue">{% trans into locale %}conference.title.private.part1{% endtrans %}</h1> #}
+                <h2 class="blue">Rejoingez {{speaker.firstname}} {{speaker.lastname}} pour un atelier ou une retraite.</h2>
+            </div>
+            {# <figure><img src="{{ asset('img/cerveau.gif') }}" alt="illustration-helicopter-taking-flight"></figure> #}
+        </header>
+        <article>
+            <h1>{% trans into locale %}conference.business.workshop.title{% endtrans %}</h1>
+            <section>
+                {% if privateWorkshop is empty %}
+                    <h3>{% trans into locale %}conference.business.workshop.empty{% endtrans %}</h3>
+                {% endif %}
+                {% for conf in privateWorkshop %}
+                    <a href="{{ path('app_private_workshop', {'slug': conf.slug }) }}" class="bgBlue">{{ conf.name }}</a>
+                {% endfor %}
+            </section>
+            <h2>{% trans into locale %}conference.private.retreat.title{% endtrans %}</h2>
+            <section>
+                {% if privateRetreat is empty %}
+                    <h3>{% trans into locale %}conference.private.retreat.empty{% endtrans %}</h3>
+                {% endif %}
+                {% for conf in privateRetreat %}
+                    <a href="{{ path('app_private_retreat', {'slug': conf.slug })  }}" class="bgBlue">{{ conf.name }}</a>
+                {% endfor %}
+            </section>
+        </article>
+    </section>
+    {% endfor %}
+
+</section>
+    {# {{ dump(speaker) }}
     {{ dump(businessConf) }}
     {{ dump(businessWorkshop) }}
     {{ dump(privateRetreat) }}
-    {{ dump(privateWorkshop) }}
+    {{ dump(privateWorkshop) }} #}
 
 {% endblock %}
 
