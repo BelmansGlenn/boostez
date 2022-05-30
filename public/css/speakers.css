@@ -17,8 +17,8 @@
   font-weight: normal;
 }
 .speaker header div h2 {
+  font-size: 16px;
   font-weight: 400;
-  font-size: 18px;
   margin: 10px 0px 0px 0px;
 }
 .speaker header div h2 .langSpeak {
@@ -32,6 +32,9 @@
 .speaker header div section {
   line-height: 25px;
   margin: 20px 0px 0px 0px;
+}
+.speaker header div section div {
+  padding: 0% 12% 0% 0%;
 }
 .speaker header figure {
   width: 300px;
@@ -183,6 +186,19 @@
 @media screen and (max-width: 778px) {
   .conferencier article section {
     width: 40%;
+  }
+
+  .speaker header {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .speaker header div section div {
+    padding: 0% 0% 0% 0%;
+  }
+
+  .speaker header div h1 {
+    margin: 50px 0px 10px 0px;
   }
 }
 @media screen and (max-width: 480px) {

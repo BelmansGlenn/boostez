@@ -7,15 +7,16 @@
         width: 45%;
         object-fit: cover;
     }
-}
+} 
 .conferences {
     padding: 0% 10%;
     section {
         header {
             display: flex;
             flex-direction: row;
-            align-items: center;
+            align-items: end;
             justify-content: space-between;
+            margin: 0px 0px 80px 0px;
             div {
                 h1 {
                     font-size: 26px;
@@ -183,6 +184,9 @@
   @media screen and (max-width: 778px) { 
     .conferences section header figure img {
         width: 135px;
+    }
+    .confBoostez {
+        width: 200px !important;
     }
     
 }  

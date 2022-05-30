@@ -33,6 +33,17 @@
         <figure class="signature"><img src="{{ asset('img/signature.png') }}" alt="signature-Anne-Everard"></figure>
     </article>
     <footer>
+        {# {% block language %}
+                    {% if locale != 'FR' %}
+                        <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+                    {% endif %}
+                    {% if locale != 'NL' %}
+                            <figure><img src="{{ asset('img/boostezNL.jpg') }}" alt="image-cover-livre-boostez"></figure>
+                    {% endif %}
+                    {% if locale != 'EN' %}
+                        <figure><img src="{{ asset('img/boostezEN.jpg') }}" alt="image-cover-livre-boostez"></figure>
+                    {% endif %}
+        {% endblock %} #}
         <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
         <a href="https://www.google.com/">{% trans into locale %}home.button.discover{% endtrans %}</a>
         <a href="https://www.google.com/">{% trans into locale %}home.button.order{% endtrans %}</a>

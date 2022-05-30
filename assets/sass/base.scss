@@ -25,7 +25,7 @@
     li {
       list-style: none;
       font-family: 'Raleway', sans-serif;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 18px;
       margin: 0px 20px;
       color: #eee;
@@ -178,7 +178,7 @@
   bottom: 5%;
   animation: goTop 1s ease-in-out 1;
   z-index: 5;
-  border: 1px dotted black;
+  border: 1px solid black;
   @keyframes goTop {
       0% {
           opacity: 0;
