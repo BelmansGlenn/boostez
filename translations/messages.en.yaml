@@ -112,6 +112,9 @@ conference:
       title: OFFSITES
       empty: Unavailable.
 
+books:
+  pageTitle: Books
+
 bio:
   title: BIOGRAPHY
   desc:
