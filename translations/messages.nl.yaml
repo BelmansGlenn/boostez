@@ -109,6 +109,9 @@ conference:
       title: RETRAITES
       empty: Niet beschikbaar.
 
+books:
+  pageTitle: Boeken
+
 bio:
   title: BIOGRAFIE
   desc:

@@ -110,6 +110,9 @@ conference:
       title: Retraites
       empty: Indisponible.
 
+books:
+  pageTitle: Livres
+
 bio:
   title: BIOGRAPHIE
   desc:
