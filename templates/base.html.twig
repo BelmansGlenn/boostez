@@ -52,7 +52,7 @@
                         <li><a href="{{ path(app.request.attributes.get('_route') ~ '.NL') }}">nl</a></li>
                     {% endif %}
                     {% if locale != 'EN' %}
-                        <li><a href="{{ path(app.request.attributes.get('_route') ~ '.EN') }}">eng</a></li>
+                        <li><a href="{{ path(app.request.attributes.get('_route') ~ '.EN') }}">en</a></li>
                     {% endif %}
                 </ol>
             </div>
@@ -62,7 +62,7 @@
         {% block body %}{% endblock %}
         <footer class="footerMain">
         <div class="socialFoot">
-            <p>{% trans into locale %} footer.social {% endtrans %}:</p>
+            <p>{% trans into locale %} footer.social {% endtrans %} :</p>
             <nav>
                 <ul>
                     <li><a href="https://www.facebook.com/anne.everard.9" target="_blank"><i class="fab fa-facebook"></i></a></li>

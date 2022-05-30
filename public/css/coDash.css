@@ -1,0 +1,37 @@
+.coDash {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  font-family: "Raleway", sans-serif;
+  padding: 50px 0px 0px 0px;
+}
+.coDash h1 {
+  font-size: 42px;
+  opacity: 0.9;
+}
+.coDash form {
+  display: flex;
+  flex-direction: column;
+}
+.coDash form input {
+  margin: 10px 0px;
+}
+.coDash form button {
+  background-color: #007793;
+  color: white;
+  padding: 10px 45px;
+  border-radius: 35px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 20px 0px 0px 0px;
+  border: none;
+  cursor: pointer;
+}
+.coDash form button:hover {
+  font-weight: 700;
+  background-color: #51acc1;
+}
+
+/*# sourceMappingURL=coDash.css.map */

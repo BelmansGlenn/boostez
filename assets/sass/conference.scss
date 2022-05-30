@@ -1,11 +1,22 @@
+.bannerConf {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0Px 0px 0px;
+    img {
+        width: 45%;
+        object-fit: cover;
+    }
+} 
 .conferences {
     padding: 0% 10%;
     section {
         header {
             display: flex;
             flex-direction: row;
-            align-items: center;
+            align-items: end;
             justify-content: space-between;
+            margin: 0px 0px 80px 0px;
             div {
                 h1 {
                     font-size: 26px;
@@ -23,6 +34,10 @@
             figure {
                 img {
                     width: 200px;
+                }
+                .confBoostez {
+                    width: 400px;
+                    margin: 50px 0px 0px 0px;
                 }
             }
         }
@@ -158,140 +173,6 @@
     color: #007793;
 }
 
-.conferencier {
-    padding: 0% 10%;
-    header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        div {
-            h1 {
-                font-size: 26px;
-                color:#007793;
-                font-weight: 700;
-                text-transform: uppercase;
-                margin: 10px 0px;
-                font-weight: normal;
-            }
-            h2 {
-                font-size: 18px;
-                font-weight: normal;
-            }
-        }
-        figure {
-            img {
-                width: 200px;
-            }
-        }
-    }
-    article {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: flex-start;
-        section {
-            width: 30%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 0px 0px 50px 0px;
-            figure {
-                height: 330px;
-                width: 100%;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-            h1 {
-                text-transform: uppercase;
-                font-size: 22px;
-                margin: 24px 0px 4px 0px;
-                text-align: center;
-                font-weight: 600;
-            }
-            h3 {
-                margin: 2px 0px;
-                font-weight: 600;
-            }
-            div {
-                line-height: 25px;
-                padding: 0% 6%;
-                text-align: center;
-                margin: 10px 0px;
-                font-style: italic;
-            }
-            h5 {
-                font-size: 20px;
-                font-weight: 600;
-                text-transform: uppercase;
-                opacity: 0.7;
-                margin: 20px 0px 20px 0px;
-                text-align: center;
-                border-top: 1px solid #cac8c8;
-                padding: 25px 0px 0px 0px;
-            }
-            .importantLink {
-                font-size: 22px;
-                font-style: italic;
-                font-weight: 500;
-                opacity: 0.6;
-                &:hover {
-                    font-weight: 600;
-                    opacity: 0.9;
-                    text-transform: uppercase;
-                    font-style: normal;
-                }
-            }
-            .smallConfLink {
-                font-size: 18px;
-                font-style: italic;
-                opacity: 0.7;
-                &:hover {
-                    font-weight: 600;
-                    opacity: 0.9;
-                    text-transform: uppercase;
-                    font-style: normal;
-                }
-            }
-            .noConf {
-                color: #c8c2c2;
-                font-size: 14px;
-            }
-            h6 {
-                font-size: 14px;
-                margin: 35px 0px 0px 0px;
-                font-weight: 400;
-            }
-            .langConf {
-                display: flex;
-                flex-direction: row;
-                margin: 10px 0px 0px 0px;
-                font-weight: 700;
-            }
-            h2 {
-                font-weight: 600;
-                font-style: italic;
-                font-size: 22px;
-                opacity: 0.9;
-                margin: 10px 0px 10px 0px;
-                text-align: center;
-            }
-            p {
-                padding: 0% 6%;
-                text-align: center;
-                font-size: 14px;
-                opacity: 0.7;
-            }
-        }
-    }
-}
-
-
 // responsive start 
 
 @media screen and (max-width: 1280px) { 
@@ -303,6 +184,9 @@
   @media screen and (max-width: 778px) { 
     .conferences section header figure img {
         width: 135px;
+    }
+    .confBoostez {
+        width: 200px !important;
     }
     
 }  
