@@ -11,7 +11,7 @@
 {#        <h2>{% trans into locale %}contact.title{% endtrans %}</h2>#}
     </header>
     <article>
-        {{ form_start(contactForm,{'action': path('app_mail.FR', {'locale': locale })}) }}
+        {{ form_start(contactForm,{'action': path('app_mail.fr', {'locale': locale })}) }}
         <section>
             <div>
                 {{ form_row(contactForm.firstname) }}

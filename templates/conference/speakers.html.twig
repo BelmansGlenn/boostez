@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
-{% block title %}Conférenciers{% endblock %}
+{% block title %}
+    {% trans into locale %}conference.pageTitle.speakersTitle{% endtrans %}
+{% endblock %}
 {% block importCss %}
     <link rel="stylesheet" href="{{ asset('css/speakers.css') }}">
 {% endblock %}

@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BooksController extends AbstractController
 {
-    #[Route(['FR' => '/livres', 'NL' => '/boeken', 'EN' => '/books'], name: 'app_books')]
+    #[Route(['fr' => '/livres', 'nl' => '/boeken', 'en' => '/books'], name: 'app_books')]
     public function index(BookRepository $bookRepository, Request $request): Response
     {
 

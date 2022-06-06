@@ -91,7 +91,10 @@ boostez:
 
 
 conference:
-  pageTitle: Conferences
+  pageTitle:
+    pageTitle: Conferences
+    speakerTitle: Speaker
+    speakersTitle: Speakers
   speakers: Our conference speakers, trainers and coaches
   title:
     business:

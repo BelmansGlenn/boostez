@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-
+{{ conference.name }}
 {% endblock %}
 {% block importCss %}
     <link rel="stylesheet" href="{{ asset('css/conference.css') }}">
@@ -15,7 +15,7 @@
         <h1>Retour</h1>
     </a>
     <header>
-        <h1 class="{{ color }}">{{ confInfo[3] }} sommeil</h1>
+        <h1 class="{{ color }}">{{ confInfo[3] }} {{ conference.name }}</h1>
         <h2 class="{{ color }}">pour les {{ confInfo[2] }}</h2>
     </header>
     <article>

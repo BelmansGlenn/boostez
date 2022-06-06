@@ -45,14 +45,14 @@
             <div class="language">
                 <button class="btnLang"><i class="fa-solid fa-chevron-right"></i>{{ locale }}</button>
                 <ol class="languageSelect">
-                    {% if locale != 'FR' %}
-                        <li><a href="{{ path(app.request.attributes.get('_route') ~ '.FR') }}">fr</a></li>
+                    {% if locale != 'fr' %}
+                        <li><a href="{{ path(app.request.attributes.get('_route') ~ '.fr') }}">fr</a></li>
                     {% endif %}
-                    {% if locale != 'NL' %}
-                        <li><a href="{{ path(app.request.attributes.get('_route') ~ '.NL') }}">nl</a></li>
+                    {% if locale != 'nl' %}
+                        <li><a href="{{ path(app.request.attributes.get('_route') ~ '.nl') }}">nl</a></li>
                     {% endif %}
-                    {% if locale != 'EN' %}
-                        <li><a href="{{ path(app.request.attributes.get('_route') ~ '.EN') }}">en</a></li>
+                    {% if locale != 'en' %}
+                        <li><a href="{{ path(app.request.attributes.get('_route') ~ '.en') }}">en</a></li>
                     {% endif %}
                 </ol>
             </div>
@@ -74,7 +74,7 @@
         </div>
         <div class="menuFoot">
             <ul>
-                <li><a href="{{ path('app_redirect') }}">{% trans into locale %} navbar.home {% endtrans %}</a></li>
+                <li><a href="{{ path('app_home') }}">{% trans into locale %} navbar.home {% endtrans %}</a></li>
                 <li><a href="{{ path('app_boostez') }}">{% trans into locale %} navbar.boost {% endtrans %}</a></li>
                 <li><a href="{{ path('app_conference') }}">{% trans into locale %} navbar.keynotes {% endtrans %}</a></li>
                 <li><a href="{{ path('app_books') }}">{% trans into locale %} navbar.books {% endtrans %}</a></li>

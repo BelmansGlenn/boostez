@@ -1,17 +1,17 @@
-{% extends 'base.html.twig' %}
-
 {% block stylesheets%}
+    <link rel="shortcut icon" href="{{ asset('img/iconWebsite.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 {% endblock %}
+{% set locale = app.request.locale %}
 
-{% block title %}{% trans into locale %} bibliography.title {% endtrans %}{% endblock %}
+<title>{% block title %}{% trans into locale %} bibliography.title {% endtrans %}{% endblock %}</title>
 
 
 
 {% block body %}
 <section class="indexPage">
     <header>
-        <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+        <figure><img src="{{ asset('img/boostez_'~locale~'.jpg') }}" alt="image-cover-livre-boostez"></figure>
         <h1>A. NOTES ET SOURCES SCIENTIFIQUES</h1>
     </header>
     <article>
@@ -258,7 +258,7 @@
             <br>TROUCHAUD Marie-Jeanne, La Communication sans violence, éd. Eyrolles, 2019
             <br>WALKER Matthew, Pourquoi nous dormons. Ce que la science nous révèle pour mieux dormir, éd. Pocket, 2019
         <p>
-        <figure><img src="{{ asset('img/front.jpeg') }}" alt="image-cover-livre-boostez"></figure>
+        <figure><img src="{{ asset('img/boostez_'~locale~'.jpg') }}" alt="image-cover-livre-boostez"></figure>
     </footer>
 </section>
 {% endblock %}
