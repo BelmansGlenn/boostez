@@ -10,7 +10,7 @@ use App\Form\NewsletterFormType;
 
 class BiographyController extends AbstractController
 {
-    #[Route(['FR' => '/biographie', 'NL' => '/biografie', 'EN' => '/biography'], name: 'app_biography')]
+    #[Route(['fr' => '/biographie', 'nl' => '/biografie', 'en' => '/biography'], name: 'app_biography')]
     public function index(LogoRepository $logoRepository): Response
     {
         $form = $this->createForm(NewsletterFormType::class);

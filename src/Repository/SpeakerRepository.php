@@ -51,15 +51,15 @@ class SpeakerRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('s')
             ->select( 's.id', 's.image', 's.firstname', 's.lastname')
             ->andWhere('s.isVisible = true');
-        if ($locale === 'FR')
+        if ($locale === 'fr')
         {
             $qb->addSelect('s.statusFR AS status');
 
-        }elseif ($locale === 'NL')
+        }elseif ($locale === 'nl')
         {
             $qb->addSelect('s.statusNL AS status');
 
-        }elseif ($locale === 'EN')
+        }elseif ($locale === 'en')
         {
             $qb->addSelect('s.statusEN AS status');
 
@@ -77,15 +77,15 @@ class SpeakerRepository extends ServiceEntityRepository
             ->andWhere('s.id = :id')
             ->setParameter('id', $id)
             ->andWhere('s.isVisible = true');
-        if ($locale === 'FR')
+        if ($locale === 'fr')
         {
             $qb->addSelect('s.statusFR AS status', 's.DescriptionFR AS desc');
 
-        }elseif ($locale === 'NL')
+        }elseif ($locale === 'nl')
         {
             $qb->addSelect('s.statusNL AS status', 's.DescriptionNL AS desc');
 
-        }elseif ($locale === 'EN')
+        }elseif ($locale === 'en')
         {
             $qb->addSelect('s.statusEN AS status', 's.DescriptionEN AS desc');
 

@@ -3,7 +3,7 @@
         <h1>{% trans into locale %}newsletter.title{% endtrans %}</h1>
         <p>{% trans into locale %}newsletter.desc{% endtrans %}</p>
     </article>
-    {{ form_start(form, {'action': path('app_newsletter.FR', { 'locale': locale})}) }}
+    {{ form_start(form, {'action': path('app_newsletter.fr', { 'locale': locale})}) }}
     {{ form_errors(form) }}
     <section>
         {{ form_row(form.firstname) }}

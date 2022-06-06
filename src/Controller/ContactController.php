@@ -18,13 +18,11 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class ContactController extends AbstractController
 {
 
-    #[Route(['FR' => '/contact', 'NL' => '/contact', 'EN' => '/contact'], name: 'app_contact')]
+    #[Route(['fr' => '/contact', 'nl' => '/contact', 'en' => '/contact'], name: 'app_contact')]
     public function index(): Response
     {
 
         $form = $this->createForm(NewsletterFormType::class);
-
-        $contact = new Contact();
 
         $contactForm = $this->createForm(ContactFormType::class);
 
@@ -35,7 +33,7 @@ class ContactController extends AbstractController
         ]);
     }
 
-    #[Route(['FR' => '/envoyer_mail/{locale}'], name: 'app_mail')]
+    #[Route(['fr' => '/envoyer_mail/{locale}'], name: 'app_mail')]
     public function send($locale, Request $request, MailerService $mailerService, FormErrorService $formErrorService, FlasherInterface $flasher, TranslatorInterface $translator): Response
     {
 

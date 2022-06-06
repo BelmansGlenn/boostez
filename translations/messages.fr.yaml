@@ -89,7 +89,10 @@ boostez:
     contact: Contactez-nous
 
 conference:
-  pageTitle: Conference
+  pagetitle:
+    pageTitle: Conference
+    speakerTitle: Conférencier
+    speakersTitle: Conférenciers
   speakers: Nos conférenciers, formateurs et coachs
   title:
     business:

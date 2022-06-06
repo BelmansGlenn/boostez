@@ -3,27 +3,26 @@
 namespace App\Controller;
 
 use App\Entity\Newsletter;
+use App\Exception\RouteNotFoundException;
 use App\Form\NewsletterFormType;
 use App\Repository\BookReviewRepository;
 use App\Services\EntityManager\EntityManagerService;
 use App\Services\Error\FormErrorService;
 use Flasher\Prime\FlasherInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class BoostezController extends AbstractController
 {
 
-    #[Route('/{redirect}', name: 'app_redirect', defaults: ['redirect' => 'FR'] )]
-    public function redirectToHome(): Response
-    {
-        return $this->redirectToRoute('app_home.FR');
-    }
 
-    #[Route(['FR' => '/', 'NL' => '/', 'EN' => '/'], name: 'app_home', defaults: ['redirect' => 'FR'] )]
+
+    #[Route(['fr' => '/', 'nl' => '/', 'en' => '/'], name: 'app_home')]
     public function home(): Response
     {
         $form = $this->createForm(NewsletterFormType::class);
@@ -34,7 +33,7 @@ class BoostezController extends AbstractController
     }
 
 
-    #[Route(['FR' => '/boostez', 'NL' => '/boostjezelf', 'EN' => '/boostyourself'], name: 'app_boostez')]
+    #[Route(['fr' => '/boostez', 'nl' => '/boostjezelf', 'en' => '/boostyourself'], name: 'app_boostez')]
     public function boostez(BookReviewRepository $bookReviewRepository, Request $request): Response
     {
         $form = $this->createForm(NewsletterFormType::class);
@@ -48,7 +47,7 @@ class BoostezController extends AbstractController
         ]);
     }
 
-    #[Route(['FR' => '/newsletter/{locale}'], name: 'app_newsletter')]
+    #[Route(['fr' => '/newsletter/{locale}'], name: 'app_newsletter')]
     public function handleNewsletter($locale,Request $request, FormErrorService $formErrorService, EntityManagerService $entityManagerService, FlasherInterface $flasher, TranslatorInterface $translator)
     {
         $newsletter = new Newsletter();

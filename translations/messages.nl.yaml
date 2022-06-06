@@ -88,7 +88,10 @@ boostez:
     contact: Contacteer ons
 
 conference:
-  pageTitle: Keynotes
+  pageTitle:
+    pageTitle: Keynotes
+    speakerTitle: Spreker
+    speakersTitle: Sprekers
   speakers: Onze sprekers, trainers en coaches
   title:
     business:

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/error.css') }}">
+{% endblock %}
+
+
+{% set urlLang = app.request.pathInfo|split('/') %}
+
+{% if 'nl' in urlLang[1] %}
+    {% set locale = 'nl' %}
+{% elseif 'en' in urlLang[1] %}
+    {% set locale = 'en' %}
+{% else %}
+    {% set locale = 'fr' %}
+{% endif %}
+{% block title %}{% trans into locale %} error.notfound.title {% endtrans %}{% endblock %}
+
+{% block body %}
+
+
+
+
+{% endblock %}
