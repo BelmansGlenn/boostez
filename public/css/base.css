@@ -307,6 +307,11 @@
   .menuMain ul {
     flex-wrap: wrap;
     justify-content: center;
+    line-height: 30px;
+  }
+
+  .menuMain {
+    height: 160px;
   }
 }
 
