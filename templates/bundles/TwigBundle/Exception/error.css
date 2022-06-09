@@ -1,0 +1,60 @@
+.alert-success {
+  text-align: center;
+  margin: 20px 0px;
+  color: #389b51;
+}
+
+.alert-error {
+  text-align: center;
+  margin: 20px 0px;
+  color: #c64545;
+}
+
+.bundleTwig {
+  display: flex;
+  justify-content: center;
+}
+.bundleTwig .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bundleTwig .img img {
+  width: 500px;
+}
+.bundleTwig .error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bundleTwig .error .errorTitle {
+  text-align: center;
+  font-size: 3em;
+}
+.bundleTwig .error .errorText {
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.container {
+  margin: 30px;
+  max-width: 600px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: red;
+}
+
+.testerror {
+  color: red;
+}
+
+@media all and (max-width: 790px) {
+  .bundleTwig {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=error.css.map */
