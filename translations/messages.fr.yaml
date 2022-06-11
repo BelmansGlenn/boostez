@@ -89,7 +89,7 @@ boostez:
     contact: Contactez-nous
 
 conference:
-  pagetitle:
+  pageTitle:
     pageTitle: Conference
     speakerTitle: Conférencier
     speakersTitle: Conférenciers
