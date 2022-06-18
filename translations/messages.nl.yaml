@@ -68,6 +68,9 @@ home:
     text6: sprekers, trainers, coaches.
     text7: Laat ons starten!
   button:
+    link:
+      discover: boostjezelf
+      order: https://www.kazidomi.com/nl-BE/catalogue/produits/boek/7756-boost?searchQueryId=2c81e953ec9bc96eed4b1b21b63e128d
     discover: Ontdek
     order: Bestel
   translation: Vertalingen

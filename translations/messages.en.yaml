@@ -69,6 +69,9 @@ home:
     text6: keynote speakers, trainers and coaches.
     text7: Here we go!
   button:
+    link:
+      discover: boostyourself
+      order: https://www.kazidomi.com/en-BE/catalogue/produits/book/7756-boost?searchQueryId=2c81e953ec9bc96eed4b1b21b63e128d
     discover: Discover
     order: Order
   translation: Translations
