@@ -69,6 +69,9 @@ home:
     text6: conférenciers, formateurs, coachs.
     text7: Allez hop, on y va !
   button:
+    link:
+      discover: boostez
+      order: https://www.kazidomi.com/fr-BE/catalogue/produits/livre/7756-boostez-1?searchQueryId=2c81e953ec9bc96eed4b1b21b63e128d
     discover: Découvrir
     order: Commander
   translation: Traductions
