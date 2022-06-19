@@ -37,23 +37,18 @@
 }
 
 .error404 {
-  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.error404 p {
-  opacity: 0.8;
-  font-size: 100px;
-  background-color: #d41726;
-  color: white;
-  padding: 35px 60px 20px 60px;
-  border-radius: 8px;
-  font-family: initial;
   margin: 0px 0px 20px 0px;
+}
+.error404 figure {
+  width: 30%;
+}
+.error404 figure img {
+  width: 100%;
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 @keyframes shake {
   10%, 90% {
@@ -73,7 +68,7 @@
   font-weight: 400;
   line-height: 35px;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 @media all and (max-width: 790px) {
@@ -87,6 +82,10 @@
 
   .error404 p {
     font-size: 72px;
+  }
+
+  .error404 figure {
+    width: 80%;
   }
 
   .error404 {
