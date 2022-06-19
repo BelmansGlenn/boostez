@@ -3,12 +3,6 @@ let lang = document.querySelector(".language")
 let btnLang = document.querySelector(".btnLang")
 let langueSelect = document.querySelector(".languageSelect")
 
-console.log("yo");
-console.log(lang);
-console.log(langueSelect);
-
-console.log(window.scrollY);
-
 
 lang.addEventListener('mouseenter', e => {
     btnLang.style.visibility = "hidden"
@@ -21,6 +15,11 @@ lang.addEventListener('mouseenter', e => {
     console.log("out");
  })
 
+ function showLang() {
+  btnLang.style.visibility = "hidden"
+  langueSelect.style.display = "flex"
+}
+lang.addEventListener('touchstart', showLang)
 
 // Return top 
 const goBackBtn = document.querySelector("#goTop")
