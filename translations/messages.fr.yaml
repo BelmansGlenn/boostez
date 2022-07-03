@@ -7,19 +7,21 @@ bibliography:
   title: Bibliographie
   notes: NOTES ET SOURCES SCIENTIFIQUES
   boostez: Boostez ça veut dire quoi ?
+  page: p.
   method:
     title: La méthode pour me booster
     2: La théorie des petites cuillères a été inventée par Christine Miserandino. Je l’ai largement développée dans mon premier livre Le Guide du burn-out (éd. Albin Michel, 2017) afin d’aider à retrouver son énergie après un épuisement.
   sleep:
     title: Mon sommeil
     6: https://www.philips.be/fr/a-w/about/news/archive/standard/about/news/communiques/Healthcare/2018/20180315-etude-philips-le-belge-dort-mal-et-trop-peu.html
-    14: éd. Lannoo, 2017, p. 122-123 (en langue néerlandaise)
+    8: 
+    14: éd. Lannoo, 2017, p. 122-123
     21: https://www.lespecialiste.be/fr/actualites/les-campagnes-de-prevention-contre-l-usage-prolonge-de-somniferes-inefficaces-en-flandre.html
     22: pneumologue et responsable du laboratoire du sommeil aux cliniques universitaires Saint-Luc à Bruxelles.
   food:
     title: Mon alimentation et mes boissons
     25:
-      link: https://www.belgiqueenbonnesante.be/fr/etat-de-sante/determinants-de-sante
+      link: https://liguecontrelobesite.org/actualite/forte-progression-de-lobesite-en-france-en-2020/
       text: En Belgique, il y a 55% de personnes en surpoids dans la population adulte, dont 21% d’obèses
     48:
       a: Pour aller plus loin
@@ -32,8 +34,44 @@ bibliography:
     56: https://emploi.belgique.be/sites/default/files/content/publications/FR/TMS-BrochureGenerale.pdf
   brain:
     title: Mon cerveau
-    61: citée
+    61: citée dans
     67: La Méditation, c’est bon pour le cerveau, éd. Odile Jacob, 2019, p. 50
+    72: citée dans
+  recuperation:
+    title: Mon temps de récupération  
+  check-up:
+    title: Mon petit check-up  
+  bonheur:
+    title: Le bonheur est dans le pré  
+    82: cité dans
+  organisation:
+    title: L'organisation de mon travail  
+    83: Sondage Bloom at Work, cité par Michel Cymes,
+    85: Pratique décrite sur le blog www.qualitystreet.fr de Jean-Claude Grosjean et issue du Guide de survie aux réunions. 40 techniques pour transformer vos réunions en moments fun et productifs de Sacha Lopez, David Lemesle et Marc Bourguignon, éd. Pearson France, 2016,
+  outils:
+    title: Ma boîte à outils
+    87: Thomas d’Ansembourg, Cessez d’être gentil, soyez vrai !, édition illustrée par Alexis Nouailhat, éd. de l’Homme, 2021; 
+    90: Cf. la théorie de l’effet rebond (ou effet ironique) de Daniel Wegner, combinée à la théorie de l’intention paradoxale de Viktor Frankl. 
+  teletravail:
+    title: Mon télétravail réussi  
+  alarmes:
+    title: Les signaux d'alarmes
+  footer:
+    title: BIBLIOGRAPHIE
+    1: Cessez d’être gentil, soyez vrai ! éd de l’Homme, 2004, ou l’édition illustrée par Alexis Nouailhat, éd. de l’Homme, 2014 
+    2: Les 5 Clés du bonheur, éd. Robert Laffont
+    3: La Méthode simple pour en finir avec la cigarette, éd. Pocket, 2004 et La Méthode simple pour maîtriser sa consommation d’alcool, éd. Pocket, 2019. 
+    4: avec la collaboration de Patrice Romedenne
+    5: avec la collaboration de Julie Martory
+    6: Cultiver le bonheur pour les nuls en BD, éd. Delcourt et First
+    7: Guide du burn-out. Comment l’éviter, comment en sortir, éd. Albin Michel, 2017 
+    8: La Méditation, c’est bon pour le cerveau, éd. Odile Jacob
+    9: Les Quatre Accords toltèques. La voie de la liberté personnelle, éd. Poches Jouvence, 2016  
+    10: Le Meilleur Médicament c’est vous !, éd. Le Livre de Poche, 2016 
+    11: Pourquoi nous dormons. Ce que la science nous révèle pour mieux dormir, éd. Pocket, 2019 
+
+
+
 
 
 

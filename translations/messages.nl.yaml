@@ -5,7 +5,69 @@ error:
 
 bibliography:
   title: Bibliografie
-
+  notes: VOETNOTEN EN WETENSCHAPPELIJKE BRONNEN
+  boostez: BOOST jezelf, wat betekent dat?
+  page: blz.
+  method:
+    title: De methode om mezelf te boosten
+    2: De theorie van de lepeltjes energie werd bedacht door Christine Miserandino. Ik heb die sterk uitgewerkt in mijn eerste boek, 50 lepeltjes energie per dag. Je praktische gids om een burn-out te voorkomen en te genezen (Uitgeverij Lannoo, 2018).
+  sleep:
+    title: Mijn slaap
+    6: https://www.philips.be/a-w/about/news/archive/standard/about/news/persberichten/Healthcare/2018/20180315-philips-studie-belg-slaapt-onvoldoende-en-ongezond.html
+    14: Uitgeverij Lannoo, 2017, blz. 122-123
+    21: https://www.ugent.be/ps/sociologie/nl/actueel/nieuws/afbouw-chronisch-gebruik-van-slaap-en-kalmeringsmiddelen
+    22: longarts en hoofd van het slaaplaboratorium van het Universitair Ziekenhuis Saint-Luc in Brussel.
+  food:
+    title: Mijn eten en drinken
+    25:
+      link: https://liguecontrelobesite.org/actualite/forte-progression-de-lobesite-en-france-en-2020/
+      text: EIn België heeft 55% van de volwassen bevolking overgewicht, waarvan 21% obees is.
+    48:
+      a: Om verder te gaan
+      b: Giulia Enders, De mooie voedselmachine. De charme van je darmen, Uitgeverij Luitingh-Sijthoff, 2015.
+    49: Francisca Joly Gomez, gastro-enterologe, professor voeding aan de Université Paris-Diderot en auteur van L’Intestin, notre deuxième cerveau, éd. Poche Marabout, 2016
+  sport:
+    title: Mijn lichaamsbeweging
+    51: https://www.gezondbelgie.be/nl/gezondheidstoestand/determinanten-van-gezondheid
+    53: en de aangehaalde referenties
+    56: https://werk.belgie.be/nl/publicaties/preventie-van-musculoskeletale-aandoeningen-msa-algemene-informatiebrochure
+  brain:
+    title: Mijn hersenen
+    61: geciteerd in
+    67: Dr Steven Laureys, Het no-nonsense meditatieboek, Uitgeverij Borgerhoff &amp; Lamberigts, 2019
+    72: geciteerd in
+  recuperation:
+    title: Mijn recuperatietijd
+  check-up:
+    title: Mijn kleine check-up
+  bonheur:
+    title: Plezier hier
+    82: geciteerd in
+  organisation:
+    title: Mijn werkorganisatie 
+    83: Enquête Bloom at Work, geciteerd door Michel Cymes,
+    85: Praktijk beschreven op de blog www.qualitystreet.fr van Jean-Claude Grosjean en afkomstig uit de Guide de survie aux réunions. 40 techniques pour transformer vos réunions en moments fun et productifs van Sacha Lopez, David Lemesle en Marc Bourguignon, éd. Pearson France, 2016,
+  outils:
+    title: Mijn toolbox
+    87: Thomas d’Ansembourg, Stop met aardig zijn. Word jezelf door grenzen te stellen, Uitgeverij Ten Have, 2021;
+    90: Vgl. Daniel Wegners theorie van het rebound effect (of ironisch effect), gecombineerd met Viktor Frankls theorie van paradoxale intentie.
+  teletravail:
+    title: Succesvol telewerken 
+  alarmes:
+    title: Alarmsignalen
+  footer:
+    title: BIBLIOGRAFIE
+    1: Stop met aardig zijn. Word jezelf door grenzen te stellen, Uitgeverij Ten Have, 2021
+    2: Gelukkiger, wat er ook gebeurt. Uitgeverij Volt
+    3: Stoppen met roken, Uitgeverij Boekerij, 2018 en Stoppen met alcohol, Uitgeverij Boekerij, 2018
+    4: met medewerking van Patrice Romedenne
+    5: met medewerking van Julie Martory,
+    6: Cultiver le bonheur pour les nuls en BD, éd. Delcourt et First
+    7: 50 lepeltjes energie per dag. Je praktische gids om een burn-out te voorkomen en te genezen, Uitgeverij Lannoo, 2018
+    8: Het no-nonsense meditatieboek, Uitgeverij Borgerhoff &amp; Lamberigts
+    9: De vier inzichten. Wijsheid van de Tolteken, Uitgeverij Vbk Media, 2000 
+    10: Het beste medicijn ben je zelf. Uitgeverij Meulenhoff, 2014 (e-book)
+    11: Matthew, Slaap. Nieuwe wetenschappelijke inzichten over slapen en dromen, Uitgeverij de Geus, 2018 
 form:
   submit:
     subscribe: INSCHRIJVEN
