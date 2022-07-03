@@ -5,6 +5,35 @@ error:
 
 bibliography:
   title: Bibliographie
+  notes: NOTES ET SOURCES SCIENTIFIQUES
+  boostez: Boostez ça veut dire quoi ?
+  method: La méthode pour me booster
+    2: La théorie des petites cuillères a été inventée par Christine Miserandino.
+      Je l’ai largement développée dans mon premier livre Le Guide du burn-out (éd. Albin Michel, 2017)
+      afin d’aider à retrouver son énergie après un épuisement.
+  sleep: Mon sommeil
+    6: https://www.philips.be/fr/a-w/about/news/archive/standard/about/news/communiques/Healthcare/2018/20180315-etude-philips-le-belge-dort-mal-et-trop-peu.html
+    14: éd. Lannoo, 2017, p. 122-123 (en langue néerlandaise)
+    21: https://www.lespecialiste.be/fr/actualites/les-campagnes-de-prevention-contre-l-usage-prolonge-de-somniferes-inefficaces-en-flandre.html
+    22: pneumologue et responsable du laboratoire du sommeil aux cliniques universitaires Saint-Luc à Bruxelles.
+  food: Mon alimentation et mes boissons
+    25:
+      link: https://www.belgiqueenbonnesante.be/fr/etat-de-sante/determinants-de-sante
+      text: En Belgique, il y a 55% de personnes en surpoids dans la population adulte, dont 21% d’obèses
+    48:
+      a: Pour aller plus loin
+      b: Giulia Elders, Le Charme discret de l’intestin, éd. Actes Sud
+    49: Francisca Joly Gomez, gastro-entérologue, professeure en nutrition à l'université ParisDiderot et auteure de l’ouvrage L’Intestin, notre deuxième cerveau, éd. Poche Marabout, 2016
+  sport: Mon activité physique
+    51: https://www.belgiqueenbonnesante.be/fr/etat-de-sante/determinants-de-sante
+    53: et les références citées
+    56: https://emploi.belgique.be/sites/default/files/content/publications/FR/TMS-BrochureGenerale.pdf
+  brain: Mon cerveau
+    61: citée
+    67: La Méditation, c’est bon pour le cerveau, éd. Odile Jacob, 2019, p. 50
+
+
+
 
 form:
   submit:
@@ -135,3 +164,4 @@ contact:
     srl: SRL
     country: Belgique
     tva: TVA
+
