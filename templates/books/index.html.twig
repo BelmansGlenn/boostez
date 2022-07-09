@@ -22,6 +22,7 @@
         </section>
     </article>
     {% endfor %}
+    {% if otherBooks|length > 0 %}
     <footer>
         <header>
             <h1>{% trans into locale %}home.translation{% endtrans %}</h1>
@@ -29,7 +30,8 @@
     </footer>
 </section>
 
-{# SLIDER #}
+{# SLIDER #}{{ dump(otherBooks) }}
+
 <section id="slider">
             <div class="container">
                 <div class="subcontainer">
@@ -61,5 +63,6 @@
                 </div>
             </div>
 </section>
+    {% endif %}
     {% include 'partials/newsletter.html.twig' %}
 {% endblock %}
