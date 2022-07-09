@@ -67,5 +67,4 @@ class BoostezController extends AbstractController
 
     }
 
-
 }

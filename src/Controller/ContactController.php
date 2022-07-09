@@ -47,7 +47,7 @@ class ContactController extends AbstractController
         {
             try {
                 $mailerService->send(
-                    'anne-everard@boostez.com',
+                    'contact@anneeverard.com',
                     'Nouveau message',
                     'contact/email.html.twig',
                     $contact

@@ -32,7 +32,7 @@ class MailerService
     {
         try {
             $email = (new TemplatedEmail())
-                ->from($object->getEmail())
+                ->from('contact@anneeverard.com')
                 ->to(new Address($to, 'Anne Everard'))
                 ->subject($subject)
                 ->htmlTemplate($template)
