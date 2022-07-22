@@ -116,7 +116,7 @@ form:
 navbar:
   home: ACCUEIL
   boost: BOOSTEZ
-  keynotes: CONFERENCES
+  keynotes: CONFÉRENCES
   books: LIVRES
 
 footer:
@@ -151,7 +151,7 @@ newsletter:
   desc: Vous voulez suivre nos activités, publications, conférences ou ateliers
 
 boostez:
-  pageTitle: Boostez
+  pageTitle: BOOSTEZ
   desc:
     part1: L’objectif de « Boostez » est de vous redonner une <b>vue d’ensemble</b> sur ce qui compte aujourd’hui pour être en forme dans son corps et dans sa tête et performer selon ses objectifs.
     part2: Vous y trouverez de nombreux <b>trucs et astuces</b>, ainsi qu’une <b>méthode</b> pour vous mettre en mouvement et tenir dans la durée.
@@ -194,7 +194,7 @@ bio:
   desc:
     part1: Anne Everard est auteure, conférencière et formatrice. Passionnée par l’humain, elle est spécialisée dans le bien-être au travail et le bien-être global.
     part2: Elle est l'auteure de « Boostez » (2022) qui est traduit en anglais et en néerlandais, ainsi que du « Guide du burn-out. Comment l’éviter, comment en sortir » (Albin Michel, 2017 - Livre de Poche, 2019) et de « 50 lepeltjes energie per dag. Je praktische gids om een burnout te voorkomen en te genezen » (Lannoo, 2018).
-    part3: Anne Everard est juriste de formation et a travaillé pendant une vingtaine d’années dans le secteur des télécommunications. Grâce à son expérience variée tant comme avocate chez Allen & Overy que dans les secteurs public (directrice-adjointe du Ministre fédéral de l’Économie) et privé (Directrice juridique et des ressources humaines chez TELE2) et comme entrepreneure (co-fondatrice du bureau de conférencier Read My Lips), elle a une vision holistique du monde du travail et peut facilement s'adapter à ses différents publics.
+    part3: Anne Everard est juriste de formation et a travaillé pendant une vingtaine d’années dans le secteur des télécommunications. Grâce à son expérience variée tant comme avocate chez Allen & Overy que dans les secteurs public (directrice-adjointe du Ministre fédéral de l’Économie) et privé (Directrice juridique et des ressources humaines chez TELE2) et comme entrepreneure (co-fondatrice du bureau de conférenciers Read My Lips), elle a une vision holistique du monde du travail et peut facilement s'adapter à ses différents publics.
     part4: Elle donne des conférences et anime des ateliers dans quatre langues (anglais, français, néerlandais, allemand).
   logo: Ils nous font déjà confiance
 

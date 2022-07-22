@@ -11,7 +11,6 @@
   line-height: 25px;
 }
 .boostez header div h1 {
-  text-transform: uppercase;
   font-size: 42px;
   font-weight: 800;
   color: #d41726;
@@ -83,6 +82,11 @@
   font-weight: 700;
 }
 
+@media screen and (min-width: 1580px) {
+  .boostez header {
+    padding: 0px 15% 0px 10%;
+  }
+}
 @media screen and (max-width: 975px) {
   .boostez header figure img {
     width: 400px;
@@ -115,6 +119,11 @@
   .boostez section header h1 {
     font-size: 22px;
     margin: 20px 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .boostez header {
+    margin: 10px 0px 0px 0px;
   }
 }
 

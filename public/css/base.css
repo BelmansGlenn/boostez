@@ -89,18 +89,19 @@
   flex-direction: column;
 }
 .footerMain .copyright h1 {
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 20px;
 }
 .footerMain .copyright h1 span {
   font-weight: 400;
 }
 .footerMain .copyright h2 {
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: normal;
 }
 .footerMain .copyright h3 {
-  font-size: 12px;
+  font-size: 10px;
   margin: 10px 0px 0px 0px;
   font-weight: normal;
 }
@@ -300,7 +301,7 @@
   }
 
   .footerMain .menuFoot ul li {
-    font-size: 16px;
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 480px) {

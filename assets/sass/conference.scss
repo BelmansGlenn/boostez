@@ -14,7 +14,7 @@
         header {
             display: flex;
             flex-direction: row;
-            align-items: end;
+            align-items: center;
             justify-content: space-between;
             margin: 0px 0px 80px 0px;
             div {
@@ -33,7 +33,7 @@
             }
             figure {
                 img {
-                    width: 200px;
+                    width: 235px;
                 }
                 .confBoostez {
                     width: 400px;
@@ -166,6 +166,24 @@
     }
 }
 
+.ctcConf {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0px 0px 0px;
+    a {
+        background-color: #007793;
+        color: white;
+        padding: 10px 45px;
+        border-radius: 35px;
+        text-transform: uppercase;
+        font-weight: 600;
+        &:hover {
+            background-color: #2290a9;
+            font-weight: 700;
+        }
+    }
+}
+
 .business_color {
     color: #d41726;
 }
@@ -175,6 +193,12 @@
 
 // responsive start 
 
+@media screen and (min-width: 1580px) { 
+      .conferences {
+        padding: 0% 15%;
+      }
+}
+
 @media screen and (max-width: 1280px) { 
     .conferences section article section a {
         width: auto;
@@ -183,7 +207,7 @@
 
   @media screen and (max-width: 778px) { 
     .conferences section header figure img {
-        width: 135px;
+        width: 185px;
     }
     .confBoostez {
         width: 200px !important;
@@ -205,13 +229,14 @@
         font-weight: 600;
       }
       .conferences section header figure img {
-        width: 100px;
+        width: 150px;
       }
     
 }
 @media screen and (max-width: 480px) { 
     .conferences section header {
         flex-direction: column;
+        text-align: center;
       }
       .conferences section article h1 {
         font-size: 20px;
@@ -226,5 +251,8 @@
       }
       .conferences button a {
         padding: 15px 60px;
+      }
+      .conferences section header figure .confBoostez {
+        margin: 40px 0px 30px 0px;
       }
 }

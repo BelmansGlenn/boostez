@@ -16,7 +16,7 @@
 .accueil article .signature {
   position: absolute;
   bottom: -105px;
-  right: 24%;
+  right: 35%;
 }
 .accueil article .signature img {
   width: 200px;
@@ -55,12 +55,12 @@
   .accueil article img {
     width: 200px;
   }
+
+  .accueil article .signature {
+    right: 30%;
+  }
 }
 @media screen and (max-width: 620px) {
-  .accueil article img {
-    width: 100px;
-  }
-
   .accueil article p {
     font-size: 14px;
   }
@@ -89,7 +89,7 @@
   .accueil article .signature {
     position: inherit;
     right: inherit;
-    margin: 20px 0px 0px 0px;
+    margin: -40px 0px 0px 0px;
   }
 }
 
