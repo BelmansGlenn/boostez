@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\BusinessWorkshop;
+use App\Entity\PrivateCoaching;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
@@ -13,13 +13,12 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class BusinessWorkshopCrudController extends AbstractCrudController
+class PrivateCoachingCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return BusinessWorkshop::class;
+        return PrivateCoaching::class;
     }
-
 
     public function configureFields(string $pageName): iterable
     {

@@ -117,6 +117,13 @@ conference:
     retreat:
       title: OFFSITES
       empty: Unavailable.
+    coaching:
+      title: Coaching
+  precise:
+    for: for
+    back: Return
+    inthisconf1: IN THIS
+    inthisconf2: YOU WILL DISCOVER
 
 books:
   pageTitle: Books

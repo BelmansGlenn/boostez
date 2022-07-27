@@ -4,12 +4,14 @@ namespace App\Controller;
 
 use App\Entity\BusinessConference;
 use App\Entity\BusinessWorkshop;
+use App\Entity\PrivateCoaching;
 use App\Entity\PrivateRetreat;
 use App\Entity\PrivateWorkshop;
 use App\Form\NewsletterFormType;
 use App\Repository\BusinessConferenceRepository;
 use App\Repository\BusinessWorkshopRepository;
 use App\Repository\ConferenceReviewRepository;
+use App\Repository\PrivateCoachingRepository;
 use App\Repository\PrivateRetreatRepository;
 use App\Repository\PrivateWorkshopRepository;
 use App\Repository\SpeakerRepository;
@@ -35,6 +37,7 @@ class ConferenceController extends AbstractController
         $businessWorkshop = $entityManager->getRepository(BusinessWorkshop::class)->findAllConfNameByLocale($locale);
         $privateWorkshop = $entityManager->getRepository(PrivateWorkshop::class)->findAllConfNameByLocale($locale);
         $privateRetreat = $entityManager->getRepository(PrivateRetreat::class)->findAllConfNameByLocale($locale);
+        $privateCoaching = $entityManager->getRepository(PrivateCoaching::class)->findAllConfNameByLocale($locale);
         $review = $conferenceReviewRepository->findTwoConfReviewByLocale($locale);
 
         return $this->render('conference/index.html.twig', [
@@ -43,6 +46,7 @@ class ConferenceController extends AbstractController
             'businessWorkshop' => $businessWorkshop,
             'privateWorkshop' => $privateWorkshop,
             'privateRetreat' => $privateRetreat,
+            'privateCoaching' => $privateCoaching,
             'review' => $review
         ]);
     }
@@ -90,6 +94,17 @@ class ConferenceController extends AbstractController
         ]);
     }
 
+    #[Route(['fr' => '/particuliers/coaching/{slug}', 'nl' => '/particulieren/coaching/{slug}', 'en' => '/individuals/coaching/{slug}'], name: 'app_private_coaching')]
+    public function privateCoaching($slug, PrivateCoachingRepository $privateCoachingRepository, Request $request): Response
+    {
+        $privateCoaching = $privateCoachingRepository->findOneConfBySlugAndByLocale($slug, $request->getLocale());
+
+        return $this->render('conference/conference.html.twig', [
+            'conference' => $privateCoaching,
+            'color' => self::PRIVATE_COLOR
+        ]);
+    }
+
 
     #[Route(['fr' => '/conferences/conferenciers', 'nl' => '/keynotes/sprekers', 'en' => '/conferences/speakers'], name: 'app_conference_speakers')]
     public function getSpeakers(SpeakerRepository $speakerRepository, Request $request): Response
@@ -117,6 +132,7 @@ class ConferenceController extends AbstractController
         $businessConf = $entityManager->getRepository(BusinessConference::class)->findNameAndSlugByLocaleFromConfBySpeakerId($id, $locale);
         $businessWorkshop = $entityManager->getRepository(BusinessWorkshop::class)->findNameAndSlugByLocaleFromConfBySpeakerId($id, $locale);
         $privateRetreat = $entityManager->getRepository(PrivateRetreat::class)->findNameAndSlugByLocaleFromConfBySpeakerId($id, $locale);
+        $privateCoaching = $entityManager->getRepository(PrivateCoaching::class)->findNameAndSlugByLocaleFromConfBySpeakerId($id, $locale);
         $privateWorkshop = $entityManager->getRepository(PrivateWorkshop::class)->findNameAndSlugByLocaleFromConfBySpeakerId($id, $locale);
 
         $form = $this->createForm(NewsletterFormType::class);
@@ -126,6 +142,7 @@ class ConferenceController extends AbstractController
             'businessConf' => $businessConf,
             'businessWorkshop' => $businessWorkshop,
             'privateRetreat' => $privateRetreat,
+            'privateCoaching' => $privateCoaching,
             'privateWorkshop' => $privateWorkshop,
             'form' => $form->createView(),
         ]);

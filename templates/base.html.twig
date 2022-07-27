@@ -27,9 +27,10 @@
             <script src="{{ asset('js/base.js') }}" defer></script>
 {#            {{ encore_entry_script_tags('app') }}#}
         {% endblock %}
-        {{ flasher_render() }}
+
     </head>
     <body>
+
         <div id="goTop"><i class="fas fa-long-arrow-alt-up"></i></div>
         <header class="menuMain">
             <h1><a href="{{ path('app_home')}}">Anne Everard</a></h1>
@@ -59,7 +60,11 @@
             {% endblock %}
         </header>
 
-        {% block body %}{% endblock %}
+            {% block body %}{% endblock %}
+
+        <div id="flash_toastr">
+            {{ flasher_render() }}
+        </div>
         <footer class="footerMain">
         <div class="socialFoot">
             <p>{% trans into locale %} footer.social {% endtrans %} :</p>

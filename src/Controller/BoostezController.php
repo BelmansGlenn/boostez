@@ -8,7 +8,9 @@ use App\Form\NewsletterFormType;
 use App\Repository\BookReviewRepository;
 use App\Services\EntityManager\EntityManagerService;
 use App\Services\Error\FormErrorService;
+use Flasher\Notyf\Prime\NotyfFactory;
 use Flasher\Prime\FlasherInterface;
+use Flasher\Toastr\Prime\ToastrFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -48,7 +50,7 @@ class BoostezController extends AbstractController
     }
 
     #[Route(['fr' => '/newsletter/{locale}'], name: 'app_newsletter')]
-    public function handleNewsletter($locale,Request $request, FormErrorService $formErrorService, EntityManagerService $entityManagerService, FlasherInterface $flasher, TranslatorInterface $translator)
+    public function handleNewsletter($locale,Request $request, FormErrorService $formErrorService, EntityManagerService $entityManagerService, NotyfFactory $flasher, TranslatorInterface $translator)
     {
         $newsletter = new Newsletter();
         $form = $this->createForm(NewsletterFormType::class, $newsletter);

@@ -62,6 +62,15 @@
                     <a href="{{ path('app_private_retreat', {'slug': conf.slug })  }}" class="bgBlue">{{ conf.name }}</a>
                 {% endfor %}
             </section>
+            <h2>{% trans into locale %}conference.private.coaching.title{% endtrans %}</h2>
+            <section>
+                {% if privateCoaching is empty %}
+                    <h3>{% trans into locale %}conference.private.retreat.empty{% endtrans %}</h3>
+                {% endif %}
+                {% for conf in privateCoaching %}
+                    <a href="{{ path('app_private_coaching', {'slug': conf.slug })  }}" class="bgBlue">{{ conf.name }}</a>
+                {% endfor %}
+            </section>
         </article>
     </section>
     <button>

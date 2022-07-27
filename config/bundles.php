@@ -17,4 +17,5 @@ return [
     Zenstruck\Foundry\ZenstruckFoundryBundle::class => ['dev' => true, 'test' => true],
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
     Flasher\Symfony\FlasherSymfonyBundle::class => ['all' => true],
+    Flasher\Notyf\Symfony\FlasherNotyfSymfonyBundle::class => ['all' => true],
 ];
