@@ -163,20 +163,20 @@ boostez:
 
 conference:
   pageTitle:
-    pageTitle: Conference
+    pageTitle: Conférence
     speakerTitle: Conférencier
     speakersTitle: Conférenciers
   speakers: Nos conférenciers, formateurs et coachs
   title:
     business:
       part1: Pour les entreprises
-      part2: Découvrez nos conférences et ateliers pour booster vos équipes.
+      part2: Découvrez nos conférences et ateliers pour inspirer vos équipes.
     private:
       part1: Pour les particuliers
-      part2: Rejoignez-nous pour un atelier ou une retraite pour vous boostez.
+      part2: Rejoignez-nous pour un atelier ou une retraite pour vous booster.
   business:
     conf:
-      title: Conferences
+      title: Conférences
       empty: Indisponible.
     workshop:
       title: Ateliers
@@ -185,6 +185,13 @@ conference:
     retreat:
       title: Retraites
       empty: Indisponible.
+    coaching:
+      title: Coaching
+  precise:
+    for: pour les
+    back: Retour
+    inthisconf1: DANS
+    inthisconf2: VOUS DÉCOUVRIREZ
 
 books:
   pageTitle: Livres

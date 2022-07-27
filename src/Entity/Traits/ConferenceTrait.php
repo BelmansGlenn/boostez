@@ -18,8 +18,7 @@ trait ConferenceTrait
     #[ORM\Column(type: 'string', length: 255, unique: true)]
     private string $slug;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     #[Assert\Length(max: 255)]
     private string $video;
 
@@ -72,20 +71,22 @@ trait ConferenceTrait
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getVideo(): string
+    public function getVideo(): ?string
     {
         return $this->video;
     }
 
     /**
-     * @param string $video
+     * @param string|null $video
      */
-    public function setVideo(string $video): void
+    public function setVideo(?string $video): void
     {
         $this->video = $video;
     }
+
+
 
     /**
      * @return array

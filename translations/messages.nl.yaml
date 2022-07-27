@@ -76,7 +76,7 @@ form:
     firstname: VOORNAAM
     lastname: NAAM
     email: EMAIL
-    company: BEDRIJFNAAM
+    company: BEDRIJFSNAAM
     phone: TELEFOON
   constraint:
     unique: Deze email is al in gebruik.
@@ -139,7 +139,7 @@ home:
 
 newsletter:
   title: Nieuwsbrief
-  desc: Wil je onze activiteiten, publicaties, keynotes of ateliers volgen?
+  desc: Wil je onze activiteiten, publicaties, keynotes of workshops volgen?
 
 boostez:
   pageTitle: BOOST jezelf
@@ -149,7 +149,7 @@ boostez:
   contents: Ga door de inhoudsopgave en <b>kies</b> de thema’s uit die u aanspreken. Maak vervolgens je <b>persoonlijk actieplan</b> om stap voor stap vooruit te gaan.
   company:
     title: U bent een organisatie of een bedrijf ?
-    desc: Geef je teams een boost! <b>Personaliseer het boek</b> met het voorwoord van uw CEO, uw logo en nuttige interne HR contacten naar voor. Een <b>ideaal cadeau</b> voor uw werknemers! Ook inspirerend voor uw medewerkers zijn onze keynotes en workshops omtrent <b>welzijn op het werk</b>.
+    desc: Geef je teams een boost! <b>Personaliseer het boek</b> met het voorwoord van uw CEO, uw logo en breng nuttige interne HR contacten naar voor. Een <b>ideaal cadeau</b> voor uw werknemers! Ook inspirerend voor uw medewerkers zijn onze keynotes en workshops omtrent <b>welzijn op het werk</b>.
     contact: Contacteer ons
 
 conference:
@@ -176,6 +176,13 @@ conference:
     retreat:
       title: RETRAITES
       empty: Niet beschikbaar.
+    coaching:
+      title: Coaching
+  precise:
+    for: voor de
+    back: Opbrengst
+    inthisconf1: IN DEZE
+    inthisconf2: ONDEK JE
 
 books:
   pageTitle: Boeken

@@ -131,11 +131,11 @@
     "nikic/php-parser": {
         "version": "v4.13.2"
     },
-    "php-flasher/flasher": {
-        "version": "v1.0.3"
+    "php-flasher/flasher-notyf-symfony": {
+        "version": "v1.7.0"
     },
     "php-flasher/flasher-symfony": {
-        "version": "v1.0.3"
+        "version": "v1.7.0"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"

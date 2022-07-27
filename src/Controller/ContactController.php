@@ -8,7 +8,9 @@ use App\Form\NewsletterFormType;
 use App\Model\Contact;
 use App\Services\Error\FormErrorService;
 use App\Services\Mailer\MailerService;
+use Flasher\Notyf\Prime\NotyfFactory;
 use Flasher\Prime\FlasherInterface;
+use Flasher\Toastr\Prime\ToastrFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -34,7 +36,7 @@ class ContactController extends AbstractController
     }
 
     #[Route(['fr' => '/envoyer_mail/{locale}'], name: 'app_mail')]
-    public function send($locale, Request $request, MailerService $mailerService, FormErrorService $formErrorService, FlasherInterface $flasher, TranslatorInterface $translator): Response
+    public function send($locale, Request $request, MailerService $mailerService, FormErrorService $formErrorService, NotyfFactory $flasher, TranslatorInterface $translator): Response
     {
 
         $contact = new Contact();
