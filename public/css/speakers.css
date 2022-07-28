@@ -85,6 +85,7 @@
 
 .conferencier {
   padding: 0% 10%;
+  min-height: 60vh;
 }
 .conferencier header {
   display: flex;
@@ -121,8 +122,9 @@
   margin: 0px 0px 50px 0px;
 }
 .conferencier article section figure {
-  height: 330px;
+  height: 250px;
   width: 100%;
+  min-width: 175px;
 }
 .conferencier article section figure img {
   width: 100%;
@@ -183,6 +185,18 @@
   font-weight: normal;
 }
 
+@media screen and (max-width: 1125px) {
+  .speaker article section a {
+    width: 29%;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 865px) {
+  .speaker article section a {
+    width: 42%;
+    font-size: 12px;
+  }
+}
 @media screen and (max-width: 778px) {
   .conferencier article section {
     width: 40%;
@@ -201,9 +215,34 @@
     margin: 50px 0px 10px 0px;
   }
 }
+@media screen and (max-width: 673px) {
+  .conferencier article section figure {
+    height: 175px;
+    width: 100%;
+    min-width: 175px;
+  }
+}
 @media screen and (max-width: 480px) {
   .conferencier article section {
     width: 80%;
+  }
+
+  .conferencier header div h1 {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 408px) {
+  .speaker article section a {
+    width: 70%;
+    font-size: 12px;
+  }
+
+  .speaker article section a {
+    width: 70%;
+    font-size: 12px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
