@@ -178,14 +178,46 @@
   color: #007793;
 }
 
+.margConf {
+  margin: 0px 0px 50px 0px;
+}
+
 @media screen and (min-width: 1580px) {
   .conferences {
     padding: 0% 15%;
   }
+
+  .zoomConference article iframe {
+    height: 750px;
+  }
+
+  .zoomConference article {
+    padding: 0px 160px;
+  }
+
+  .zoomConference footer {
+    padding: 0% 17%;
+  }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 1280px) {
   .conferences section article section a {
     width: auto;
+  }
+
+  .zoomConference article iframe {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 1125px) {
+  .conferences section article section a {
+    width: 29%;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 865px) {
+  .conferences section article section a {
+    width: 42%;
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 778px) {
@@ -218,6 +250,10 @@
   .conferences section header figure img {
     width: 150px;
   }
+
+  .zoomConference article iframe {
+    height: 400px;
+  }
 }
 @media screen and (max-width: 480px) {
   .conferences section header {
@@ -245,6 +281,32 @@
 
   .conferences section header figure .confBoostez {
     margin: 40px 0px 30px 0px;
+  }
+
+  .zoomConference footer {
+    font-size: 14px;
+  }
+
+  .zoomConference header h1 {
+    font-size: 25px;
+    margin: 40px 0px 12px 0px;
+  }
+}
+@media screen and (max-width: 408px) {
+  .conferences section article section a {
+    width: 70%;
+    font-size: 12px;
+  }
+
+  .conferences button a {
+    padding: 15px 80px;
+    font-size: 16px;
+    border: 2px solid #007793;
+  }
+
+  .conferences button a {
+    padding: 15px 15px;
+    margin: 0px 10px;
   }
 }
 
