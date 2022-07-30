@@ -97,7 +97,7 @@
 
 .zoomConference {
   margin: 50px 0px 0px 0px;
-  min-height: 60vh;
+  min-height: 75vh;
 }
 .zoomConference .retourBtn {
   display: flex;
@@ -151,6 +151,10 @@
 .zoomConference footer ul li {
   line-height: 25px;
   font-weight: normal;
+}
+
+.noVidFoot {
+  margin: 150px 0px 150px 0px !important;
 }
 
 .ctcConf {
@@ -208,6 +212,10 @@
   .zoomConference article iframe {
     height: 600px;
   }
+
+  .noVidFoot {
+    margin: 75px 0px 50px 0px !important;
+  }
 }
 @media screen and (max-width: 1125px) {
   .conferences section article section a {
@@ -219,6 +227,10 @@
   .conferences section article section a {
     width: 42%;
     font-size: 12px;
+  }
+
+  .noVidFoot {
+    margin: 50px 0px 20px 0px !important;
   }
 }
 @media screen and (max-width: 778px) {
