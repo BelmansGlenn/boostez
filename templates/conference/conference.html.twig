@@ -28,7 +28,8 @@
 
         <h2 class="{{ color }}">{% trans into locale %}conference.precise.for{% endtrans %} {{ confInfo[2] }}</h2>
     </header>
-    {% if conference.video is empty %}
+    {% if conference.video is null or conference.video is empty %}
+
     {% else %}
     <article>
          <iframe src="{{ conference.video }}"></iframe>
