@@ -12,6 +12,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js" integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <section class="books">
+    {% if bookLocale is empty %}
+    <section class="emptyBook">
+    </section>
+    {% endif %}
     {% for book in bookLocale %}
     <article>
         <figure><img src="{{asset('uploads/images/books')}}/{{book.image}}" alt="image-cover-livre-boostez"></figure>
@@ -23,13 +27,16 @@
     </article>
     {% endfor %}
     {# {% if otherBooks|length > 0 %} #}
-    <footer>
+
+    {% if otherBooks is empty %}
+    </section>
+    {% else %}
+        <footer>
         <header>
             <h1>{% trans into locale %}home.translation{% endtrans %}</h1>
         </header>
     </footer>
 </section>
-
 <section id="slider">
             <div class="container">
                 <div class="subcontainer">
@@ -61,6 +68,44 @@
                 </div>
             </div>
 </section>
+    {% endif %}
+    {# <footer>
+        <header>
+            <h1>{% trans into locale %}home.translation{% endtrans %}</h1>
+        </header>
+    </footer>
+</section>
+<section id="slider">
+            <div class="container">
+                <div class="subcontainer">
+                    <div class="side-wrapper">
+                        <div class="controller">
+                            <div id="controls"> 
+                                <button class="previous"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="my-slider">
+                         {% for book in otherBooks %}
+                            <div>
+                                <div class="slide">
+                                    <div class="slide-img img-1">
+                                        <figure><img src="{{asset('uploads/images/books')}}/{{book.image}}" alt="image-cover-livre-{{book.title}}"></figure>
+                                    </div>
+                                    <div class="infoBooks">
+                                        <h1>{{ book.title }}</h1>
+                                        <h2>{{ book.language }}</h2>
+                                        <a href="{{ book.link }}">{% trans into locale %}home.button.order{% endtrans %}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section> #}
     {# {% endif %} #}
     {% include 'partials/newsletter.html.twig' %}
 {% endblock %}

@@ -29,12 +29,36 @@
         <h2 class="{{ color }}">{% trans into locale %}conference.precise.for{% endtrans %} {{ confInfo[2] }}</h2>
     </header>
     {% if conference.video is null or conference.video is empty %}
+    <footer class="noVidFoot">
+        <h1>{% trans into locale %}conference.precise.inthisconf1{% endtrans %}
+            {% if locale == 'fr' %}
+                {% if confInfo[3] == 'atelier'%}cet
+                {% elseif confInfo[3] == 'coaching'%}
+                    ce
+                {% else %}
+                    cette
+                {% endif %}
+                {% if confInfo[3] == 'conference' %}
+                    conférence
+                {% else %}
+                    {{ confInfo[3] }}
+                {% endif %}
+                {% else %}
+                    {{ confInfo[3] }}
+            {% endif %}
 
+
+            {% trans into locale %}conference.precise.inthisconf2{% endtrans %}:</h1>
+        <ul>
+            {% for point in conference.point %}
+            <li>{{ point }}</li>
+            {% endfor %}
+        </ul>
+    </footer>
     {% else %}
     <article>
          <iframe src="{{ conference.video }}"></iframe>
     </article>
-    {% endif %}
     <footer>
         <h1>{% trans into locale %}conference.precise.inthisconf1{% endtrans %}
             {% if locale == 'fr' %}
@@ -61,6 +85,33 @@
             {% endfor %}
         </ul>
     </footer>
+    {% endif %}
+    {# <footer>
+        <h1>{% trans into locale %}conference.precise.inthisconf1{% endtrans %}
+            {% if locale == 'fr' %}
+                {% if confInfo[3] == 'atelier'%}cet
+                {% elseif confInfo[3] == 'coaching'%}
+                    ce
+                {% else %}
+                    cette
+                {% endif %}
+                {% if confInfo[3] == 'conference' %}
+                    conférence
+                {% else %}
+                    {{ confInfo[3] }}
+                {% endif %}
+                {% else %}
+                    {{ confInfo[3] }}
+            {% endif %}
+
+
+            {% trans into locale %}conference.precise.inthisconf2{% endtrans %}:</h1>
+        <ul>
+            {% for point in conference.point %}
+            <li>{{ point }}</li>
+            {% endfor %}
+        </ul>
+    </footer> #}
         <div class="ctcConf margConf">
             <a class="ctcConf" href="{{ path('app_contact') }}">{% trans into locale %}boostez.company.contact{% endtrans %}</a>
         </div>
