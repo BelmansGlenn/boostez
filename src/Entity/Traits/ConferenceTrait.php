@@ -20,7 +20,7 @@ trait ConferenceTrait
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     #[Assert\Length(max: 255)]
-    private string $video;
+    private ?string $video;
 
     #[ORM\Column(type: 'array')]
     #[Assert\NotBlank]
