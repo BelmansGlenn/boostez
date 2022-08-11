@@ -20,15 +20,15 @@
         section {
             width: 45%;
             h1 {
-                text-transform: uppercase;
-                font-size: 36px;
-                font-weight: 600;
+                font-size: 42px;
+                font-weight: 800;
                 color: #d41726;
-                margin: 50px 0px 0px 0px;
+                margin: 25px 0px;
             }
             p {
-                line-height: 30px;
+                line-height: 25px;
                 margin: 30px 0px 50px 0px;
+                font-size: 16px;
             }
         }
     }
@@ -67,7 +67,7 @@
         font-size: 18px;
       }
 }
-@media screen and (max-width: 620px) { 
+@media screen and (max-width: 920px) { 
     .biography header {
         flex-direction: column;
       }
@@ -80,9 +80,7 @@
         padding: 0% 10%;
       }
     .biography header section h1 {
-        font-size: 28px;
         text-align: center;
-        margin: 20px 0px 0px 0px;
     }
     .biography header section p {
         text-align: center;

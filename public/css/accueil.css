@@ -1,7 +1,7 @@
 .accueil article {
   text-align: center;
   padding: 0px 10%;
-  line-height: 30px;
+  line-height: 25px;
   position: relative;
 }
 .accueil article img {
@@ -62,7 +62,7 @@
 }
 @media screen and (max-width: 620px) {
   .accueil article p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .accueil footer {
