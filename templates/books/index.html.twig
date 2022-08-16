@@ -69,43 +69,5 @@
             </div>
 </section>
     {% endif %}
-    {# <footer>
-        <header>
-            <h1>{% trans into locale %}home.translation{% endtrans %}</h1>
-        </header>
-    </footer>
-</section>
-<section id="slider">
-            <div class="container">
-                <div class="subcontainer">
-                    <div class="side-wrapper">
-                        <div class="controller">
-                            <div id="controls"> 
-                                <button class="previous"><i class="fa-solid fa-chevron-left"></i></button>
-                                <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="my-slider">
-                         {% for book in otherBooks %}
-                            <div>
-                                <div class="slide">
-                                    <div class="slide-img img-1">
-                                        <figure><img src="{{asset('uploads/images/books')}}/{{book.image}}" alt="image-cover-livre-{{book.title}}"></figure>
-                                    </div>
-                                    <div class="infoBooks">
-                                        <h1>{{ book.title }}</h1>
-                                        <h2>{{ book.language }}</h2>
-                                        <a href="{{ book.link }}">{% trans into locale %}home.button.order{% endtrans %}</a>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-</section> #}
-    {# {% endif %} #}
     {% include 'partials/newsletter.html.twig' %}
 {% endblock %}
