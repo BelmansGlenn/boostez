@@ -12,7 +12,7 @@
 {% block body %}
     <a href ={{ path('app_conference_speakers') }} class="retourBtn">
         <i class="fa-solid fa-arrow-down"></i>
-        <h1>Retour</h1>
+        <h1>{% trans into locale %}conference.precise.back{% endtrans %}</h1>
     </a>
 <section class="speaker">
     <header>
@@ -20,7 +20,7 @@
             {% for speaker in speaker %}
             <h1>{{speaker.firstname}} {{speaker.lastname}}</h1>
             <section>{{speaker.desc|raw}}</section>
-            <h2>{{speaker.firstname}} {{speaker.lastname}} vous propose des conférences en 
+            <h2>{{speaker.firstname}} {{speaker.lastname}} {% trans into locale %}conference.speaker.propose{% endtrans %}:
                 {% for lang in speaker.language %}
                     <span class="langSpeak">{{ lang }}</span>
                 {% endfor %}.
@@ -38,7 +38,7 @@
         {% else %}
         <header>
             <div>
-                <h2 class="red">Découvez les conférences de {{speaker.firstname}} {{speaker.lastname}}.</h2>
+                <h2 class="red">{% trans into locale %}conference.speaker.conf{% endtrans %} {{speaker.firstname}} {{speaker.lastname}}.</h2>
             </div>
         </header>
         {% endif %}
@@ -73,7 +73,7 @@
         <header>
             <div>
 
-                <h2 class="blue">Rejoignez {{speaker.firstname}} {{speaker.lastname}} pour un atelier ou une retraite.</h2>
+                <h2 class="blue">{% trans into locale %}conference.speaker.join{% endtrans %} {{speaker.firstname}} {{speaker.lastname}} {% trans into locale %}conference.speaker.workshop{% endtrans %}</h2>
             </div>
         </header>
         {% endif %}

@@ -3,15 +3,14 @@
 namespace App\Entity;
 
 use App\Entity\Traits\ConferenceTrait;
-use App\Repository\PrivateCoachingRepository;
+use App\Repository\BusinessCoachingRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: PrivateCoachingRepository::class)]
-class PrivateCoaching
+#[ORM\Entity(repositoryClass: BusinessCoachingRepository::class)]
+class BusinessCoaching
 {
-
     use ConferenceTrait;
 
     #[ORM\Id]
@@ -19,8 +18,8 @@ class PrivateCoaching
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\ManyToMany(targetEntity: Speaker::class, mappedBy: 'privateRetreats')]
-    private $speakers;
+    #[ORM\ManyToMany(targetEntity: Speaker::class, mappedBy: 'businessCoachings')]
+    private Collection $speakers;
 
     public function __construct()
     {
@@ -44,7 +43,7 @@ class PrivateCoaching
     {
         if (!$this->speakers->contains($speaker)) {
             $this->speakers[] = $speaker;
-            $speaker->addPrivateCoaching($this);
+            $speaker->addBusinessCoaching($this);
         }
 
         return $this;
@@ -53,7 +52,7 @@ class PrivateCoaching
     public function removeSpeaker(Speaker $speaker): self
     {
         if ($this->speakers->removeElement($speaker)) {
-            $speaker->removePrivateCoaching($this);
+            $speaker->removeBusinessCoaching($this);
         }
 
         return $this;

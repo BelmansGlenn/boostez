@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bio{% endblock %}
+{% block title %}{% trans into locale %}bio.pageTitle{% endtrans %}{% endblock %}
 {% block importCss %}
     <link rel="stylesheet" href="{{ asset('css/bio.css') }}">
 {% endblock %}
