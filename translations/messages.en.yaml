@@ -45,8 +45,8 @@ form:
 
 navbar:
   home: HOME
-  boost: BOOST yourself
-  keynotes: CONFERENCES
+  boost: BOOST Yourself
+  keynotes: KEYNOTES
   books: BOOKS
 
 footer:
@@ -54,24 +54,25 @@ footer:
   copyright:
     rights: All rights reserved
     website: Website built by
+    illust: Illustrations made by
 
 home:
   page:
     home: Home
     book: Books
   text:
-    welcome: Welcome to the “BOOST yourself” space
+    welcome: Welcome to the “BOOST Yourself” space
     text1: Would you like to have <b>50 teaspoons of energy</b> every morning to carry out all of your projects?
     text2: Would you like to have <b>enthusiastic teams</b>?
     text3: Our mission is to give you an <b>overview</b> of what matters today to be in good shape for the long term!
-    text4: « <b>BOOST yourself</b> » is a <b>practical and fun guide</b> for your policy around <b>well-being at work</b> as well as for your overall well-being.
+    text4: « <b>BOOST Yourself</b> » is a <b>practical and fun guide</b> for your policy around <b>well-being at work</b> as well as for your overall well-being.
     text5: All of this with the support of our <b>experts</b>
     text6: keynote speakers, trainers and coaches.
     text7: Here we go!
   button:
     link:
       discover: boostyourself
-      order: https://www.kazidomi.com/en-BE/catalogue/produits/book/7756-boost?searchQueryId=2c81e953ec9bc96eed4b1b21b63e128d
+      order: https://www.anneeverard.com/en/contact
     discover: Discover
     order: Order
   translation: Translations
@@ -82,33 +83,33 @@ newsletter:
 
 
 boostez:
-  pageTitle: BOOST yourself
+  pageTitle: BOOST Yourself
   desc:
-    part1:  The objective of “BOOST yourself” is to give you an <b>overview</b> of what matters today to be in good shape in your body and mind and to perform in-line with your targets.
+    part1:  The objective of “BOOST Yourself” is to give you an <b>overview</b> of what matters today to be in good shape in your body and mind and to perform in-line with your targets.
     part2: You will find many <b>tips and tricks</b>, as well as a <b>method</b> to get you moving and to keep at it.
   contents: Go through the table of contents and from the different themes, <b>pick</b> out the ones that speak to you. Then, create your own <b>individual action plan</b> to move forward one step at a time.
   company:
     title: Are you an organization or a company ?
-    desc:  Boost your teams! <b>Personalize the book</b> with an introduction from the head of your organization with your logo and highlight your human resources team. An <b>ideal gift</b> for your workers! Also think about the conferences and the workshops on <b>well-being at work</b>.
+    desc:  Boost your teams! <b>Personalize the book</b> with an introduction from the head of your organization with your logo and highlight your human resources team. An <b>ideal gift</b> for your workers! Also think about the keynotes and the workshops on <b>well-being at work</b>.
     contact: Contact us
 
 
 conference:
   pageTitle:
-    pageTitle: Conferences
+    pageTitle: Keynotes
     speakerTitle: Speaker
     speakersTitle: Speakers
-  speakers: Our conference speakers, trainers and coaches
+  speakers: Our keynote speakers, trainers and coaches
   title:
     business:
-      part1: For companies
-      part2: Discover our conferences and workshops to boost your teams.
+      part1: For companies and organisations
+      part2: Discover our keynotes, workshops en coachings to boost your teams.
     private:
       part1: For individuals
-      part2: Join us for a workshop or offsite and boost yourself.
+      part2: Join us for a workshop, offsite or coaching and boost yourself.
   business:
     conf:
-      title: Conferences
+      title: Keynotes
       empty: Unavailable.
     workshop:
       title: WORKSHOPS
@@ -121,14 +122,21 @@ conference:
       title: Coaching
   precise:
     for: for
-    back: Return
+    back: Back
     inthisconf1: IN THIS
     inthisconf2: YOU WILL DISCOVER
+  speaker:
+    discover: Read more
+    propose: works in
+    conf: Discover de keynotes, workshops and/or coachings of
+    join: Join
+    workshop: for a workshop, offsite and/or coaching.
 
 books:
   pageTitle: Books
 
 bio:
+  pageTitle: Biography
   title: BIOGRAPHY
   desc:
     part1: Anne Everard is an author, speaker and trainer. Passionate about people, she specializes in well-being at work and overall well-being.
@@ -140,6 +148,6 @@ bio:
 contact:
   title: How can we help you ?
   info:
-    srl: SRL
+    srl: srl
     country: Belgium
     tva: VAT

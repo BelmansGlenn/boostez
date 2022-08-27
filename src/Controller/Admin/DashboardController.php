@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Book;
 use App\Entity\BookReview;
+use App\Entity\BusinessCoaching;
 use App\Entity\BusinessConference;
 use App\Entity\BusinessWorkshop;
 use App\Entity\ConferenceReview;
@@ -52,7 +53,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Newsletter', 'fa-solid fa-business-time');
          yield MenuItem::linkToCrud('Conferences Entreprises', 'fa-solid fa-business-time', BusinessConference::class);
          yield MenuItem::linkToCrud('Ateliers Entreprises', 'fa-solid fa-paint-roller', BusinessWorkshop::class);
-         yield MenuItem::linkToCrud('Retraites Particuliers', 'fa-solid fa-campground', PrivateRetreat::class);
+        yield MenuItem::linkToCrud('Coaching Entreprises', 'fa-solid fa-stopwatch-20', BusinessCoaching::class);
+        yield MenuItem::linkToCrud('Retraites Particuliers', 'fa-solid fa-campground', PrivateRetreat::class);
         yield MenuItem::linkToCrud('Ateliers Particuliers', 'fa-solid fa-paintbrush', PrivateWorkshop::class);
         yield MenuItem::linkToCrud('Coaching Particuliers', 'fa-solid fa-dumbbell', PrivateCoaching::class);
         yield MenuItem::linkToCrud('Conferenciers', 'fa-solid fa-people-group', Speaker::class);
