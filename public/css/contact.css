@@ -37,6 +37,7 @@
   background: none;
   margin: 10px 0px;
   font-size: 16px;
+  width: 130%;
 }
 .contact article form .formText {
   padding: 0% 10%;
@@ -131,9 +132,10 @@
     margin-top: 40px;
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .contact article form section div input {
     font-size: 10px;
+    width: 130%;
   }
 
   .contact article form .formText textarea {
