@@ -21,9 +21,9 @@
             <h1>{{speaker.firstname}} {{speaker.lastname}}</h1>
             <section>{{speaker.desc|raw}}</section>
             <h2>{{speaker.firstname}} {{speaker.lastname}} {% trans into locale %}conference.speaker.propose{% endtrans %}:
-                {% for lang in speaker.language %}
-                    <span class="langSpeak">{{ lang }}</span>
-                {% endfor %}.
+                {%  set count = speaker.language|length %}
+                {%  set i = 1 %}
+                {% for lang in speaker.language %}{% if i < count %}<span class="langSpeak">{{ lang }}</span> {% else %}<span class="langSpeak">{{ lang }}</span>{% endif %}{%  set i = i + 1 %}{% endfor %}.
             </h2>
             {% endfor %}
         </div>
