@@ -170,10 +170,10 @@ conference:
   title:
     business:
       part1: Pour les entreprises
-      part2: Découvrez nos conférences et ateliers pour inspirer vos équipes.
+      part2: Découvrez nos conférences, ateliers et coaching pour inspirer vos équipes.
     private:
       part1: Pour les particuliers
-      part2: Rejoignez-nous pour un atelier ou une retraite pour vous booster.
+      part2: Rejoignez-nous pour un atelier, une retraite ou un coaching pour vous booster.
   business:
     conf:
       title: Conférences

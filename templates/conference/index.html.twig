@@ -36,7 +36,7 @@
         </article>
     </section>
     <section class="confEntreprise">
-        <header>
+        <header class="marginParticulier">
             <div>
                 <h1 class="blue">{% trans into locale %}conference.title.private.part1{% endtrans %}</h1>
                 <h2>{% trans into locale %}conference.title.private.part2{% endtrans %}</h2>
@@ -88,7 +88,7 @@
             {% if avis.company is defined and avis.company is not null %}
             <h2>{{ avis.company }}</h2>
             {% endif %}
-            <p><span>"</span>{{avis.review}}<span>"</span></p>
+            <p><span></span>{{avis.review}}<span></span></p>
         </div>
     {% endfor %}
 </section>

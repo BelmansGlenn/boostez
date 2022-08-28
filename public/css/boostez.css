@@ -14,7 +14,7 @@
   font-size: 42px;
   font-weight: 800;
   color: #d41726;
-  margin: 25px 0px;
+  margin: 0px 0px 60px 0px;
 }
 .boostez section header {
   display: flex;
@@ -91,6 +91,10 @@
   .boostez header figure img {
     width: 400px;
   }
+
+  .boostez section header h2 {
+    margin: 25px 0px 0px 0px;
+  }
 }
 @media screen and (max-width: 778px) {
   .boostez header figure img {
@@ -99,6 +103,10 @@
 
   .boostez article a {
     font-size: 14px;
+  }
+
+  .boostez header div h1 {
+    margin: 25px 0px;
   }
 }
 @media screen and (max-width: 620px) {
