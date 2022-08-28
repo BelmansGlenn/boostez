@@ -2,12 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\BusinessCoaching;
 use App\Entity\BusinessConference;
 use App\Entity\BusinessWorkshop;
 use App\Entity\PrivateCoaching;
 use App\Entity\PrivateRetreat;
 use App\Entity\PrivateWorkshop;
 use App\Form\NewsletterFormType;
+use App\Repository\BusinessCoachingRepository;
 use App\Repository\BusinessConferenceRepository;
 use App\Repository\BusinessWorkshopRepository;
 use App\Repository\ConferenceReviewRepository;
@@ -28,13 +30,14 @@ class ConferenceController extends AbstractController
     CONST PRIVATE_COLOR = 'private_color';
 
 
-    #[Route(['fr' => '/conferences', 'nl' => '/keynotes', 'en' => '/conferences'], name: 'app_conference')]
+    #[Route(['fr' => '/conferences', 'nl' => '/keynotes', 'en' => '/keynotes'], name: 'app_conference')]
     public function index(EntityManagerInterface $entityManager, Request $request, ConferenceReviewRepository $conferenceReviewRepository): Response
     {
         $locale = $request->getLocale();
         $form = $this->createForm(NewsletterFormType::class);
         $businessConf = $entityManager->getRepository(BusinessConference::class)->findAllConfNameByLocale($locale);
         $businessWorkshop = $entityManager->getRepository(BusinessWorkshop::class)->findAllConfNameByLocale($locale);
+        $businessCoaching = $entityManager->getRepository(BusinessCoaching::class)->findAllConfNameByLocale($locale);
         $privateWorkshop = $entityManager->getRepository(PrivateWorkshop::class)->findAllConfNameByLocale($locale);
         $privateRetreat = $entityManager->getRepository(PrivateRetreat::class)->findAllConfNameByLocale($locale);
         $privateCoaching = $entityManager->getRepository(PrivateCoaching::class)->findAllConfNameByLocale($locale);
@@ -44,6 +47,7 @@ class ConferenceController extends AbstractController
             'form' => $form->createView(),
             'businessConf' => $businessConf,
             'businessWorkshop' => $businessWorkshop,
+            'businessCoaching' => $businessCoaching,
             'privateWorkshop' => $privateWorkshop,
             'privateRetreat' => $privateRetreat,
             'privateCoaching' => $privateCoaching,
@@ -51,7 +55,7 @@ class ConferenceController extends AbstractController
         ]);
     }
 
-    #[Route(['fr' => '/entreprises/conference/{slug}', 'nl' => '/bedrijven/keynote/{slug}', 'en' => '/companies/conference/{slug}'], name: 'app_business_conference')]
+    #[Route(['fr' => '/entreprises/conference/{slug}', 'nl' => '/bedrijven/keynote/{slug}', 'en' => '/companies/keynote/{slug}'], name: 'app_business_conference')]
     public function businessConference($slug, BusinessConferenceRepository $businessConferenceRepository, Request $request): Response
     {
         $businessConf = $businessConferenceRepository->findOneConfBySlugAndByLocale($slug, $request->getLocale());
@@ -69,6 +73,17 @@ class ConferenceController extends AbstractController
         return $this->render('conference/conference.html.twig', [
             'conference' => $businessWorkshop,
             'color' => self::BUSINESS_COLOR
+        ]);
+    }
+
+    #[Route(['fr' => '/entreprises/coaching/{slug}', 'nl' => '/bedrijven/coaching/{slug}', 'en' => '/companies/coaching/{slug}'], name: 'app_business_coaching')]
+    public function businessCoaching($slug, BusinessCoachingRepository $businessCoachingRepository, Request $request): Response
+    {
+        $businessCoaching = $businessCoachingRepository->findOneConfBySlugAndByLocale($slug, $request->getLocale());
+
+        return $this->render('conference/conference.html.twig', [
+            'conference' => $businessCoaching,
+            'color' => self::PRIVATE_COLOR
         ]);
     }
 
@@ -106,7 +121,7 @@ class ConferenceController extends AbstractController
     }
 
 
-    #[Route(['fr' => '/conferences/conferenciers', 'nl' => '/keynotes/sprekers', 'en' => '/conferences/speakers'], name: 'app_conference_speakers')]
+    #[Route(['fr' => '/conferences/conferenciers', 'nl' => '/keynotes/sprekers', 'en' => '/keynotes/speakers'], name: 'app_conference_speakers')]
     public function getSpeakers(SpeakerRepository $speakerRepository, Request $request): Response
     {
         $speakers = $speakerRepository->findAllSpeakersGetSimpleDataByLocaleOrderByImportance($request->getLocale());
@@ -120,7 +135,7 @@ class ConferenceController extends AbstractController
         ]);
     }
 
-    #[Route(['fr' => '/conferences/conferenciers/{id}', 'nl' => '/keynotes/sprekers/{id}', 'en' => '/conferences/speakers/{id}'], name: 'app_conference_speaker')]
+    #[Route(['fr' => '/conferences/conferenciers/{id}', 'nl' => '/keynotes/sprekers/{id}', 'en' => '/keynotes/speakers/{id}'], name: 'app_conference_speaker')]
     public function getSpeaker($id, SpeakerRepository $speakerRepository, Request $request, EntityManagerInterface $entityManager): Response
     {
         $locale = $request->getLocale();

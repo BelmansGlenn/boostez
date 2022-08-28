@@ -33,6 +33,15 @@
                     <a href="{{ path('app_business_workshop', {'slug': conf.slug}) }}" class="bgRed">{{ conf.name }}</a>
                 {% endfor %}
             </section>
+            <h2>{% trans into locale %}conference.private.coaching.title{% endtrans %}</h2>
+            <section>
+                {% if businessCoaching is empty %}
+                    <h3>{% trans into locale %}conference.business.workshop.empty{% endtrans %}</h3>
+                {% endif %}
+                {% for conf in businessCoaching %}
+                    <a href="{{ path('app_business_coaching', {'slug': conf.slug })  }}" class="bgRed">{{ conf.name }}</a>
+                {% endfor %}
+            </section>
         </article>
     </section>
     <section class="confEntreprise">

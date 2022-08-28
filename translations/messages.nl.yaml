@@ -115,6 +115,7 @@ footer:
   copyright:
     rights: Alle rechten voorbehouden
     website: Website gemaakt door
+    illust: Illustraties gemaakt door
 
 home:
   page:
@@ -132,7 +133,7 @@ home:
   button:
     link:
       discover: boostjezelf
-      order: https://www.kazidomi.com/nl-BE/catalogue/produits/boek/7756-boost?searchQueryId=2c81e953ec9bc96eed4b1b21b63e128d
+      order: https://www.anneeverard.com/nl/contact
     discover: Ontdek
     order: Bestel
   translation: Vertalingen
@@ -161,10 +162,10 @@ conference:
   title:
     business:
       part1: Voor organisaties en bedrijven
-      part2: Ontdek onze keynotes en workshops om je teams te boosten.
+      part2: Ontdek onze keynotes, workshops en coachings om je teams te boosten.
     private:
       part1: Voor particulieren
-      part2: Schrijf je in voor een workshop of retraite om jezelf te boosten.
+      part2: Schrijf je in voor een workshop, retraite of coaching om jezelf te boosten.
   business:
     conf:
       title: KEYNOTES
@@ -180,14 +181,21 @@ conference:
       title: Coaching
   precise:
     for: voor de
-    back: Opbrengst
+    back: Terug
     inthisconf1: IN DEZE
     inthisconf2: ONDEK JE
+  speaker:
+    discover: Lees meer
+    propose: werkt in volgende talen
+    conf: Ontdek de keynotes, workshops en/of coachings van
+    join: Neem deel aan een workshop, retraite en/of coaching met
+    workshop: .
 
 books:
   pageTitle: Boeken
 
 bio:
+  pageTitle: Biografie
   title: BIOGRAFIE
   desc:
     part1: Anne Everard is auteur, keynote spreekster en trainer. Ze is gepassioneerd door mensen en is gespecialiseerd in welzijn op het werk en persoonlijk welzijn.
@@ -200,6 +208,6 @@ bio:
 contact:
   title: Hoe kunnen we u helpen ?
   info:
-    srl: B.V.
+    srl: b.v.
     country: België
     tva: BTW

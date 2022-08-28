@@ -81,11 +81,11 @@ form:
     subscribe: S'INSCRIRE
     send: Envoyez
   placeholder:
-    firstname: PRENOM
+    firstname: PRÉNOM
     lastname: NOM
     email:  EMAIL
     company: NOM DE L'ENTREPRISE
-    phone: TELEPHONE
+    phone: TÉLÉPHONE
   constraint:
     lastname:
         minMessage: Le nom de famille doit comporter au minimum 2 caractères.
@@ -124,6 +124,7 @@ footer:
   copyright:
     rights: Tous droits réservés
     website: Site web réalisé par
+    illust: Illustrations réalisées par
 
 home:
   page:
@@ -132,7 +133,7 @@ home:
   text:
     welcome: Bienvenue dans l’univers “Boostez”
     text1: Vous voulez chaque matin disposer de <b> 50 petites cuillères d’énergie </b> pour réaliser tous vos projets ?
-    text2: Vous voulez des <b> équipes enthousiastes </b>?
+    text2: Vous voulez des <b> équipes enthousiastes</b>&nbsp;?
     text3: Notre mission est de vous redonner la <b> vue d’ensemble </b> sur ce qui compte aujourd’hui pour être en forme durablement!
     text4: « <b>Boostez</b> » est un <b>guide pratique et ludique</b> pour votre politique de <b>bien-être au travail</b> et pour votre bien-être global.
     text5: Le tout encadré par nos <b>experts de terrain</b>
@@ -141,7 +142,7 @@ home:
   button:
     link:
       discover: boostez
-      order: https://www.kazidomi.com/fr-BE/catalogue/produits/livre/7756-boostez-1?searchQueryId=2c81e953ec9bc96eed4b1b21b63e128d
+      order: https://www.amazon.fr/Boostez-Anne-Everard/dp/2805207416/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=14AR1A5VVPO5Z&keywords=anne+everard+boostez&qid=1661535506&s=books&sprefix=anne+everard+boostez%2Cstripbooks%2C75&sr=1-1
     discover: Découvrir
     order: Commander
   translation: Traductions
@@ -163,17 +164,17 @@ boostez:
 
 conference:
   pageTitle:
-    pageTitle: Conférence
+    pageTitle: Conférences
     speakerTitle: Conférencier
     speakersTitle: Conférenciers
   speakers: Nos conférenciers, formateurs et coachs
   title:
     business:
-      part1: Pour les entreprises
-      part2: Découvrez nos conférences, ateliers et coaching pour inspirer vos équipes.
+      part1: Pour les entreprises et les organisations
+      part2: Découvrez nos conférences, ateliers et coachings pour inspirer vos équipes.
     private:
       part1: Pour les particuliers
-      part2: Rejoignez-nous pour un atelier, une retraite ou un coaching pour vous booster.
+      part2: Rejoignez-nous pour un atelier, retraite ou coaching pour vous booster.
   business:
     conf:
       title: Conférences
@@ -192,11 +193,18 @@ conference:
     back: Retour
     inthisconf1: DANS
     inthisconf2: VOUS DÉCOUVRIREZ
+  speaker:
+    discover: Découvrir
+    propose: vous propose des conférences en
+    conf: Découvrez les conférences, ateliers et/ou les coachings de
+    join: Rejoignez
+    workshop: pour un atelier, une retraite et/ou un coaching.
 
 books:
   pageTitle: Livres
 
 bio:
+  pageTitle: Biographie
   title: BIOGRAPHIE
   desc:
     part1: Anne Everard est auteure, conférencière et formatrice. Passionnée par l’humain, elle est spécialisée dans le bien-être au travail et le bien-être global.
@@ -209,7 +217,7 @@ bio:
 contact:
   title: Comment pouvons-nous vous aider ?
   info:
-    srl: SRL
+    srl: srl
     country: Belgique
     tva: TVA
 

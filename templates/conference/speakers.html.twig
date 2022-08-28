@@ -7,6 +7,10 @@
 {% endblock %}
 {% block body %}
 <section class="conferencier">
+    <a href ={{ path('app_conference') }} class="retourBtn">
+        <i class="fa-solid fa-arrow-down"></i>
+        <h1>{% trans into locale %}conference.precise.back{% endtrans %}</h1>
+    </a>
     <header>
         <div>
             <h1>{% trans into locale %}conference.speakers{% endtrans %}</h1>
@@ -18,7 +22,7 @@
             <figure><a href="{{ path('app_conference_speaker', {'id': speaker.id}) }}"><img src="{{ asset('uploads/images/speakers/') }}/{{ speaker.image }}" alt="conferencier-{{speaker.firstname}}{{speaker.lastname}}-portrait"></a></figure>
             <h1>{{speaker.firstname}} {{speaker.lastname}}</h1>
             <p>{{ speaker.status }}</p>
-            <a class ="linkSpeaker" href="{{ path('app_conference_speaker', {'id': speaker.id}) }}">Découvrir</a>
+            <a class ="linkSpeaker" href="{{ path('app_conference_speaker', {'id': speaker.id}) }}">{% trans into locale %}conference.speaker.discover{% endtrans %}</a>
         </section>
         {% endfor %}
     </article>

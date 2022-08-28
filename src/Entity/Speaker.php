@@ -84,6 +84,9 @@ class Speaker
     #[ORM\ManyToMany(targetEntity: PrivateCoaching::class, inversedBy: 'speakers')]
     private $privateCoachings;
 
+    #[ORM\ManyToMany(targetEntity: BusinessCoaching::class, mappedBy: 'speakers')]
+    private Collection $businessCoachings;
+
     public function __construct()
     {
         $this->businessConferences = new ArrayCollection();
@@ -91,6 +94,7 @@ class Speaker
         $this->privateRetreats = new ArrayCollection();
         $this->privateWorkshops = new ArrayCollection();
         $this->privateCoachings = new ArrayCollection();
+        $this->businessCoachings = new ArrayCollection();
     }
 
     /**
@@ -422,6 +426,33 @@ class Speaker
     {
         if ($this->privateCoachings->removeElement($privateCoaching)) {
             $privateCoaching->removeSpeaker($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, BusinessCoaching>
+     */
+    public function getBusinessCoachings(): Collection
+    {
+        return $this->businessCoachings;
+    }
+
+    public function addBusinessCoaching(BusinessCoaching $businessCoaching): self
+    {
+        if (!$this->businessCoachings->contains($businessCoaching)) {
+            $this->businessCoachings->add($businessCoaching);
+            $businessCoaching->addSpeaker($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBusinessCoaching(BusinessCoaching $businessCoaching): self
+    {
+        if ($this->businessCoachings->removeElement($businessCoaching)) {
+            $businessCoaching->removeSpeaker($this);
         }
 
         return $this;
