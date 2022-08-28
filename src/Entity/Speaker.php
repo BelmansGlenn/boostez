@@ -84,8 +84,8 @@ class Speaker
     #[ORM\ManyToMany(targetEntity: PrivateCoaching::class, inversedBy: 'speakers')]
     private $privateCoachings;
 
-    #[ORM\ManyToMany(targetEntity: BusinessCoaching::class, mappedBy: 'speakers')]
-    private Collection $businessCoachings;
+    #[ORM\ManyToMany(targetEntity: BusinessCoaching::class, inversedBy: 'speakers')]
+    private $businessCoachings;
 
     public function __construct()
     {

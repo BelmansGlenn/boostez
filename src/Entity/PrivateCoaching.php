@@ -19,7 +19,7 @@ class PrivateCoaching
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\ManyToMany(targetEntity: Speaker::class, mappedBy: 'privateRetreats')]
+    #[ORM\ManyToMany(targetEntity: Speaker::class, mappedBy: 'privateCoachings')]
     private $speakers;
 
     public function __construct()
