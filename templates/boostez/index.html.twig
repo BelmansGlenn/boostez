@@ -16,6 +16,7 @@
             <p>
                 {% trans into locale %}boostez.desc.part1{% endtrans %}
                 <br>
+                <br>
                 {% trans into locale %}boostez.desc.part2{% endtrans %}
             </p>
         </div>
@@ -46,7 +47,7 @@
             {% if avis.company is defined and avis.company is not null %}
             <h2>{{ avis.company }}</h2>
             {% endif %}
-            <p><span>"</span>{{avis.review}}<span>"</span></p>
+            <p><span></span>{{avis.review}}<span></span></p>
         </div>
     {% endfor %}
 </section>

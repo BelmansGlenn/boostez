@@ -71,7 +71,8 @@
             text-transform: uppercase;
             margin: 0px 0px 0px 0px;
             font-weight: normal;
-            font-size: 22px;
+            font-size: 18px;
+            text-align: center;
         }
         h2 {
             text-transform: uppercase;
@@ -106,11 +107,11 @@
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        padding: 100px 0px 100px 0px;
+        padding: 50px 0px 50px 0px;
         border-bottom: 2px solid #d2d2d2;
         figure {
             img {
-                height: 400px;
+                height: 250px;
                 rotate: -5deg;
                 box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
             }
@@ -127,7 +128,7 @@
             }
             p {
                 line-height: 30px;
-                margin: 30px 0px 50px 0px;
+                margin: 25px 0px 25px 0px;
             }
             a {
                 background-color: #007793;
@@ -240,6 +241,7 @@
       }
       .books article section p {
         font-size: 14px;
+        text-align: center;
       }
       .books article figure img {
         height: 200px;
@@ -266,7 +268,7 @@
         flex-direction: column;
       }
       .books article figure img {
-        height: 300px;
+        height: 2s00px;
       }
       .books article section {
         width: inherit;
