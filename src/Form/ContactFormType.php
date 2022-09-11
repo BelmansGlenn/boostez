@@ -90,7 +90,6 @@ class ContactFormType extends AbstractType
                 'constraints' => new Recaptcha3(),
                 'action_name' => 'contact'
             ]);
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
