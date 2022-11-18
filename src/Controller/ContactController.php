@@ -21,53 +21,63 @@ class ContactController extends AbstractController
 {
 
     #[Route(['fr' => '/contact', 'nl' => '/contact', 'en' => '/contact'], name: 'app_contact')]
-    public function index(): Response
+    public function index(Request $request): Response
     {
 
-        $form = $this->createForm(NewsletterFormType::class);
-
-        $contactForm = $this->createForm(ContactFormType::class);
-
-
-        return $this->render('contact/index.html.twig', [
-            'form' => $form->createView(),
-            'contactForm' => $contactForm->createView()
-        ]);
+        $lang = $request->getLocale();
+        switch ($lang){
+            case 'fr':
+                return $this->redirect('https://www.50spoons.com/fr/contact');
+            case 'nl':
+                return $this->redirect('https://www.50spoons.com/nl/contact');
+            default:
+                return $this->redirect('https://www.50spoons.com/en/contact');
+        }
+//
+//        $form = $this->createForm(NewsletterFormType::class);
+//
+//        $contactForm = $this->createForm(ContactFormType::class);
+//
+//
+//        return $this->render('contact/index.html.twig', [
+//            'form' => $form->createView(),
+//            'contactForm' => $contactForm->createView()
+//        ]);
     }
 
-    #[Route(['fr' => '/envoyer_mail/{locale}'], name: 'app_mail')]
-    public function send($locale, Request $request, MailerService $mailerService, FormErrorService $formErrorService, NotyfFactory $flasher, TranslatorInterface $translator): Response
-    {
-
-        $contact = new Contact();
-
-        $contactForm = $this->createForm(ContactFormType::class, $contact);
-
-        $contactForm->handleRequest($request);
-
-        if ($contactForm->isSubmitted() && $contactForm->isValid())
-        {
-            try {
-                $mailerService->send(
-                    'contact@anneeverard.com',
-                    'Nouveau message',
-                    'contact/email.html.twig',
-                    $contact
-                );
-                $flasher->addSuccess($translator->trans('form.flash.success.contact', [], 'messages', $locale));
-                return $this->redirect($request->headers->get('referer'));
-            }catch (CustomBadRequestException)
-            {
-                $flasher->addWarning($translator->trans('form.flash.error.contact', [], 'messages', $locale));
-                return $this->redirect($request->headers->get('referer'));
-            }
-
-        }
-        $errors = $formErrorService->getErrorsFromForm($contactForm);
-        foreach ($errors as $error){
-            $flasher->addError($translator->trans($error[0], [], 'messages', $locale));
-        }
-        return $this->redirect($request->headers->get('referer'));
-
-    }
+//    #[Route(['fr' => '/envoyer_mail/{locale}'], name: 'app_mail')]
+//    public function send($locale, Request $request, MailerService $mailerService, FormErrorService $formErrorService, NotyfFactory $flasher, TranslatorInterface $translator): Response
+//    {
+//
+//        $contact = new Contact();
+//
+//        $contactForm = $this->createForm(ContactFormType::class, $contact);
+//
+//        $contactForm->handleRequest($request);
+//
+//        if ($contactForm->isSubmitted() && $contactForm->isValid())
+//        {
+//            try {
+//                $mailerService->send(
+//                    'contact@anneeverard.com',
+//                    'Nouveau message',
+//                    'contact/email.html.twig',
+//                    $contact
+//                );
+//                $flasher->addSuccess($translator->trans('form.flash.success.contact', [], 'messages', $locale));
+//                return $this->redirect($request->headers->get('referer'));
+//            }catch (CustomBadRequestException)
+//            {
+//                $flasher->addWarning($translator->trans('form.flash.error.contact', [], 'messages', $locale));
+//                return $this->redirect($request->headers->get('referer'));
+//            }
+//
+//        }
+//        $errors = $formErrorService->getErrorsFromForm($contactForm);
+//        foreach ($errors as $error){
+//            $flasher->addError($translator->trans($error[0], [], 'messages', $locale));
+//        }
+//        return $this->redirect($request->headers->get('referer'));
+//
+//    }
 }

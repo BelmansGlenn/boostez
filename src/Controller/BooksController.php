@@ -14,16 +14,24 @@ class BooksController extends AbstractController
     #[Route(['fr' => '/livres', 'nl' => '/boeken', 'en' => '/books'], name: 'app_books')]
     public function index(BookRepository $bookRepository, Request $request): Response
     {
-
-        $booksLocale = $bookRepository->findAllBooksByLocaleOrderByImportance($request->getLocale());
-        $otherBooks = $bookRepository->findAllBooksWhereLocaleIsNotEqualOrderByImportance($request->getLocale());
-
-        $form = $this->createForm(NewsletterFormType::class);
-
-        return $this->render('books/index.html.twig', [
-            'bookLocale' => $booksLocale,
-            'otherBooks' => $otherBooks,
-            'form' => $form->createView()
-        ]);
+        $lang = $request->getLocale();
+        switch ($lang){
+            case 'fr':
+                return $this->redirect('https://www.50spoons.com/fr/livres');
+            case 'nl':
+                return $this->redirect('https://www.50spoons.com/nl/boeken');
+            default:
+                return $this->redirect('https://www.50spoons.com/en/books');
+        }
+//        $booksLocale = $bookRepository->findAllBooksByLocaleOrderByImportance($request->getLocale());
+//        $otherBooks = $bookRepository->findAllBooksWhereLocaleIsNotEqualOrderByImportance($request->getLocale());
+//
+//        $form = $this->createForm(NewsletterFormType::class);
+//
+//        return $this->render('books/index.html.twig', [
+//            'bookLocale' => $booksLocale,
+//            'otherBooks' => $otherBooks,
+//            'form' => $form->createView()
+//        ]);
     }
 }
