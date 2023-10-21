@@ -107,6 +107,7 @@ form:
 navbar:
   home: HOME
   boost: BOOST jezelf
+  team: TEAM
   keynotes: KEYNOTES
   books: BOEKEN
 

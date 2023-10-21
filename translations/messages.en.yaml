@@ -46,6 +46,7 @@ form:
 navbar:
   home: HOME
   boost: BOOST Yourself
+  team: TEAM
   keynotes: KEYNOTES
   books: BOOKS
 

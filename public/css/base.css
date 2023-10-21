@@ -310,6 +310,10 @@
     justify-content: center;
     line-height: 30px;
   }
+  .menuMain ul li {
+    font-size: 12px;
+    margin: 0px 6px;
+  }
 
   .menuMain {
     height: 160px;

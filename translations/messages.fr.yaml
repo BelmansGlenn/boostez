@@ -116,6 +116,7 @@ form:
 navbar:
   home: ACCUEIL
   boost: BOOSTEZ
+  team: ÉQUIPE
   keynotes: CONFÉRENCES
   books: LIVRES
 
