@@ -3,8 +3,76 @@ error:
     title: Under Construction! 🚧
     message: Our new website is under construction and will soon be there for you.
 
+
 bibliography:
   title: Bibliography
+  notes: NOTES AND SCIENTIFIC SOURCES
+  boostez: What does boost yourself mean?
+  page: p.
+  method:
+    title: The method to boost myself
+    2: 2 The Spoon Theory was created by Chris4ne Miserandino. I greatly expanded it in my first book, Guide du burn-out (Paris, Albin Michel, 2017), in order to help regain energy aGer exhaus4on.
+  sleep:
+    title: My Sleep
+    4: <a href="https://www.finebedding.co.uk/blogs/news/the-average-bedtime-for-adults-in-britain-is-revealed">https://www.finebedding.co.uk/blogs/news/the-average-bedtime-for-adults-in-britain-is-revealed</a>; <a href="https://www.directlinegroup.co.uk/en/news/brand-news/2022/sleeping-dangerously--7-5-million-brits-have-under-five-hours--a.html">https://www.directlinegroup.co.uk/en/news/brand-news/2022/sleeping-dangerously--7-5-million-brits-have-under-five-hours--a.html</a>.
+    6: https://www.philips.be/fr/a-w/about/news/archive/standard/about/news/communiques/Healthcare/2018/20180315-etude-philips-le-belge-dort-mal-et-trop-peu.html <a href="https://www.independent.co.uk/life-style/health-and-families/tired-all-the-time-yougov-survey-b1991348.html">https://www.independent.co.uk/life-style/health-and-families/tired-all-the-time-yougov-survey-b1991348.html</a>
+    8:
+    14: éd. Lannoo, 2017, p. 122-123
+    21: https://www.lespecialiste.be/fr/actualites/les-campagnes-de-prevention-contre-l-usage-prolonge-de-somniferes-inefficaces-en-flandre.html
+    21A: <a href="https://www.uk-rehab.com/sleeping-pills-addiction/">https://www.uk-rehab.com/sleeping-pills-addiction/</a> UK and Germany are doing better than France and Belgium.
+    22: pulmonologist and head of the sleep laboratory at the Saint-Luc university clinics in Brussels
+  food:
+    title: My Food and Drinks
+    25:
+      link: https://liguecontrelobesite.org/actualite/forte-progression-de-lobesite-en-france-en-2020/
+      text: In Belgium, 55% of the adult population is overweight, and 21% is obese. <a href="https://www.belgiqueenbonnesante.be/fr/etat-desante/determinants-de-sante">https://www.belgiqueenbonnesante.be/fr/etat-desante/determinants-de-sante</a>; <a href="https://www.ethnicity-facts-figures.service.gov.uk/health/diet-andexercise/overweight-adults/latest">https://www.ethnicity-facts-figures.service.gov.uk/health/diet-andexercise/overweight-adults/latest</a>.
+    48:
+      a: Pour aller plus loin
+      b: Giulia Elders, Le Charme discret de l’intestin, éd. Actes Sud
+    49: Francisca Joly Gomez, gastroenterologist, professor en nutri4on à l'université Paris-Diderot and author of the book L’Intes(n, our second brain, éd. Poche Marabout, 2016.
+  sport:
+    title: My Physical Exercise
+    51: https://www.belgiqueenbonnesante.be/fr/etat-de-sante/determinants-de-sante
+    53: and the references quoted
+    56: https://emploi.belgique.be/sites/default/files/content/publications/FR/TMS-BrochureGenerale.pdf
+  brain:
+    title: My brain
+    61: quoted in
+    67: La Méditation, c’est bon pour le cerveau, éd. Odile Jacob, 2019, p. 50
+    72: quoted in
+  recuperation:
+    title: My recovery time
+  check-up:
+    title: My quick check-up
+  bonheur:
+    title: Happy days
+    82: quoted in
+  organisation:
+    title: Organising my work
+    83: Bloom at Work survey, quoted by Michel Cymes,
+    85:  Practice described on the blog www.qualitystreet.fr by Jean-Claude Grosjean and issue of the Guide de survie aux réunions. 40 techniques pour transformer vos réunions en moments fun et produc(fs de Sacha Lopez, David Lemesle and Marc Bourguignon, éd. Pearson France, 2016,
+  outils:
+    title: My tool box
+    87: Thomas d’Ansembourg, Cessez d’être gentil, soyez vrai !, édition illustrée par Alexis Nouailhat, éd. de l’Homme, 2021;
+    90: Cf. la théorie de l’effet rebond (ou effet ironique) de Daniel Wegner, combinée à la théorie de l’intention paradoxale de Viktor Frankl.
+  teletravail:
+    title: My successful teleworking
+  alarmes:
+    title: Warning signs
+  footer:
+    title: BIBLIOGRAPHY
+    1: Cessez d’être gentil, soyez vrai ! éd de l’Homme, 2004, ou l’édition illustrée par Alexis Nouailhat, éd. de l’Homme, 2014
+    2: Les 5 Clés du bonheur, éd. Robert Laffont
+    3: La Méthode simple pour en finir avec la cigarette, éd. Pocket, 2004 et La Méthode simple pour maîtriser sa consommation d’alcool, éd. Pocket, 2019.
+    4: avec la collaboration de Patrice Romedenne
+    5: avec la collaboration de Julie Martory
+    6: Cultiver le bonheur pour les nuls en BD, éd. Delcourt et First
+    7: Guide du burn-out. Comment l’éviter, comment en sortir, éd. Albin Michel, 2017
+    8: La Méditation, c’est bon pour le cerveau, éd. Odile Jacob
+    9: Les Quatre Accords toltèques. La voie de la liberté personnelle, éd. Poches Jouvence, 2016
+    10: Le Meilleur Médicament c’est vous !, éd. Le Livre de Poche, 2016
+    11: Pourquoi nous dormons. Ce que la science nous révèle pour mieux dormir, éd. Pocket, 2019
+
 
 form:
   submit:
